@@ -10,7 +10,7 @@ public class HewanViewModel extends ViewModel {
 
     public HewanViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is hewan fragment");
+        mText.setValue("This is hewan fragment lalapo");
     }
 
     public LiveData<String> getText() {
