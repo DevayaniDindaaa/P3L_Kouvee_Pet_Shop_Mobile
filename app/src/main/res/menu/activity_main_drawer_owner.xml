@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    android:background="@color/colorBottom">
+
+    <item android:title="Pengelolaan Hewan dan Konsumen">
+        <menu>
+            <item
+                android:id="@+id/nav_konsumen"
+                android:icon="@drawable/ic_konsumen"
+                android:title="Konsumen Terdaftar" />
+            <item
+                android:id="@+id/nav_hewan"
+                android:icon="@drawable/ic_menu_jenis"
+                android:title="Hewan Terdaftar" />
+            <item
+                android:id="@+id/nav_ukuran_hewan"
+                android:icon="@drawable/ic_menu_ukuran"
+                android:title="Ukuran Hewan" />
+            <item
+                android:id="@+id/nav_jenis_hewan"
+                android:icon="@drawable/ic_menu_jenis"
+                android:title="Jenis Hewan" />
+        </menu>
+    </item>
+
+    <item android:title="Pengelolaan Produk dan Layanan">
+        <menu>
+            <item
+                android:id="@+id/nav_data_produk"
+                android:icon="@drawable/ic_menu_produk"
+                android:title="Produk" />
+            <item
+                android:id="@+id/nav_data_layanan"
+                android:icon="@drawable/ic_menu_layanan"
+                android:title="Layanan" />
+        </menu>
+    </item>
+
+    <item android:title="Pengadaan Produk">
+        <menu>
+            <item
+                android:id="@+id/nav_data_supplier"
+                android:icon="@drawable/ic_menu_supplier"
+                android:title="Supplier" />
+            <item
+                android:id="@+id/nav_pemesanan_produk"
+                android:icon="@drawable/ic_menu_pengadaan"
+                android:title="Pemesanan Produk" />
+        </menu>
+    </item>
+
+    <item android:title="Pengaturan">
+        <menu>
+            <item
+                android:id="@+id/nav_keluar"
+                android:icon="@drawable/ic_keluar"
+                android:title="Keluar" />
+        </menu>
+    </item>
+</menu>

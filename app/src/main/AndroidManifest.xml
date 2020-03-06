@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.p3l_f_1_pegawai">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_logo"
+        android:label="Kouvee Pet Shop"
+        android:roundIcon="@mipmap/ic_logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <meta-data android:name="DATABASE" android:value="User.db"/>
+        <meta-data android:name="VERSION" android:value="2.1"/>
+        <meta-data android:name="QUERY-LOG" android:value="true"/>
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.p3l_f_1_pegawai"/>
+        <activity
+            android:name=".splash_screen_activity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".login_activity"
+            android:theme="@style/SplashTheme">
+        </activity>
+        <activity
+            android:name=".drawer_activity_owner"
+            android:label="Kouvee Pet Shop"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".drawer_activity_cs"
+            android:label="Kouvee Pet Shop"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+    </application>
+</manifest>
