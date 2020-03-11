@@ -103,8 +103,9 @@ public class login_activity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                 }
                 else
-                    Toast.makeText(login_activity.this, "Kesalahan Login, Silahkan Coba Lagi!",
+                    Toast.makeText(login_activity.this, "Kesalahan Autentikasi, Silahkan Coba Lagi!",
                             Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
             }
         }, 2000);
     }
@@ -157,6 +158,13 @@ public class login_activity extends AppCompatActivity {
                 return params;
             }
         };
+        postRequest.setRetryPolicy(
+                new DefaultRetryPolicy(
+                        50000,
+                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+                )
+        );
         queue.add(postRequest);
     }
 }
