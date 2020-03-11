@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -53,6 +54,7 @@ public class drawer_activity_owner extends AppCompatActivity {
         });
     }
 
+    public void onBackPressed() { Toast.makeText(drawer_activity_owner.this, "Anda Sudah Masuk!", Toast.LENGTH_SHORT).show(); }
     /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

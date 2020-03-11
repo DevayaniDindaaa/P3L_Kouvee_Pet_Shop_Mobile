@@ -11,28 +11,39 @@
     android:orientation="vertical"
     tools:context=".login_activity">
 
-
-    <EditText
-        android:id="@+id/username"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="450dp"
-        android:layout_marginRight="30dp"
-        android:drawableLeft="@drawable/ic_person"
-        android:hint="ID Pengguna" />
+        android:layout_marginTop="400dp"
+        android:layout_marginRight="30dp" >
 
-    <EditText
-        android:id="@+id/password"
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/username"
+            android:drawableStart="@drawable/ic_person"
+            android:hint="ID Pengguna" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
-        android:drawableLeft="@drawable/ic_key"
-        android:hint="Kata Sandi"
-        android:inputType="textPassword"
-        android:password="true" />
+        app:passwordToggleEnabled="true"
+        app:passwordToggleDrawable="@drawable/visibility">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/password"
+            android:hint="Kata Sandi"
+            android:inputType="textPassword"
+            android:drawableStart="@drawable/ic_key"
+            android:password="true" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/masuk"

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -51,6 +52,8 @@ public class drawer_activity_cs extends AppCompatActivity {
             }
         });
     }
+
+    public void onBackPressed() { Toast.makeText(drawer_activity_cs.this, "Anda Sudah Masuk!", Toast.LENGTH_SHORT).show(); }
 
     /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
