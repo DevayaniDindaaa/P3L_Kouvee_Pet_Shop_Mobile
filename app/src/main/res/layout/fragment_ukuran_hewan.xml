@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <Button
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id = "@+id/recycle_tampil_ukuran"
+            android:scrollbars = "vertical"
+            tools:listitem="@layout/recycle_adapter_ukuran"/>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_ukuran"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tambah Ukuran Hewan"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:id="@+id/tambah_ukuran"
-        android:layout_gravity="right"
-        android:backgroundTint="@color/colorTop"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id = "@+id/recycle_tampil_ukuran"
-        android:scrollbars = "vertical"
-        tools:listitem="@layout/recycle_adapter_ukuran"/>
-
-</LinearLayout>
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        android:backgroundTint="@color/colorTop"
+        app:borderWidth="0dp"
+        android:src="@drawable/ic_plus" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

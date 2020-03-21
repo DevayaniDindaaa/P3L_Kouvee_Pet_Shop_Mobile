@@ -3,60 +3,76 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation_owner"
-    app:startDestination="@+id/nav_ukuran_hewan">
+    app:startDestination="@+id/nav_akun">
 
     <fragment
         android:id="@+id/nav_konsumen"
         android:name="com.p3l_f_1_pegawai.Activities.konsumen.KonsumenFragment"
         android:label="Konsumen"
+        android:textColor="#000000"
         tools:layout="@layout/fragment_konsumen" />
 
     <fragment
         android:id="@+id/nav_hewan"
         android:name="com.p3l_f_1_pegawai.Activities.hewan.HewanFragment"
         android:label="Hewan"
+        android:textColor="#000000"
         tools:layout="@layout/fragment_hewan" />
 
     <fragment
         android:id="@+id/nav_ukuran_hewan"
         android:name="com.p3l_f_1_pegawai.Activities.ukuran_hewan.UkuranHewanFragment"
         android:label="Ukuran Hewan"
+        android:textColor="#000000"
         tools:layout="@layout/fragment_ukuran_hewan" />
 
     <fragment
         android:id="@+id/nav_jenis_hewan"
         android:name="com.p3l_f_1_pegawai.Activities.jenis_hewan.JenisHewanFragment"
         android:label="Jenis Hewan"
+        android:textColor="#000000"
         tools:layout="@layout/fragment_jenis_hewan" />
 
     <fragment
         android:id="@+id/nav_data_produk"
         android:name="com.p3l_f_1_pegawai.Activities.produk.ProdukFragment"
         android:label="Produk"
+        android:textColor="#000000"
         tools:layout="@layout/fragment_produk" />
 
     <fragment
         android:id="@+id/nav_data_layanan"
         android:name="com.p3l_f_1_pegawai.Activities.layanan.LayananFragment"
         android:label="Layanan"
+        android:textColor="#000000"
         tools:layout="@layout/fragment_layanan" />
 
     <fragment
         android:id="@+id/nav_data_supplier"
         android:name="com.p3l_f_1_pegawai.Activities.supplier.SupplierFragment"
         android:label="Supplier"
+        android:textColor="#000000"
         tools:layout="@layout/fragment_supplier" />
 
     <fragment
         android:id="@+id/nav_pemesanan_produk"
         android:name="com.p3l_f_1_pegawai.Activities.pengadaan.PengadaanFragment"
         android:label="Pengadaan Produk"
+        android:textColor="#000000"
         tools:layout="@layout/fragment_pengadaan" />
+
+    <fragment
+        android:id="@+id/nav_akun"
+        android:name="com.p3l_f_1_pegawai.Activities.akun.AkunFragment"
+        android:label="Profil"
+        android:textColor="#000000"
+        tools:layout="@layout/fragment_akun" />
 
     <fragment
         android:id="@+id/nav_keluar"
         android:name="com.p3l_f_1_pegawai.logout_activity"
         android:label="Keluar"
+        android:textColor="#000000"
         tools:layout="@layout/fragment_keluar" />
 
 </navigation>

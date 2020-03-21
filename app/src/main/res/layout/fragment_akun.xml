@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:layout_gravity="center_horizontal">
+
+    <TableRow
+        android:paddingTop="10px"
+        android:gravity="center"
+        android:layout_marginTop="75dp">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/round_logo"
+            android:layout_gravity="center" />
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="20dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="ID Pegawai"
+            android:layout_marginLeft="30dp"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text=":"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/id_pegawai"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Jabatan"
+            android:layout_marginLeft="30dp"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text=":"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/role"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Nama Pengguna"
+            android:layout_marginLeft="30dp"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text=":"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/username"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Nama Lengkap"
+            android:layout_marginLeft="30dp"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text=":"
+            android:textColor="#000000"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nama_pegawai"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Tanggal Lahir"
+            android:layout_marginLeft="30dp"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text=":"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tgl_lahir"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Alamat"
+            android:layout_marginLeft="30dp"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text=":"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/alamat"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Nomor Telepon"
+            android:layout_marginLeft="30dp"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text=":"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/telepon"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"/>
+    </TableRow>
+</TableLayout>

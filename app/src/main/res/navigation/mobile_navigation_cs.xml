@@ -3,24 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation_cs"
-    app:startDestination="@+id/nav_konsumen">
+    app:startDestination="@+id/nav_akun">
 
     <fragment
         android:id="@+id/nav_konsumen"
         android:name="com.p3l_f_1_pegawai.Activities.konsumen.KonsumenFragment"
         android:label="Konsumen"
+        android:textColor="#000000"
         tools:layout="@layout/fragment_konsumen" />
 
     <fragment
         android:id="@+id/nav_hewan"
         android:name="com.p3l_f_1_pegawai.Activities.hewan.HewanFragment"
         android:label="Hewan"
+        android:textColor="#000000"
         tools:layout="@layout/fragment_hewan" />
 
     <fragment
         android:id="@+id/nav_penjualan_produk"
         android:name="com.p3l_f_1_pegawai.Activities.penjualan_produk.PenjualanProdukFragment"
         android:label="Produk"
+        android:textColor="#000000"
         tools:layout="@layout/fragment_penjualan_produk" />
 
     <fragment
@@ -30,9 +33,17 @@
         tools:layout="@layout/fragment_penjualan_layanan" />
 
     <fragment
+        android:id="@+id/nav_akun"
+        android:name="com.p3l_f_1_pegawai.Activities.akun.AkunFragment"
+        android:label="Profil"
+        android:textColor="#000000"
+        tools:layout="@layout/fragment_akun" />
+
+    <fragment
         android:id="@+id/nav_keluar"
         android:name="com.p3l_f_1_pegawai.logout_activity"
         android:label="Keluar"
+        android:textColor="#000000"
         tools:layout="@layout/fragment_keluar" />
 
 </navigation>

@@ -12,7 +12,7 @@
                 android:title="Konsumen Terdaftar" />
             <item
                 android:id="@+id/nav_hewan"
-                android:icon="@drawable/ic_menu_jenis"
+                android:icon="@drawable/dog"
                 android:title="Hewan Terdaftar" />
             <item
                 android:id="@+id/nav_ukuran_hewan"
@@ -29,11 +29,11 @@
         <menu>
             <item
                 android:id="@+id/nav_data_produk"
-                android:icon="@drawable/ic_menu_produk"
+                android:icon="@drawable/produk"
                 android:title="Produk" />
             <item
                 android:id="@+id/nav_data_layanan"
-                android:icon="@drawable/ic_menu_layanan"
+                android:icon="@drawable/layanan"
                 android:title="Layanan" />
         </menu>
     </item>
@@ -42,7 +42,7 @@
         <menu>
             <item
                 android:id="@+id/nav_data_supplier"
-                android:icon="@drawable/ic_menu_supplier"
+                android:icon="@drawable/supplier"
                 android:title="Supplier" />
             <item
                 android:id="@+id/nav_pemesanan_produk"
@@ -53,6 +53,10 @@
 
     <item android:title="Pengaturan">
         <menu>
+            <item
+                android:id="@+id/nav_akun"
+                android:icon="@drawable/ic_akun"
+                android:title="Profil" />
             <item
                 android:id="@+id/nav_keluar"
                 android:icon="@drawable/ic_keluar"

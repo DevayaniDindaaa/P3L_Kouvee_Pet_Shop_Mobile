@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -20,9 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
-import com.p3l_f_1_pegawai.dao.user;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -38,7 +35,11 @@ public class login_activity extends AppCompatActivity {
     String id_role = "-";
     String nama_pengguna = "-";
     String username_pengguna = "-";
+    String alamat_pengguna = "-";
+    String tgl_lahir_pengguna = "-";
+    String no_telp = "-";
     ProgressDialog dialog;
+    private boolean doubleBackToExitPressedOnce;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,11 +66,26 @@ public class login_activity extends AppCompatActivity {
         });
     }
 
-    public void onBackPressed() { Toast.makeText(login_activity.this, "Silahkan Masuk Kembali!", Toast.LENGTH_SHORT).show(); }
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Tekan Tombol Kembali 2x untuk Keluar Aplikasi!", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
+    }
 
     private void progDialog() {
-        dialog.setTitle("Membuat Koneksi");
-        dialog.setMessage("Mohon Menunggu...");
+        dialog.setMessage("Membuat Koneksi ...");
         dialog.show();
     }
 
@@ -79,21 +95,29 @@ public class login_activity extends AppCompatActivity {
             @Override
             public void run() {
                 if(message.equalsIgnoreCase("owner")) {
+                    id_role = "Owner";
                     Intent i = new Intent(getApplicationContext(), drawer_activity_owner.class);
                     i.putExtra("ID_PEGAWAI", id_pengguna);
                     i.putExtra("ID_ROLE", id_role);
                     i.putExtra("NAMA_PEGAWAI", nama_pengguna);
+                    i.putExtra("ALAMAT_PEGAWAI", alamat_pengguna);
+                    i.putExtra("TGL_LAHIR_PEGAWAI", tgl_lahir_pengguna);
                     i.putExtra("USERNAME", username_pengguna);
+                    i.putExtra("NO_TELP", no_telp);
                     Toast.makeText(login_activity.this, "Selamat Datang " + nama_pengguna + "!",
                             Toast.LENGTH_SHORT).show();
                     startActivity(i);
                 }
                 else if(message.equalsIgnoreCase("customer service")) {
+                    id_role = "Customer Service";
                     Intent i = new Intent(getApplicationContext(), drawer_activity_cs.class);
                     i.putExtra("ID_PEGAWAI", id_pengguna);
                     i.putExtra("ID_ROLE", id_role);
                     i.putExtra("NAMA_PEGAWAI", nama_pengguna);
+                    i.putExtra("ALAMAT_PEGAWAI", alamat_pengguna);
+                    i.putExtra("TGL_LAHIR_PEGAWAI", tgl_lahir_pengguna);
                     i.putExtra("USERNAME", username_pengguna);
+                    i.putExtra("NO_TELP", no_telp);
                     Toast.makeText(login_activity.this, "Selamat Datang " + nama_pengguna + "!",
                             Toast.LENGTH_SHORT).show();
                     startActivity(i);
@@ -112,7 +136,7 @@ public class login_activity extends AppCompatActivity {
 
     private void loginUser(final String usernameku, final String passwordku) {
 
-        String url = "http://192.168.8.101/CI_P3L_1_F/index.php/pegawai/login";
+        String url = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/pegawai/login";
         RequestQueue queue = Volley.newRequestQueue(this);
 
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
@@ -134,7 +158,10 @@ public class login_activity extends AppCompatActivity {
                             id_pengguna = objUser.getString("ID_PEGAWAI");
                             id_role = objUser.getString("ID_ROLE");
                             nama_pengguna = objUser.getString("NAMA_PEGAWAI");
+                            alamat_pengguna = objUser.getString("ALAMAT_PEGAWAI");
+                            tgl_lahir_pengguna = objUser.getString("TGL_LAHIR_PEGAWAI");
                             username_pengguna = objUser.getString("USERNAME");
+                            no_telp = objUser.getString("NO_TLP_PEGAWAI");
 
                         } catch (JSONException e) {
                             e.printStackTrace();
