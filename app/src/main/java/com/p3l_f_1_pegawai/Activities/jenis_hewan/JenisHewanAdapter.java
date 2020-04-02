@@ -1,35 +1,34 @@
 package com.p3l_f_1_pegawai.Activities.jenis_hewan;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.p3l_f_1_pegawai.R;
 import com.p3l_f_1_pegawai.dao.jenis_hewan;
 import com.p3l_f_1_pegawai.dao.ukuran_hewan;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class JenisHewanAdapter extends RecyclerView.Adapter<JenisHewanAdapter.MyViewHolder> implements Filterable {
     private List<jenis_hewan> JenisHewanList;
     private List<jenis_hewan> JenisHewanFiltered;
     private Context context;
-    //private UkuranHewanAdapter listener;
 
     public JenisHewanAdapter(List<jenis_hewan> jenisHewanList, Context context) {
         this.JenisHewanList = jenisHewanList;
         this.JenisHewanFiltered = jenisHewanList;
         this.context = context;
-        //this.listener = listener;
     }
 
     @NonNull
@@ -42,9 +41,47 @@ public class JenisHewanAdapter extends RecyclerView.Adapter<JenisHewanAdapter.My
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        jenis_hewan row = JenisHewanFiltered.get(position);
+        final jenis_hewan row = JenisHewanFiltered.get(position);
         holder.nama_jenis_hewan.setText(row.getNama_jenis_hewan());
         holder.log_aktivitas.setText(row.getStatus_data() + " by " + row.getKeterangan() + " at " + row.getTime_stamp());
+
+        if(row.getStatus_data().equalsIgnoreCase("deleted")){
+            holder.recycler_jenis.findViewById(R.id.hapus_jenis).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "Data ini sudah dihapus!", Toast.LENGTH_LONG).show();
+                }
+            });
+            holder.recycler_jenis.findViewById(R.id.edit_jenis).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "Data ini sudah dihapus!", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+        else {
+            holder.recycler_jenis.findViewById(R.id.hapus_jenis).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(context.getApplicationContext(), activity_hapus_jenis.class);
+                    i.putExtra("id_jenis_hewan", row.getId_jenis_hewan());
+                    i.putExtra("nama_jenis_hewan", row.getNama_jenis_hewan());
+                    i.putExtra("keterangan", row.getKeterangan());
+                    context.getApplicationContext().startActivity(i);
+                }
+            });
+
+            holder.recycler_jenis.findViewById(R.id.edit_jenis).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(context.getApplicationContext(), activity_ubah_jenis.class);
+                    i.putExtra("id_jenis_hewan", row.getId_jenis_hewan());
+                    i.putExtra("nama_jenis_hewan", row.getNama_jenis_hewan());
+                    i.putExtra("keterangan", row.getKeterangan());
+                    context.getApplicationContext().startActivity(i);
+                }
+            });
+        }
     }
 
 
@@ -94,18 +131,13 @@ public class JenisHewanAdapter extends RecyclerView.Adapter<JenisHewanAdapter.My
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
+        LinearLayout recycler_jenis;
         TextView nama_jenis_hewan, log_aktivitas;
         public MyViewHolder(@NonNull  View itemView) {
             super(itemView);
+            recycler_jenis = itemView.findViewById(R.id.recycle_jenis);
             nama_jenis_hewan = itemView.findViewById(R.id.nama_jenis_hewan);
             log_aktivitas = itemView.findViewById(R.id.log_aktivitas);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //listener.onUkuranHewanSelected(UkuranHewanFiltered.get(getAdapterPosition()));
-                }
-            });
         }
     }
 }

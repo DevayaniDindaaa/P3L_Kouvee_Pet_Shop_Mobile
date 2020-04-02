@@ -11,7 +11,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/recycle_jenis">
 
         <ImageView
             android:layout_marginTop="15dp"
@@ -25,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="7dp"
+            android:padding="5dp"
             android:id="@+id/recycle_ukuran">
 
             <TextView
@@ -46,26 +47,29 @@
                 android:gravity="right"
                 android:layout_marginTop="5dp">
 
+
                 <Button
-                    android:layout_width="80dp"
+                    android:layout_width="70dp"
                     android:layout_height="30dp"
                     android:drawableStart="@drawable/ic_ubah"
                     android:text="Ubah"
                     android:textAllCaps="false"
-                    android:textColor="#FFFFFF"
-                    android:background="@drawable/button_editor"
-                    android:textStyle="bold" />
+                    android:textColor="@color/colorTop"
+                    android:background="@drawable/button_ubah"
+                    android:textStyle="bold"
+                    android:id="@+id/edit_jenis"/>
 
                 <Button
-                    android:layout_width="80dp"
+                    android:layout_width="70dp"
                     android:layout_height="30dp"
                     android:drawableStart="@drawable/ic_hapus"
                     android:text="Hapus"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/button_editor"
-                    android:textStyle="bold" />
+                    android:background="@drawable/button_hapus"
+                    android:textStyle="bold"
+                    android:id="@+id/hapus_jenis"/>
             </LinearLayout>
 
         </LinearLayout>

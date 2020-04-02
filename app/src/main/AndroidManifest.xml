@@ -39,5 +39,88 @@
             android:label="Kouvee Pet Shop"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
+        <activity
+            android:name=".Activities.ukuran_hewan.activity_tambah_ukuran"
+            android:label="Tambah Ukuran Hewan"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.ukuran_hewan.UkuranHewanFragment">
+        </activity>
+        <activity
+            android:name=".Activities.ukuran_hewan.activity_ubah_ukuran"
+            android:label="Ubah Ukuran Hewan"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.ukuran_hewan.UkuranHewanFragment">
+        </activity>
+        <activity
+            android:name=".Activities.ukuran_hewan.activity_hapus_ukuran"
+            android:label="Hapus Ukuran Hewan"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.ukuran_hewan.UkuranHewanFragment">
+        </activity>
+        <activity android:name=".Activities.ukuran_hewan.UkuranHewanFragment"></activity>
+
+        <activity
+            android:name=".Activities.jenis_hewan.activity_tambah_jenis"
+            android:label="Tambah Jenis Hewan"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.jenis_hewan.JenisHewanFragment">
+        </activity>
+        <activity
+            android:name=".Activities.jenis_hewan.activity_ubah_jenis"
+            android:label="Ubah Jenis Hewan"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.jenis_hewan.JenisHewanFragment">
+        </activity>
+        <activity
+            android:name=".Activities.jenis_hewan.activity_hapus_jenis"
+            android:label="Hapus Jenis Hewan"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.jenis_hewan.JenisHewanFragment">
+        </activity>
+        <activity android:name=".Activities.jenis_hewan.JenisHewanFragment"></activity>
+
+        <activity
+            android:name=".Activities.layanan.activity_tambah_layanan"
+            android:label="Tambah Layanan"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.layanan.LayananFragment">
+        </activity>
+        <activity
+            android:name=".Activities.layanan.activity_ubah_layanan"
+            android:label="Ubah Layanan"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.layanan.LayananFragment">
+        </activity>
+        <activity
+            android:name=".Activities.layanan.activity_hapus_layanan"
+            android:label="Hapus Layanan"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.layanan.LayananFragment">
+        </activity>
+        <activity android:name=".Activities.layanan.LayananFragment"></activity>
+
+        <activity
+            android:name=".Activities.supplier.activity_tambah_supplier"
+            android:label="Tambah Supplier"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.supplier.SupplierFragment">
+        </activity>
+        <activity
+            android:name=".Activities.supplier.activity_ubah_supplier"
+            android:label="Ubah Supplier"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.supplier.SupplierFragment">
+        </activity>
+        <activity
+            android:name=".Activities.supplier.activity_hapus_supplier"
+            android:label="Hapus Supplier"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.supplier.SupplierFragment">
+        </activity>
+        <activity android:name=".Activities.supplier.SupplierFragment"></activity>
+
+        <activity android:name=".Activities.akun.AkunFragment"></activity>
+        <activity android:name=".logout_activity"></activity>
     </application>
 </manifest>

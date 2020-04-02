@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -57,7 +58,7 @@ public class login_activity extends AppCompatActivity {
                 usernameku = edtusername.getText().toString();
                 passwordku = edtpassword.getText().toString();
 
-                System.out.println("test");
+                formValidation(usernameku);
                 loginUser(usernameku, passwordku);
                 System.out.println(message);
                 progDialog();
@@ -73,7 +74,7 @@ public class login_activity extends AppCompatActivity {
         }
 
         this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Tekan Tombol Kembali 2x untuk Keluar Aplikasi!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Tekan Lagi untuk Keluar Aplikasi!", Toast.LENGTH_SHORT).show();
 
         new Handler().postDelayed(new Runnable() {
 
@@ -135,8 +136,7 @@ public class login_activity extends AppCompatActivity {
     }
 
     private void loginUser(final String usernameku, final String passwordku) {
-
-        String url = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/pegawai/login";
+        String url = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/pegawai/login";
         RequestQueue queue = Volley.newRequestQueue(this);
 
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
@@ -193,5 +193,12 @@ public class login_activity extends AppCompatActivity {
                 )
         );
         queue.add(postRequest);
+    }
+
+    private void formValidation(String username) {
+        if (TextUtils.isEmpty(username)) {
+            edtusername.setError("Nama Pengguna Tidak Boleh Kosong!");
+            return;
+        }
     }
 }

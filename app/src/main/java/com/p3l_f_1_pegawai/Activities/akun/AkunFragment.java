@@ -15,14 +15,12 @@ import com.p3l_f_1_pegawai.R;
 
 public class AkunFragment extends Fragment {
     private TextView id_pegawai, role, nama_pegawai, username, tgl_lahir_pegawai, alamat_pegawai, no_telp;
-
-    public AkunFragment() {
-
-    }
+    Activity context;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         //Inflate the layout for this fragment
+        context = getActivity();
         return inflater.inflate(R.layout.fragment_akun, container, false);
     }
 

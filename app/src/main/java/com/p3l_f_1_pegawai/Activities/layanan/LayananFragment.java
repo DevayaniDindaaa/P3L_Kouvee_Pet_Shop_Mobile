@@ -1,6 +1,7 @@
 package com.p3l_f_1_pegawai.Activities.layanan;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -24,9 +25,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.p3l_f_1_pegawai.Activities.layanan.LayananAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.p3l_f_1_pegawai.R;
-import com.p3l_f_1_pegawai.dao.jenis_hewan;
 import com.p3l_f_1_pegawai.dao.layanan;
 
 import org.json.JSONArray;
@@ -41,29 +41,43 @@ public class LayananFragment extends Fragment {
     private List<layanan> LayananList;
     private RecyclerView recyclerView;
     private LayananAdapter recycleAdapter;
+    private FloatingActionButton tambahLayanan;
+    private String nama_user;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         setHasOptionsMenu(true);
-        return inflater.inflate(R.layout.fragment_layanan, container, false);
+        View view = inflater.inflate(R.layout.fragment_layanan, container, false);
+        tambahLayanan = view.findViewById(R.id.fab_layanan);
+        tambahLayanan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), activity_tambah_layanan.class);
+                i.putExtra("USERNAME", nama_user);
+                startActivity(i);
+            }
+        });
+        return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         LayananList = new ArrayList<>();
-
+        context = getActivity();
         recyclerView = view.findViewById(R.id.recycle_tampil_layanan);
         recycleAdapter = new LayananAdapter(LayananList, getActivity());
         recyclerView.setLayoutManager(new GridLayoutManager(context, 1));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(recycleAdapter);
 
+        nama_user = getActivity().getIntent().getExtras().getString("USERNAME");
+
         getLayanan();
     }
 
     public void getLayanan(){
-        String url = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/layanan";
+        String url = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/layanan";
         RequestQueue queue = Volley.newRequestQueue(getActivity());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,
@@ -108,7 +122,7 @@ public class LayananFragment extends Fragment {
         inflater.inflate(R.menu.main, menu);
         MenuItem item = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) item.getActionView();
-        searchView.setQueryHint("Cari Layanan ...");
+        searchView.setQueryHint("Cari Layanan ... (Nama/Jenis/Ukuran)");
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String newText) {

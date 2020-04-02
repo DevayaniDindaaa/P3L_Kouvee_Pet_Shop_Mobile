@@ -1,6 +1,7 @@
 package com.p3l_f_1_pegawai.Activities.jenis_hewan;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -24,7 +25,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.p3l_f_1_pegawai.Activities.jenis_hewan.JenisHewanAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.p3l_f_1_pegawai.R;
 import com.p3l_f_1_pegawai.dao.jenis_hewan;
 
@@ -40,29 +41,43 @@ public class JenisHewanFragment extends Fragment {
     private List<jenis_hewan> JenisHewanList;
     private RecyclerView recyclerView;
     private JenisHewanAdapter recycleAdapter;
+    private FloatingActionButton tambahJenis;
+    private String nama_user;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         setHasOptionsMenu(true);
-        return inflater.inflate(R.layout.fragment_jenis_hewan, container, false);
+        View view = inflater.inflate(R.layout.fragment_jenis_hewan, container, false);
+        tambahJenis = view.findViewById(R.id.fab_jenis);
+        tambahJenis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), activity_tambah_jenis.class);
+                i.putExtra("USERNAME", nama_user);
+                startActivity(i);
+            }
+        });
+        return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         JenisHewanList = new ArrayList<>();
-
+        context = getActivity();
         recyclerView = view.findViewById(R.id.recycle_tampil_jenis);
         recycleAdapter = new JenisHewanAdapter(JenisHewanList, getActivity());
         recyclerView.setLayoutManager(new GridLayoutManager(context, 1));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(recycleAdapter);
 
+        nama_user = getActivity().getIntent().getExtras().getString("USERNAME");
+
         getJenisHewan();
     }
 
     public void getJenisHewan(){
-        String url = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/jenishewan";
+        String url = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/jenishewan";
         RequestQueue queue = Volley.newRequestQueue(getActivity());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,

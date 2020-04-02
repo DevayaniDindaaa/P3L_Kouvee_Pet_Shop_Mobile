@@ -2,9 +2,9 @@ package com.p3l_f_1_pegawai.dao;
 
 public class layanan {
     private String id_layanan, nama_ukuran_hewan, nama_jenis_hewan, nama_layanan, status_data, time_stamp, keterangan;
-    private int harga_layanan;
+    private Integer harga_layanan;
 
-    public layanan(String id_layanan, String nama_ukuran_hewan, String nama_jenis_hewan, String nama_layanan, int harga_layanan, String status_data, String time_stamp, String keterangan) {
+    public layanan(String id_layanan, String nama_ukuran_hewan, String nama_jenis_hewan, String nama_layanan, Integer harga_layanan, String status_data, String time_stamp, String keterangan) {
         this.id_layanan = id_layanan;
         this.nama_ukuran_hewan = nama_ukuran_hewan;
         this.nama_jenis_hewan = nama_jenis_hewan;
@@ -71,11 +71,11 @@ public class layanan {
         this.keterangan = keterangan;
     }
 
-    public int getHarga_layanan() {
+    public Integer getHarga_layanan() {
         return harga_layanan;
     }
 
-    public void setHarga_layanan(int harga_layanan) {
+    public void setHarga_layanan(Integer harga_layanan) {
         this.harga_layanan = harga_layanan;
     }
 }
