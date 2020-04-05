@@ -57,7 +57,7 @@
                 android:layout_marginTop="5dp">
 
                 <Button
-                    android:layout_width="70dp"
+                    android:layout_width="75dp"
                     android:layout_height="30dp"
                     android:drawableStart="@drawable/ic_ubah"
                     android:text="Ubah"
@@ -68,7 +68,7 @@
                     android:id="@+id/edit_supplier" />
 
                 <Button
-                    android:layout_width="70dp"
+                    android:layout_width="75dp"
                     android:layout_height="30dp"
                     android:drawableStart="@drawable/ic_hapus"
                     android:text="Hapus"
@@ -79,9 +79,6 @@
                     android:textStyle="bold"
                     android:id="@+id/hapus_supplier"/>
             </LinearLayout>
-
         </LinearLayout>
-
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>

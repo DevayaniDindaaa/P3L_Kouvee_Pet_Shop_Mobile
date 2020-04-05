@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tambah Foto Produk"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:textSize="20dp"
+        android:gravity="center">
+    </TextView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ambil Foto dari Kamera"
+        android:drawableStart="@drawable/ic_menu_camera"
+        android:drawablePadding="10dp"
+        android:textSize="18dp"
+        android:textAllCaps="false"
+        android:gravity="left"
+        android:layout_marginTop="10dp"
+        android:id="@+id/camera">
+    </Button>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pilih dari Galeri"
+        android:drawableStart="@drawable/ic_menu_gallery"
+        android:drawablePadding="10dp"
+        android:textAllCaps="false"
+        android:textSize="18dp"
+        android:gravity="left"
+        android:id="@+id/gallery">
+    </Button>
+
+<!--    <Button-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="BATAL"-->
+<!--        android:textAllCaps="true"-->
+<!--        android:textSize="18dp"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:textColor="@color/colorAccent"-->
+<!--        android:id="@+id/cancel"-->
+<!--        android:background="#FFFFFF">-->
+<!--    </Button>-->
+</LinearLayout>

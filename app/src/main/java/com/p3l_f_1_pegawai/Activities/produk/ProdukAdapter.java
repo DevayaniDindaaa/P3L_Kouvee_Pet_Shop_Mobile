@@ -43,54 +43,61 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull ProdukAdapter.MyViewHolder holder, int position) {
         final produk row = ProdukFiltered.get(position);
-        holder.nama_produk.setText(row.getNama_produk() + " - " + row.getNama_jenis_hewan());
+        holder.nama_produk.setText(row.getNama_produk());
+        holder.jenis_hewan_produk.setText(row.getNama_jenis_hewan());
         holder.stok_produk.setText((String.valueOf(row.getStok_produk())) + " " + row.getSatuan_produk());
         holder.stok_minimal_produk.setText((String.valueOf(row.getStok_minimal_produk())) + " " + row.getSatuan_produk());
         holder.harga_produk.setText((String.valueOf(row.getHarga_produk())) + " /" + row.getSatuan_produk());
         Glide.with(context).load(row.getFoto_produk()).into(holder.foto_produk);
         holder.log_aktivitas.setText(row.getStatus_data() + " by " + row.getKeterangan() + " at " + row.getTime_stamp());
 
-//        if(row.getStatus_data().equalsIgnoreCase("deleted")){
-//            holder.recycler_layanan.findViewById(R.id.hapus_layanan).setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Toast.makeText(context, "Data ini sudah dihapus!", Toast.LENGTH_LONG).show();
-//                }
-//            });
-//            holder.recycler_layanan.findViewById(R.id.edit_layanan).setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Toast.makeText(context, "Data ini sudah dihapus!", Toast.LENGTH_LONG).show();
-//                }
-//            });
-//        }
-//        else {
-//            holder.recycler_layanan.findViewById(R.id.hapus_layanan).setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent i = new Intent(context.getApplicationContext(), activity_hapus_layanan.class);
-//                    i.putExtra("nama_layanan_hewan", row.getNama_layanan() + " " + row.getNama_jenis_hewan() + " " + row.getNama_ukuran_hewan() );
-//                    i.putExtra("keterangan", row.getKeterangan());
-//                    i.putExtra("id_layanan", row.getId_layanan());
-//                    i.putExtra("harga_layanan", String.valueOf(row.getHarga_layanan()));
-//                    context.getApplicationContext().startActivity(i);
-//                }
-//            });
-//
-//            holder.recycler_layanan.findViewById(R.id.edit_layanan).setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent i = new Intent(context.getApplicationContext(), activity_ubah_layanan.class);
-//                    i.putExtra("nama_layanan", row.getNama_layanan());
-//                    i.putExtra("nama_jenis_hewan", row.getNama_jenis_hewan());
-//                    i.putExtra("nama_ukuran_hewan", row.getNama_ukuran_hewan());
-//                    i.putExtra("keterangan", row.getKeterangan());
-//                    i.putExtra("id_layanan", row.getId_layanan());
-//                    i.putExtra("harga_layanan", String.valueOf(row.getHarga_layanan()));
-//                    context.getApplicationContext().startActivity(i);
-//                }
-//            });
-//        }
+        if(row.getStatus_data().equalsIgnoreCase("deleted")){
+            holder.recycler_produk.findViewById(R.id.hapus_produk).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "Data ini sudah dihapus!", Toast.LENGTH_LONG).show();
+                }
+            });
+            holder.recycler_produk.findViewById(R.id.edit_produk).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "Data ini sudah dihapus!", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+        else {
+            holder.recycler_produk.findViewById(R.id.hapus_produk).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(context.getApplicationContext(), activity_hapus_produk.class);
+                    i.putExtra("foto_produk", row.getFoto_produk());
+                    i.putExtra("nama_produk", row.getNama_produk());
+                    i.putExtra("jenis_hewan", row.getNama_jenis_hewan());
+                    i.putExtra("stok_produk",(String.valueOf(row.getStok_produk())) + " " + row.getSatuan_produk());
+                    i.putExtra("stok_minimal_produk",(String.valueOf(row.getStok_minimal_produk())) + " " + row.getSatuan_produk());
+                    i.putExtra("keterangan", row.getKeterangan());
+                    i.putExtra("id_produk", row.getId_produk());
+                    i.putExtra("harga_produk", (String.valueOf(row.getHarga_produk())) + " /" + row.getSatuan_produk());
+                    context.getApplicationContext().startActivity(i);
+                }
+            });
+
+            holder.recycler_produk.findViewById(R.id.edit_produk).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(context.getApplicationContext(), activity_ubah_produk.class);
+                    i.putExtra("foto_produk", row.getFoto_produk());
+                    i.putExtra("nama_produk", row.getNama_produk());
+                    i.putExtra("satuan_produk", row.getSatuan_produk());
+                    i.putExtra("stok_produk",String.valueOf(row.getStok_produk()));
+                    i.putExtra("stok_minimal_produk",String.valueOf(row.getStok_minimal_produk()));
+                    i.putExtra("keterangan", row.getKeterangan());
+                    i.putExtra("id_produk", row.getId_produk());
+                    i.putExtra("harga_produk", String.valueOf(row.getHarga_produk()));
+                    context.getApplicationContext().startActivity(i);
+                }
+            });
+        }
     }
 
 
@@ -140,7 +147,7 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         LinearLayout recycler_produk;
-        TextView nama_produk, harga_produk, stok_produk, stok_minimal_produk, log_aktivitas;
+        TextView nama_produk, harga_produk, jenis_hewan_produk, stok_produk, stok_minimal_produk, log_aktivitas;
         ImageView foto_produk;
 
         public MyViewHolder(@NonNull  View itemView) {
@@ -148,6 +155,7 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
             recycler_produk = itemView.findViewById(R.id.recycle_produk);
             nama_produk = itemView.findViewById(R.id.nama_produk);
             harga_produk = itemView.findViewById(R.id.harga_produk);
+            jenis_hewan_produk = itemView.findViewById(R.id.jenis_hewan_produk);
             stok_produk = itemView.findViewById(R.id.stok_produk);
             stok_minimal_produk = itemView.findViewById(R.id.stok_minimal);
             foto_produk = itemView.findViewById(R.id.foto_produk);
