@@ -53,25 +53,25 @@ public class login_activity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        FirebaseInstanceId.getInstance().getInstanceId()
-                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                        if (!task.isSuccessful()) {
-                            Log.w(TAG, "getInstanceId failed", task.getException());
-                            return;
-                        }
-
-                        // Get new Instance ID token
-                        String token = task.getResult().getToken();
-
-                        // Log and toast
-                        String msg = token;
-                        Log.d(TAG, msg);
-                        System.out.println(msg);
-                        Toast.makeText(login_activity.this, msg, Toast.LENGTH_SHORT).show();
-                    }
-                });
+//        FirebaseInstanceId.getInstance().getInstanceId()
+//                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+//                        if (!task.isSuccessful()) {
+//                            Log.w(TAG, "getInstanceId failed", task.getException());
+//                            return;
+//                        }
+//
+//                        // Get new Instance ID token
+//                        String token = task.getResult().getToken();
+//
+//                        // Log and toast
+//                        String msg = token;
+//                        Log.d(TAG, msg);
+//                        System.out.println(msg);
+//                        Toast.makeText(login_activity.this, msg, Toast.LENGTH_SHORT).show();
+//                    }
+//                });
 
         edtusername = (TextInputEditText) findViewById(R.id.username);
         edtpassword = (TextInputEditText) findViewById(R.id.password);

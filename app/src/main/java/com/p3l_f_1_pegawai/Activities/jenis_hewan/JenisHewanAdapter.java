@@ -15,17 +15,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.p3l_f_1_pegawai.R;
-import com.p3l_f_1_pegawai.dao.jenis_hewan;
-import com.p3l_f_1_pegawai.dao.ukuran_hewan;
+import com.p3l_f_1_pegawai.dao.jenis_hewanDAO;
+import com.p3l_f_1_pegawai.dao.ukuran_hewanDAO;
 import java.util.ArrayList;
 import java.util.List;
 
 public class JenisHewanAdapter extends RecyclerView.Adapter<JenisHewanAdapter.MyViewHolder> implements Filterable {
-    private List<jenis_hewan> JenisHewanList;
-    private List<jenis_hewan> JenisHewanFiltered;
+    private List<jenis_hewanDAO> JenisHewanList;
+    private List<jenis_hewanDAO> JenisHewanFiltered;
     private Context context;
 
-    public JenisHewanAdapter(List<jenis_hewan> jenisHewanList, Context context) {
+    public JenisHewanAdapter(List<jenis_hewanDAO> jenisHewanList, Context context) {
         this.JenisHewanList = jenisHewanList;
         this.JenisHewanFiltered = jenisHewanList;
         this.context = context;
@@ -41,7 +41,7 @@ public class JenisHewanAdapter extends RecyclerView.Adapter<JenisHewanAdapter.My
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        final jenis_hewan row = JenisHewanFiltered.get(position);
+        final jenis_hewanDAO row = JenisHewanFiltered.get(position);
         holder.nama_jenis_hewan.setText(row.getNama_jenis_hewan());
         holder.log_aktivitas.setText(row.getStatus_data() + " by " + row.getKeterangan() + " at " + row.getTime_stamp());
 
@@ -103,8 +103,8 @@ public class JenisHewanAdapter extends RecyclerView.Adapter<JenisHewanAdapter.My
             if(charSequence.toString().isEmpty()){
                 JenisHewanFiltered = JenisHewanList;
             }else{
-                List<jenis_hewan> filteredList = new ArrayList<>();
-                for(jenis_hewan jenis: JenisHewanList){
+                List<jenis_hewanDAO> filteredList = new ArrayList<>();
+                for(jenis_hewanDAO jenis: JenisHewanList){
                     if(jenis.getNama_jenis_hewan().toLowerCase().contains(charSequence.toString().toLowerCase())){
                         filteredList.add(jenis);
                     }
@@ -121,13 +121,13 @@ public class JenisHewanAdapter extends RecyclerView.Adapter<JenisHewanAdapter.My
         //runs on a ui thread
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-            JenisHewanFiltered = (List<jenis_hewan>) filterResults.values;
+            JenisHewanFiltered = (List<jenis_hewanDAO>) filterResults.values;
             notifyDataSetChanged();
         }
     };
 
     public interface UkuranHewanAdapterListener {
-        void onUkuranHewanSelected(ukuran_hewan ukuran);
+        void onUkuranHewanSelected(ukuran_hewanDAO ukuran);
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

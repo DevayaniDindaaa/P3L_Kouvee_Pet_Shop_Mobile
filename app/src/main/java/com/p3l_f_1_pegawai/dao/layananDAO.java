@@ -1,10 +1,10 @@
 package com.p3l_f_1_pegawai.dao;
 
-public class layanan {
+public class layananDAO {
     private String id_layanan, nama_ukuran_hewan, nama_jenis_hewan, nama_layanan, status_data, time_stamp, keterangan;
     private Integer harga_layanan;
 
-    public layanan(String id_layanan, String nama_ukuran_hewan, String nama_jenis_hewan, String nama_layanan, Integer harga_layanan, String status_data, String time_stamp, String keterangan) {
+    public layananDAO(String id_layanan, String nama_ukuran_hewan, String nama_jenis_hewan, String nama_layanan, Integer harga_layanan, String status_data, String time_stamp, String keterangan) {
         this.id_layanan = id_layanan;
         this.nama_ukuran_hewan = nama_ukuran_hewan;
         this.nama_jenis_hewan = nama_jenis_hewan;

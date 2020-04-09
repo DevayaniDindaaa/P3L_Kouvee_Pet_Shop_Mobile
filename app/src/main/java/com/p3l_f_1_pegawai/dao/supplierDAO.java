@@ -1,9 +1,9 @@
 package com.p3l_f_1_pegawai.dao;
 
-public class supplier {
+public class supplierDAO {
     private String id_supplier, nama_supplier, alamat_supplier, kota_supplier, telepon_supplier, status_data, time_stamp, keterangan;
 
-    public supplier(String id_supplier, String nama_supplier, String alamat_supplier, String kota_supplier, String telepon_supplier, String status_data, String time_stamp, String keterangan) {
+    public supplierDAO(String id_supplier, String nama_supplier, String alamat_supplier, String kota_supplier, String telepon_supplier, String status_data, String time_stamp, String keterangan) {
         this.id_supplier = id_supplier;
         this.nama_supplier = nama_supplier;
         this.alamat_supplier = alamat_supplier;

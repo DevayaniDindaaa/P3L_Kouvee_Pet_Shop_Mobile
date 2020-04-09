@@ -17,16 +17,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.p3l_f_1_pegawai.R;
-import com.p3l_f_1_pegawai.dao.produk;
+import com.p3l_f_1_pegawai.dao.produkDAO;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHolder> implements Filterable {
-    private List<produk> ProdukList;
-    private List<produk> ProdukFiltered;
+    private List<produkDAO> ProdukList;
+    private List<produkDAO> ProdukFiltered;
     private Context context;
 
-    public ProdukAdapter(List<produk> produkList, Context context) {
+    public ProdukAdapter(List<produkDAO> produkList, Context context) {
         this.ProdukList = produkList;
         this.ProdukFiltered = produkList;
         this.context = context;
@@ -42,7 +42,7 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ProdukAdapter.MyViewHolder holder, int position) {
-        final produk row = ProdukFiltered.get(position);
+        final produkDAO row = ProdukFiltered.get(position);
         holder.nama_produk.setText(row.getNama_produk());
         holder.jenis_hewan_produk.setText(row.getNama_jenis_hewan());
         holder.stok_produk.setText((String.valueOf(row.getStok_produk())) + " " + row.getSatuan_produk());
@@ -136,8 +136,8 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
             if(charSequence.toString().isEmpty()){
                 ProdukFiltered = ProdukList;
             }else{
-                List<produk> filteredList = new ArrayList<>();
-                for(produk produk: ProdukList){
+                List<produkDAO> filteredList = new ArrayList<>();
+                for(produkDAO produk: ProdukList){
                     if(produk.getNama_produk().toLowerCase().contains(charSequence.toString().toLowerCase())){
                         filteredList.add(produk);
                     }else
@@ -157,7 +157,7 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
         //runs on a ui thread
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-            ProdukFiltered = (List<produk>) filterResults.values;
+            ProdukFiltered = (List<produkDAO>) filterResults.values;
             notifyDataSetChanged();
         }
     };

@@ -27,7 +27,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.p3l_f_1_pegawai.R;
-import com.p3l_f_1_pegawai.dao.jenis_hewan;
+import com.p3l_f_1_pegawai.dao.jenis_hewanDAO;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -38,7 +38,7 @@ import java.util.List;
 
 public class JenisHewanFragment extends Fragment {
     Activity context;
-    private List<jenis_hewan> JenisHewanList;
+    private List<jenis_hewanDAO> JenisHewanList;
     private RecyclerView recyclerView;
     private JenisHewanAdapter recycleAdapter;
     private FloatingActionButton tambahJenis;
@@ -91,7 +91,7 @@ public class JenisHewanFragment extends Fragment {
 
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject objectReview = jsonArray.getJSONObject(i);
-                                jenis_hewan r = new jenis_hewan(objectReview.getString("ID_JENIS_HEWAN"),
+                                jenis_hewanDAO r = new jenis_hewanDAO(objectReview.getString("ID_JENIS_HEWAN"),
                                         objectReview.getString("NAMA_JENIS_HEWAN"),
                                         objectReview.getString("STATUS_DATA"),
                                         objectReview.getString("TIME_STAMP"),

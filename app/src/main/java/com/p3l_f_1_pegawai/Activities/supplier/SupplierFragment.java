@@ -28,7 +28,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.p3l_f_1_pegawai.R;
-import com.p3l_f_1_pegawai.dao.supplier;
+import com.p3l_f_1_pegawai.dao.supplierDAO;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,7 +39,7 @@ import java.util.List;
 
 public class SupplierFragment extends Fragment {
     Activity context;
-    private List<supplier> SupplierList;
+    private List<supplierDAO> SupplierList;
     private RecyclerView recyclerView;
     private SupplierAdapter recycleAdapter;
     private FloatingActionButton tambahSupplier;
@@ -93,7 +93,7 @@ public class SupplierFragment extends Fragment {
 
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject objectReview = jsonArray.getJSONObject(i);
-                                supplier r = new supplier(objectReview.getString("ID_SUPPLIER"),
+                                supplierDAO r = new supplierDAO(objectReview.getString("ID_SUPPLIER"),
                                         objectReview.getString("NAMA_SUPPLIER"),
                                         objectReview.getString("ALAMAT_SUPPLIER"),
                                         objectReview.getString("KOTA_SUPPLIER"),

@@ -32,7 +32,7 @@ import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.google.android.material.textfield.TextInputEditText;
 import com.p3l_f_1_pegawai.R;
-import com.p3l_f_1_pegawai.dao.spinner_jenis_hewan;
+import com.p3l_f_1_pegawai.dao.spinner_jenis_hewanDAO;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -62,7 +62,7 @@ public class activity_ubah_produk extends AppCompatActivity {
     private String id_jenis_hewan;
     private Bitmap bitmap;
     ProgressDialog dialogProg;
-    private List<spinner_jenis_hewan> jenisHewans = new ArrayList<>();
+    private List<spinner_jenis_hewanDAO> jenisHewans = new ArrayList<>();
     private ArrayList<String> tempJenis = new ArrayList<>();
     private Spinner spinner_jenis;
     private int GALLERY = 1, CAMERA = 2;
@@ -169,7 +169,7 @@ public class activity_ubah_produk extends AppCompatActivity {
 
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject objectReview = jsonArray.getJSONObject(i);
-                                spinner_jenis_hewan r = new spinner_jenis_hewan(objectReview.getString("ID_JENIS_HEWAN"),
+                                spinner_jenis_hewanDAO r = new spinner_jenis_hewanDAO(objectReview.getString("ID_JENIS_HEWAN"),
                                         objectReview.getString("NAMA_JENIS_HEWAN"),
                                         objectReview.getString("STATUS_DATA"));
 

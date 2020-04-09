@@ -25,8 +25,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
 import com.p3l_f_1_pegawai.R;
-import com.p3l_f_1_pegawai.dao.spinner_jenis_hewan;
-import com.p3l_f_1_pegawai.dao.spinner_ukuran_hewan;
+import com.p3l_f_1_pegawai.dao.spinner_jenis_hewanDAO;
+import com.p3l_f_1_pegawai.dao.spinner_ukuran_hewanDAO;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -50,9 +50,9 @@ public class activity_tambah_layanan extends AppCompatActivity {
     private String id_jenis_hewan, id_ukuran_hewan;
     private String Numeric = "\\d+";
     ProgressDialog dialog;
-    private List<spinner_jenis_hewan> jenisHewans = new ArrayList<>();
+    private List<spinner_jenis_hewanDAO> jenisHewans = new ArrayList<>();
     private ArrayList<String> tempJenis = new ArrayList<>();
-    private List<spinner_ukuran_hewan> ukuranHewans = new ArrayList<spinner_ukuran_hewan>();
+    private List<spinner_ukuran_hewanDAO> ukuranHewans = new ArrayList<spinner_ukuran_hewanDAO>();
     private ArrayList<String> tempUkuran = new ArrayList<>();
     private Spinner spinner_jenis, spinner_ukuran;
 
@@ -157,7 +157,7 @@ public class activity_tambah_layanan extends AppCompatActivity {
 
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject objectReview = jsonArray.getJSONObject(i);
-                                spinner_jenis_hewan r = new spinner_jenis_hewan(objectReview.getString("ID_JENIS_HEWAN"),
+                                spinner_jenis_hewanDAO r = new spinner_jenis_hewanDAO(objectReview.getString("ID_JENIS_HEWAN"),
                                         objectReview.getString("NAMA_JENIS_HEWAN"),
                                         objectReview.getString("STATUS_DATA"));
 
@@ -201,7 +201,7 @@ public class activity_tambah_layanan extends AppCompatActivity {
 
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject objectReview = jsonArray.getJSONObject(i);
-                                spinner_ukuran_hewan r = new spinner_ukuran_hewan(objectReview.getString("ID_UKURAN_HEWAN"),
+                                spinner_ukuran_hewanDAO r = new spinner_ukuran_hewanDAO(objectReview.getString("ID_UKURAN_HEWAN"),
                                         objectReview.getString("NAMA_UKURAN_HEWAN"),
                                         objectReview.getString("STATUS_DATA"));
 

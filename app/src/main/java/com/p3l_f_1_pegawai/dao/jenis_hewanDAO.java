@@ -1,9 +1,9 @@
 package com.p3l_f_1_pegawai.dao;
 
-public class jenis_hewan {
+public class jenis_hewanDAO {
     private String id_jenis_hewan, nama_jenis_hewan, status_data, time_stamp, keterangan;
 
-    public jenis_hewan(String id_jenis_hewan, String nama_jenis_hewan, String status_data, String time_stamp, String keterangan) {
+    public jenis_hewanDAO(String id_jenis_hewan, String nama_jenis_hewan, String status_data, String time_stamp, String keterangan) {
         this.id_jenis_hewan = id_jenis_hewan;
         this.nama_jenis_hewan = nama_jenis_hewan;
         this.status_data = status_data;

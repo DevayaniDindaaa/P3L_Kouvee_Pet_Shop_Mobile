@@ -15,16 +15,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.p3l_f_1_pegawai.R;
-import com.p3l_f_1_pegawai.dao.supplier;
+import com.p3l_f_1_pegawai.dao.supplierDAO;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SupplierAdapter extends RecyclerView.Adapter<SupplierAdapter.MyViewHolder> implements Filterable {
-    private List<supplier> SupplierList;
-    private List<supplier> SupplierFiltered;
+    private List<supplierDAO> SupplierList;
+    private List<supplierDAO> SupplierFiltered;
     private Context context;
 
-    public SupplierAdapter(List<supplier> SupplierList, Context context) {
+    public SupplierAdapter(List<supplierDAO> SupplierList, Context context) {
         this.SupplierList = SupplierList;
         this.SupplierFiltered = SupplierList;
         this.context = context;
@@ -40,7 +40,7 @@ public class SupplierAdapter extends RecyclerView.Adapter<SupplierAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        final supplier row = SupplierFiltered.get(position);
+        final supplierDAO row = SupplierFiltered.get(position);
         holder.nama_supplier.setText(row.getNama_supplier());
         holder.alamat_supplier.setText(row.getAlamat_supplier() + ", " + row.getKota_supplier());
         holder.telepon_supplier.setText(row.getTelepon_supplier());
@@ -109,8 +109,8 @@ public class SupplierAdapter extends RecyclerView.Adapter<SupplierAdapter.MyView
             if(charSequence.toString().isEmpty()){
                 SupplierFiltered = SupplierList;
             }else{
-                List<supplier> filteredList = new ArrayList<>();
-                for(supplier supplier: SupplierList){
+                List<supplierDAO> filteredList = new ArrayList<>();
+                for(supplierDAO supplier: SupplierList){
                     if(supplier.getNama_supplier().toLowerCase().contains(charSequence.toString().toLowerCase())){
                         filteredList.add(supplier);
                     }else
@@ -130,13 +130,13 @@ public class SupplierAdapter extends RecyclerView.Adapter<SupplierAdapter.MyView
         //runs on a ui thread
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-            SupplierFiltered = (List<supplier>) filterResults.values;
+            SupplierFiltered = (List<supplierDAO>) filterResults.values;
             notifyDataSetChanged();
         }
     };
 
     public interface UkuranHewanAdapterListener {
-        void onUkuranHewanSelected(supplier supplier);
+        void onUkuranHewanSelected(supplierDAO supplier);
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

@@ -27,7 +27,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.p3l_f_1_pegawai.R;
-import com.p3l_f_1_pegawai.dao.layanan;
+import com.p3l_f_1_pegawai.dao.layananDAO;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -38,7 +38,7 @@ import java.util.List;
 
 public class LayananFragment extends Fragment {
     Activity context;
-    private List<layanan> LayananList;
+    private List<layananDAO> LayananList;
     private RecyclerView recyclerView;
     private LayananAdapter recycleAdapter;
     private FloatingActionButton tambahLayanan;
@@ -91,7 +91,7 @@ public class LayananFragment extends Fragment {
 
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject objectReview = jsonArray.getJSONObject(i);
-                                layanan r = new layanan(objectReview.getString("id_layanan"),
+                                layananDAO r = new layananDAO(objectReview.getString("id_layanan"),
                                         objectReview.getString("nama_ukuran_hewan"),
                                         objectReview.getString("nama_jenis_hewan"),
                                         objectReview.getString("nama_layanan"),

@@ -1,9 +1,9 @@
 package com.p3l_f_1_pegawai.dao;
 
-public class user {
+public class userDAO {
     private String id_pegawai, id_role, nama_pegawai, username, tgl_lahir_pegawai, alamat_pegawai, no_telp;
 
-    public user(String id_pegawai, String id_role, String nama_pegawai, String username, String tgl_lahir_pegawai, String alamat_pegawai, String no_telp) {
+    public userDAO(String id_pegawai, String id_role, String nama_pegawai, String username, String tgl_lahir_pegawai, String alamat_pegawai, String no_telp) {
         this.id_pegawai = id_pegawai;
         this.id_role = id_role;
         this.nama_pegawai = nama_pegawai;

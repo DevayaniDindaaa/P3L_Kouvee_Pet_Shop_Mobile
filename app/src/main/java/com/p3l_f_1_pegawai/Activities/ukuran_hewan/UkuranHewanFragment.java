@@ -28,7 +28,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.p3l_f_1_pegawai.R;
-import com.p3l_f_1_pegawai.dao.ukuran_hewan;
+import com.p3l_f_1_pegawai.dao.ukuran_hewanDAO;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,7 +39,7 @@ import java.util.List;
 
 public class UkuranHewanFragment extends Fragment {
     Activity context;
-    private List<ukuran_hewan> UkuranHewanList;
+    private List<ukuran_hewanDAO> UkuranHewanList;
     private RecyclerView recyclerView;
     private UkuranHewanAdapter recycleAdapter;
     private FloatingActionButton tambahUkuran;
@@ -93,7 +93,7 @@ public class UkuranHewanFragment extends Fragment {
 
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject objectReview = jsonArray.getJSONObject(i);
-                                ukuran_hewan r = new ukuran_hewan(objectReview.getString("ID_UKURAN_HEWAN"),
+                                ukuran_hewanDAO r = new ukuran_hewanDAO(objectReview.getString("ID_UKURAN_HEWAN"),
                                         objectReview.getString("NAMA_UKURAN_HEWAN"),
                                         objectReview.getString("STATUS_DATA"),
                                         objectReview.getString("TIME_STAMP"),

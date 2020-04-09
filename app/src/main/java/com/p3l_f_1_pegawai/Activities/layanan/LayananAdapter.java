@@ -15,17 +15,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.p3l_f_1_pegawai.R;
-import com.p3l_f_1_pegawai.dao.layanan;
-import com.p3l_f_1_pegawai.dao.ukuran_hewan;
+import com.p3l_f_1_pegawai.dao.layananDAO;
+import com.p3l_f_1_pegawai.dao.ukuran_hewanDAO;
 import java.util.ArrayList;
 import java.util.List;
 
 public class LayananAdapter extends RecyclerView.Adapter<LayananAdapter.MyViewHolder> implements Filterable {
-    private List<layanan> LayananList;
-    private List<layanan> LayananFiltered;
+    private List<layananDAO> LayananList;
+    private List<layananDAO> LayananFiltered;
     private Context context;
 
-    public LayananAdapter(List<layanan> layananList, Context context) {
+    public LayananAdapter(List<layananDAO> layananList, Context context) {
         this.LayananList = layananList;
         this.LayananFiltered = layananList;
         this.context = context;
@@ -41,7 +41,7 @@ public class LayananAdapter extends RecyclerView.Adapter<LayananAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        final layanan row = LayananFiltered.get(position);
+        final layananDAO row = LayananFiltered.get(position);
         holder.nama_layanan.setText(row.getNama_layanan() + " " + row.getNama_jenis_hewan() + " " + row.getNama_ukuran_hewan());
         holder.harga_layanan.setText(String.valueOf(row.getHarga_layanan()));
         holder.log_aktivitas.setText(row.getStatus_data() + " by " + row.getKeterangan() + " at " + row.getTime_stamp());
@@ -108,8 +108,8 @@ public class LayananAdapter extends RecyclerView.Adapter<LayananAdapter.MyViewHo
             if(charSequence.toString().isEmpty()){
                 LayananFiltered = LayananList;
             }else{
-                List<layanan> filteredList = new ArrayList<>();
-                for(layanan layanan: LayananList){
+                List<layananDAO> filteredList = new ArrayList<>();
+                for(layananDAO layanan: LayananList){
                     if(layanan.getNama_layanan().toLowerCase().contains(charSequence.toString().toLowerCase())){
                         filteredList.add(layanan);
                     }else
@@ -133,13 +133,13 @@ public class LayananAdapter extends RecyclerView.Adapter<LayananAdapter.MyViewHo
         //runs on a ui thread
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-            LayananFiltered = (List<layanan>) filterResults.values;
+            LayananFiltered = (List<layananDAO>) filterResults.values;
             notifyDataSetChanged();
         }
     };
 
     public interface UkuranHewanAdapterListener {
-        void onUkuranHewanSelected(ukuran_hewan ukuran);
+        void onUkuranHewanSelected(ukuran_hewanDAO ukuran);
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

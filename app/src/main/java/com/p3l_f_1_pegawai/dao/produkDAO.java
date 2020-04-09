@@ -1,10 +1,10 @@
 package com.p3l_f_1_pegawai.dao;
 
-public class produk {
+public class produkDAO {
     private String id_produk, nama_jenis_hewan, nama_produk, satuan_produk, foto_produk, status_data, time_stamp, keterangan;
     private Integer stok_produk, stok_minimal_produk, harga_produk;
 
-    public produk(String id_produk, String nama_jenis_hewan, String nama_produk, String satuan_produk, String foto_produk, String status_data, String time_stamp, String keterangan, Integer stok_produk, Integer stok_minimal_produk, Integer harga_produk) {
+    public produkDAO(String id_produk, String nama_jenis_hewan, String nama_produk, String satuan_produk, String foto_produk, String status_data, String time_stamp, String keterangan, Integer stok_produk, Integer stok_minimal_produk, Integer harga_produk) {
         this.id_produk = id_produk;
         this.nama_jenis_hewan = nama_jenis_hewan;
         this.nama_produk = nama_produk;
