@@ -108,7 +108,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/harga_layanan_hewan"
-                android:hint="Harga Layanan Hewan" />
+                android:hint="Harga Layanan Hewan"
+                android:inputType="numberSigned"/>
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 

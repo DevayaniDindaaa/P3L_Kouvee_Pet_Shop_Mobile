@@ -38,6 +38,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 public class activity_ubah_layanan extends AppCompatActivity {
     private String URLline = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/layanan/";
@@ -46,6 +47,7 @@ public class activity_ubah_layanan extends AppCompatActivity {
     private TextView show_calendar, show_person;
     private String data = "-";
     private String message = "-";
+    private String Numeric = "\\d+";
     private String id_jenis_hewan, id_ukuran_hewan, id_layanan_hewan;
     ProgressDialog dialog;
     private List<spinner_jenis_hewan> jenisHewans = new ArrayList<>();
@@ -69,7 +71,7 @@ public class activity_ubah_layanan extends AppCompatActivity {
                 harga_layanan_hewan = Integer.valueOf(harga_layanan.getText().toString());
                 nama_pengguna = show_person.getText().toString();
 
-                formValidation(nama_layanan_hewan);
+                formValidation(nama_layanan_hewan, String.valueOf(harga_layanan_hewan));
                 ubahLayanan(nama_layanan_hewan, harga_layanan_hewan, id_jenis_hewan, id_ukuran_hewan, nama_pengguna);
                 System.out.println(message);
                 progDialog();
@@ -232,9 +234,19 @@ public class activity_ubah_layanan extends AppCompatActivity {
         queue.add(getRequest);
     }
 
-    private void formValidation(String nama_layanan_hewan) {
+    private void formValidation(String nama_layanan_hewan, String harga_layanan_hewan) {
         if (TextUtils.isEmpty(nama_layanan_hewan)) {
             nama_layanan.setError("Field Tidak Boleh Kosong!");
+            return;
+        }
+
+        if (TextUtils.isEmpty(harga_layanan_hewan)) {
+            harga_layanan.setError("Field Tidak Boleh Kosong!");
+            return;
+        }
+
+        if (!Pattern.matches(Numeric, harga_layanan_hewan)){
+            harga_layanan.setError("Harga Hanya dalam Bentuk Angka");
             return;
         }
     }

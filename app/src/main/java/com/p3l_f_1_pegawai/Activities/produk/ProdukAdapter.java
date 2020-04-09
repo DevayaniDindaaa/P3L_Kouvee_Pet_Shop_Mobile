@@ -48,8 +48,13 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
         holder.stok_produk.setText((String.valueOf(row.getStok_produk())) + " " + row.getSatuan_produk());
         holder.stok_minimal_produk.setText((String.valueOf(row.getStok_minimal_produk())) + " " + row.getSatuan_produk());
         holder.harga_produk.setText((String.valueOf(row.getHarga_produk())) + " /" + row.getSatuan_produk());
-        Glide.with(context).load(row.getFoto_produk()).into(holder.foto_produk);
         holder.log_aktivitas.setText(row.getStatus_data() + " by " + row.getKeterangan() + " at " + row.getTime_stamp());
+        if(row.getFoto_produk().equalsIgnoreCase("null")){
+            Glide.with(context).load("http://192.168.8.102/CI_Mobile_P3L_1F/upload/default.png").into(holder.foto_produk);;
+        }
+        else{
+            Glide.with(context).load("http://192.168.8.102/CI_Mobile_P3L_1F/" + row.getFoto_produk()).into(holder.foto_produk);
+        }
 
         if(row.getStatus_data().equalsIgnoreCase("deleted")){
             holder.recycler_produk.findViewById(R.id.hapus_produk).setOnClickListener(new View.OnClickListener() {
@@ -70,7 +75,6 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(context.getApplicationContext(), activity_hapus_produk.class);
-                    i.putExtra("foto_produk", row.getFoto_produk());
                     i.putExtra("nama_produk", row.getNama_produk());
                     i.putExtra("jenis_hewan", row.getNama_jenis_hewan());
                     i.putExtra("stok_produk",(String.valueOf(row.getStok_produk())) + " " + row.getSatuan_produk());
@@ -78,6 +82,13 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
                     i.putExtra("keterangan", row.getKeterangan());
                     i.putExtra("id_produk", row.getId_produk());
                     i.putExtra("harga_produk", (String.valueOf(row.getHarga_produk())) + " /" + row.getSatuan_produk());
+                    if(row.getFoto_produk().equalsIgnoreCase("null")){
+                        i.putExtra("foto_produk", "http://192.168.8.102/CI_Mobile_P3L_1F/upload/default.png");
+                    }
+                    else
+                    {
+                        i.putExtra("foto_produk", "http://192.168.8.102/CI_Mobile_P3L_1F/" + row.getFoto_produk());
+                    }
                     context.getApplicationContext().startActivity(i);
                 }
             });
@@ -86,7 +97,6 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(context.getApplicationContext(), activity_ubah_produk.class);
-                    i.putExtra("foto_produk", row.getFoto_produk());
                     i.putExtra("nama_produk", row.getNama_produk());
                     i.putExtra("satuan_produk", row.getSatuan_produk());
                     i.putExtra("stok_produk",String.valueOf(row.getStok_produk()));
@@ -94,6 +104,13 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
                     i.putExtra("keterangan", row.getKeterangan());
                     i.putExtra("id_produk", row.getId_produk());
                     i.putExtra("harga_produk", String.valueOf(row.getHarga_produk()));
+                    if(row.getFoto_produk().equalsIgnoreCase("null")){
+                        i.putExtra("foto_produk", "http://192.168.8.102/CI_Mobile_P3L_1F/upload/default.png");
+                    }
+                    else
+                    {
+                        i.putExtra("foto_produk", "http://192.168.8.102/CI_Mobile_P3L_1F/" + row.getFoto_produk());
+                    }
                     context.getApplicationContext().startActivity(i);
                 }
             });

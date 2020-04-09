@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "527213261807",
+    "firebase_url": "https://p3l-f-1-pegawai-b5e56.firebaseio.com",
+    "project_id": "p3l-f-1-pegawai-b5e56",
+    "storage_bucket": "p3l-f-1-pegawai-b5e56.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527213261807:android:b8c29e2f20e43d185afc1a",
+        "android_client_info": {
+          "package_name": "com.p3l_f_1_pegawai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527213261807-nkv39rjn834hieasln9todufkspnkvli.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD81bCh9zX4BJaAOjMm3MP9nHoirFC2ITc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527213261807-nkv39rjn834hieasln9todufkspnkvli.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
