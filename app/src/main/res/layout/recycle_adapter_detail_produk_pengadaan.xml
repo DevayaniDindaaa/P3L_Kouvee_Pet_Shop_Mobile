@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:id="@+id/recycle_pengadaan">
+        android:id="@+id/recycle_detail_tambah_pengadaan" >
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="15dp"
             android:layout_marginRight="5dp"
             android:src="@drawable/round_logo" />
 
@@ -25,19 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="5dp">
-
-            <TextView
-                android:id="@+id/no_pemesanan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/nama_supplier_pemesanan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"/>
+            android:padding="5dp" >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -45,9 +33,9 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="120dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
-                    android:text="Tgl. Pemesanan"
+                    android:text="Nama Produk"
                     android:textStyle="bold" />
 
                 <TextView
@@ -58,7 +46,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tgl_pemesanan"
+                    android:id="@+id/nama_produk_dipesan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -69,9 +57,9 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="120dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
-                    android:text="Tgl. Cetak Surat"
+                    android:text="Jumlah Produk"
                     android:textStyle="bold" />
 
                 <TextView
@@ -82,31 +70,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tgl_cetak_surat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:text="Status Produk"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=":"
-                    android:layout_marginRight="5dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/status_kedatangan"
+                    android:id="@+id/jumlah_produk_pesan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -119,20 +83,17 @@
                 android:layout_marginTop="5dp">
 
                 <Button
-                    android:layout_width="120dp"
+                    android:layout_width="75dp"
                     android:layout_height="30dp"
-                    android:drawableStart="@drawable/ic_search"
-                    android:text="Lihat Detail"
+                    android:drawableStart="@drawable/ic_hapus"
+                    android:text="Hapus"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/button_hapus"
                     android:textStyle="bold"
-                    android:id="@+id/lihat_detail_pengadaan"/>
+                    android:id="@+id/hapus_pesan_produk"/>
             </LinearLayout>
-
         </LinearLayout>
-
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>

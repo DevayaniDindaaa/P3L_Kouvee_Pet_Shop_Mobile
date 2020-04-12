@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:background="@color/colorBottom">
 
     <TextView
         android:layout_width="match_parent"
@@ -27,7 +28,8 @@
         android:textAllCaps="false"
         android:gravity="left"
         android:layout_marginTop="10dp"
-        android:id="@+id/camera">
+        android:id="@+id/camera"
+        android:backgroundTint="@color/colorTop">
     </Button>
 
     <Button
@@ -39,19 +41,7 @@
         android:textAllCaps="false"
         android:textSize="18dp"
         android:gravity="left"
-        android:id="@+id/gallery">
+        android:id="@+id/gallery"
+        android:backgroundTint="@color/colorTop">
     </Button>
-
-<!--    <Button-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="BATAL"-->
-<!--        android:textAllCaps="true"-->
-<!--        android:textSize="18dp"-->
-<!--        android:gravity="center"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:textColor="@color/colorAccent"-->
-<!--        android:id="@+id/cancel"-->
-<!--        android:background="#FFFFFF">-->
-<!--    </Button>-->
 </LinearLayout>

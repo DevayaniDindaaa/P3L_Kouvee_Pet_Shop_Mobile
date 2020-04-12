@@ -44,6 +44,7 @@ public class PengadaanAdapter extends RecyclerView.Adapter<PengadaanAdapter.MyVi
         holder.nama_supplier.setText(row.getNama_supplier());
         holder.tgl_pemesanan.setText(row.getTgl_pemesanan());
         holder.tgl_cetak_surat.setText(row.getTgl_cetak_surat());
+        holder.status_kedatangan.setText(row.getStatus_kedatangan_produk());
 
         holder.recycler_pengadaan.findViewById(R.id.lihat_detail_pengadaan).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,7 +109,7 @@ public class PengadaanAdapter extends RecyclerView.Adapter<PengadaanAdapter.MyVi
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         LinearLayout recycler_pengadaan;
-        TextView nomor_pemesanan, nama_supplier, tgl_pemesanan, tgl_cetak_surat;
+        TextView nomor_pemesanan, nama_supplier, tgl_pemesanan, tgl_cetak_surat, status_kedatangan;
 
         public MyViewHolder(@NonNull  View itemView) {
             super(itemView);
@@ -117,6 +118,7 @@ public class PengadaanAdapter extends RecyclerView.Adapter<PengadaanAdapter.MyVi
             nama_supplier = itemView.findViewById(R.id.nama_supplier_pemesanan);
             tgl_pemesanan = itemView.findViewById(R.id.tgl_pemesanan);
             tgl_cetak_surat = itemView.findViewById(R.id.tgl_cetak_surat);
+            status_kedatangan = itemView.findViewById(R.id.status_kedatangan);
         }
     }
 }

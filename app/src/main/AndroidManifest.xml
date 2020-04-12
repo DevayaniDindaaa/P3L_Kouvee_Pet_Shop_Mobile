@@ -169,24 +169,28 @@
         </activity>
         <activity
             android:name=".Activities.pengadaan.activity_tambah_pengadaan"
-            android:label="Tambah Pemesanan Produk"
+            android:label="Tambah Pengadaan Produk"
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.pengadaan.PengadaanFragment">
         </activity>
         <activity
             android:name=".Activities.pengadaan.activity_ubah_pengadaan"
-            android:label="Ubah Pemesanan Produk"
+            android:label="Ubah Pengadaan Produk"
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.pengadaan.activity_detail_pengadaan">
         </activity>
         <activity
             android:name=".Activities.pengadaan.activity_hapus_pengadaan"
-            android:label="Hapus Pemesanan Produk"
+            android:label="Hapus Pengadaan Produk"
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.pengadaan.activity_detail_pengadaan">
         </activity>
         <activity android:name=".Activities.pengadaan.PengadaanFragment"></activity>
         <activity android:name=".Activities.akun.AkunFragment"></activity>
         <activity android:name=".logout_activity"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 </manifest>

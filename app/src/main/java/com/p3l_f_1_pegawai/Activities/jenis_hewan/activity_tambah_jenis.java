@@ -1,5 +1,6 @@
 package com.p3l_f_1_pegawai.Activities.jenis_hewan;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,12 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -22,6 +29,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
 import com.p3l_f_1_pegawai.R;
+import com.p3l_f_1_pegawai.drawer_activity_owner;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -65,9 +73,14 @@ public class activity_tambah_jenis extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 nama_jenis_hewan.getText().clear();
+                JenisHewanFragment jenisHewanFragment = new JenisHewanFragment();
                 Toast.makeText(activity_tambah_jenis.this, "Batal Tambah Jenis!", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(activity_tambah_jenis.this, JenisHewanFragment.class);
+                Intent intent = new Intent(activity_tambah_jenis.this, jenisHewanFragment.getClass());
                 startActivity(intent);
+//                Intent parentIntent = NavUtils.getParentActivityIntent(activity_tambah_jenis.this);
+//                parentIntent.setFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT | Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+//                startActivity(parentIntent);
+//                finish();
             }
         });
     }
