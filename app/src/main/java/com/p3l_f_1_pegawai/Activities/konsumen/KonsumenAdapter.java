@@ -48,11 +48,13 @@ public class KonsumenAdapter extends RecyclerView.Adapter<KonsumenAdapter.MyView
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context.getApplicationContext(), activity_detail_hapus_konsumen.class);
+                i.putExtra("id_konsumen", row.getId_konsumen());
                 i.putExtra("nama_konsumen", row.getNama_konsumen());
                 i.putExtra("status_member", row.getStatus_member());
                 i.putExtra("alamat_konsumen", row.getAlamat_konsumen());
                 i.putExtra("tgl_lahir_konsumen", row.getTgl_lahir_konsumen());
                 i.putExtra("no_tlp_konsumen", row.getNo_tlp_konsumen());
+                i.putExtra("status_hapus", row.getStatus_data());
                 i.putExtra("status_data", row.getStatus_data() + " by " + row.getKeterangan() + " at " + row.getTime_stamp());
                 i.putExtra("details", row.getDetail_hewankonsumen().toString());
                 context.getApplicationContext().startActivity(i);
