@@ -1,7 +1,9 @@
 package com.p3l_f_1_pegawai;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -103,6 +105,14 @@ public class login_activity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+
+                String nama_user_login = username_pengguna;
+                SharedPreferences mSettings = getApplication().getSharedPreferences("Login", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = mSettings.edit();
+                editor.putString("nama_user_login", nama_user_login);
+                editor.apply();
+                System.out.println(editor);
+
                 if(message.equalsIgnoreCase("owner")) {
                     id_role = "Owner";
                     Intent i = new Intent(getApplicationContext(), drawer_activity_owner.class);

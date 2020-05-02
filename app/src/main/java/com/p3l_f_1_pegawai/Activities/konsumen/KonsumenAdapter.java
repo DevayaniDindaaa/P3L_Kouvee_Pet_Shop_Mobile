@@ -47,7 +47,7 @@ public class KonsumenAdapter extends RecyclerView.Adapter<KonsumenAdapter.MyView
         holder.recycler_konsumen.findViewById(R.id.lihat_detail_konsumen).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context.getApplicationContext(), activity_detail_konsumen.class);
+                Intent i = new Intent(context.getApplicationContext(), activity_detail_hapus_konsumen.class);
                 i.putExtra("nama_konsumen", row.getNama_konsumen());
                 i.putExtra("status_member", row.getStatus_member());
                 i.putExtra("alamat_konsumen", row.getAlamat_konsumen());

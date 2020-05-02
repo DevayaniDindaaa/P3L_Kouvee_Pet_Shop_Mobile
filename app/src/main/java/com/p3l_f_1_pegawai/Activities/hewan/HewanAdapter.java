@@ -11,16 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.p3l_f_1_pegawai.Activities.konsumen.KonsumenAdapter;
-import com.p3l_f_1_pegawai.Activities.konsumen.activity_detail_konsumen;
 import com.p3l_f_1_pegawai.R;
 import com.p3l_f_1_pegawai.dao.hewanDAO;
-import com.p3l_f_1_pegawai.dao.konsumenDAO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,11 +48,13 @@ public class HewanAdapter extends RecyclerView.Adapter<HewanAdapter.MyViewHolder
         holder.recycler_hewan.findViewById(R.id.lihat_detail_hewan).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context.getApplicationContext(), activity_detail_hewan.class);
+                Intent i = new Intent(context.getApplicationContext(), activity_detail_hapus_hewan.class);
+                i.putExtra("id_hewan", row.getId_hewan());
                 i.putExtra("nama_hewan", row.getNama_hewan());
                 i.putExtra("jenis_hewan", row.getId_jenis_hewan());
                 i.putExtra("ukuran_hewan", row.getId_ukuran_hewan());
                 i.putExtra("tgl_lahir_hewan", row.getTgl_lahir_hewan());
+                i.putExtra("status_hapus", row.getStatus_data());
 
                 i.putExtra("nama_konsumen", row.getId_konsumen());
                 i.putExtra("status_member", row.getStatus_member());

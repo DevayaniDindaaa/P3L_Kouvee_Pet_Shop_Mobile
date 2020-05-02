@@ -1,6 +1,8 @@
 package com.p3l_f_1_pegawai.Activities.konsumen;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,7 +25,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class activity_detail_konsumen extends AppCompatActivity {
+public class activity_detail_hapus_konsumen extends AppCompatActivity {
     Activity context;
     private List<hewanDAO> DetailHewanKonsumen;
     private RecyclerView recyclerView;
@@ -53,9 +55,11 @@ public class activity_detail_konsumen extends AppCompatActivity {
         ubah_konsumen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println(nama_user);
                 if(nama_user.equalsIgnoreCase("owner")){
-                    Toast.makeText(context, "Owner tidak bisa mengubah data konsumen!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity_detail_hapus_konsumen.this, "Owner tidak bisa mengubah data konsumen!", Toast.LENGTH_SHORT).show();
                 }
+
                 else{
                     //DISINI INTENT KE HALAMAN UBAH DATA KONSUMEN
                 }
@@ -64,8 +68,9 @@ public class activity_detail_konsumen extends AppCompatActivity {
         hapus_konsumen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println(nama_user);
                 if(nama_user.equalsIgnoreCase("owner")){
-                    Toast.makeText(context, "Owner tidak bisa menghapus data konsumen!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity_detail_hapus_konsumen.this, "Owner tidak bisa menghapus data konsumen!", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     //DISINI INTENT KE HALAMAN HAPUS DATA KONSUMEN
@@ -103,7 +108,9 @@ public class activity_detail_konsumen extends AppCompatActivity {
     }
 
     private void setAtribut(){
-        //nama_user = context.getIntent().getExtras().getString("USERNAME");
+        SharedPreferences mSettings = getSharedPreferences("Login", Context.MODE_PRIVATE);
+        nama_user = mSettings.getString("nama_user_login", "user_tidak_terdeteksi");
+
         nama_konsumen = findViewById(R.id.nama_konsumen_detail);
         nama_konsumen.setText(getIntent().getStringExtra("nama_konsumen"));
         alamat_konsumen = findViewById(R.id.alamat_konsumen_detail);
@@ -116,8 +123,5 @@ public class activity_detail_konsumen extends AppCompatActivity {
         status_member.setText(getIntent().getStringExtra("status_member"));
         status_data = findViewById(R.id.log_aktivitas);
         status_data.setText(getIntent().getStringExtra("status_data"));
-
-        ubah_konsumen = findViewById(R.id.ubah_konsumen);
-        hapus_konsumen = findViewById(R.id.hapus_konsumen);
     }
 }
