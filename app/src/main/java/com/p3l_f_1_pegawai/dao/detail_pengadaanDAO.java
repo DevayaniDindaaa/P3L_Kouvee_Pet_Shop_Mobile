@@ -1,11 +1,12 @@
 package com.p3l_f_1_pegawai.dao;
 
 public class detail_pengadaanDAO {
-    private String id_detail_pengadaan, nama_produk, satuan_produk, status_data, time_stamp, keterangan;
+    private String id_detail_pengadaan, id_produk, nama_produk, satuan_produk, status_data, time_stamp, keterangan;
     private Integer jumlah_produk_dipesan;
 
-    public detail_pengadaanDAO(String id_detail_pengadaan, String nama_produk, String satuan_produk, String status_data, String time_stamp, String keterangan, Integer jumlah_produk_dipesan) {
+    public detail_pengadaanDAO(String id_detail_pengadaan, String id_produk, String nama_produk, String satuan_produk, String status_data, String time_stamp, String keterangan, Integer jumlah_produk_dipesan) {
         this.id_detail_pengadaan = id_detail_pengadaan;
+        this.id_produk = id_produk;
         this.nama_produk = nama_produk;
         this.satuan_produk = satuan_produk;
         this.status_data = status_data;
@@ -20,6 +21,14 @@ public class detail_pengadaanDAO {
 
     public void setId_detail_pengadaan(String id_detail_pengadaan) {
         this.id_detail_pengadaan = id_detail_pengadaan;
+    }
+
+    public String getId_produk() {
+        return id_produk;
+    }
+
+    public void setId_produk(String id_produk) {
+        this.id_produk = id_produk;
     }
 
     public String getNama_produk() {

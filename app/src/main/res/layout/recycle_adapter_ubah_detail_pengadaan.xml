@@ -11,14 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:id="@+id/recycle_detail_pengadaan" >
+        android:id="@+id/recycle_detail_ubah_pengadaan" >
 
         <ImageView
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="5dp"
             android:src="@drawable/round_logo" />
 
         <LinearLayout
@@ -80,6 +80,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_marginTop="5dp">
+
+                <Button
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:drawableStart="@drawable/ic_ubah"
+                    android:text="Ubah"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorTop"
+                    android:background="@drawable/button_ubah"
+                    android:textStyle="bold"
+                    android:id="@+id/edit_pengadaan_produk" />
+
+                <Button
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:drawableStart="@drawable/ic_hapus"
+                    android:text="Hapus"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/button_hapus"
+                    android:textStyle="bold"
+                    android:id="@+id/hapus_pengadan_produk"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -4,11 +4,11 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HewanViewModel extends ViewModel {
+public class HewanAdapter extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HewanViewModel() {
+    public HewanAdapter() {
         mText = new MutableLiveData<>();
         mText.setValue("This is hewan fragment");
     }

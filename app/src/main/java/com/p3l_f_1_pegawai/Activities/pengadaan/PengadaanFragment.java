@@ -93,6 +93,7 @@ public class PengadaanFragment extends Fragment {
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject objectReview = jsonArray.getJSONObject(i);
                                 pengadaanDAO r = new pengadaanDAO(objectReview.getString("nomor_pemesanan"),
+                                        objectReview.getString("id_supplier"),
                                         objectReview.getString("nama_supplier"),
                                         objectReview.getString("alamat_supplier"),
                                         objectReview.getString("kota_supplier"),

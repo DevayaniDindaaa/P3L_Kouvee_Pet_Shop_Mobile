@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@color/colorBottom">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp">
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:layout_marginRight="5dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nomor_pemesanan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="Tanggal"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:layout_marginRight="5dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tanggal_pemesanan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Supplier Tujuan"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/spinner_supplier">
+    </Spinner>
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="Tambah Produk"
+        android:textSize="15dp"
+        android:textColor="@color/colorTop"
+        android:background="@drawable/button_ubah"
+        android:drawableStart="@drawable/add_produk"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:id="@+id/button_tambah_produk"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:id = "@+id/recycle_ubah_pengadaan_produk"
+        android:scrollbars = "vertical"
+        tools:listitem="@layout/recycle_adapter_ubah_detail_pengadaan"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="BATAL"
+            android:textSize="15dp"
+            android:textColor="@color/colorTop"
+            android:background="@drawable/button_ubah"
+            android:textStyle="bold"
+            android:id="@+id/button_batal_ubah_pengadaan"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="UBAH"
+            android:textSize="15dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/button_hapus"
+            android:textStyle="bold"
+            android:id="@+id/button_ubah_pengadaan"/>
+    </LinearLayout>
+</LinearLayout>

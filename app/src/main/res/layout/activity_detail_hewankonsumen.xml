@@ -21,9 +21,9 @@
             android:layout_marginRight="10dp">
 
             <TextView
-                android:layout_width="60dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="No"
+                android:text="Nama"
                 android:textStyle="bold" />
 
             <TextView
@@ -34,7 +34,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/nomor_pemesanan"
+                android:id="@+id/nama_konsumen_detail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginRight="5dp"/>
@@ -48,9 +48,9 @@
             android:layout_marginRight="10dp">
 
             <TextView
-                android:layout_width="60dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="Tanggal"
+                android:text="Alamat"
                 android:textStyle="bold" />
 
             <TextView
@@ -61,7 +61,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tanggal_pemesanan"
+                android:id="@+id/alamat_konsumen_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"/>
@@ -75,29 +75,9 @@
             android:layout_marginRight="10dp">
 
             <TextView
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:text="Supplier"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=":"
-                android:layout_marginRight="5dp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="30dp">
-
-            <TextView
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="Nama Supplier"
+                android:text="Tanggal Lahir"
                 android:textStyle="bold" />
 
             <TextView
@@ -108,59 +88,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/nama_supplier_detail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="30dp">
-
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="Alamat Supplier"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=":"
-                android:layout_marginRight="5dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/alamat_supplier_detail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="30dp">
-
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="No. Telepon"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=":"
-                android:layout_marginRight="5dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/telepon_supplier_detail"
+                android:id="@+id/tgl_lahir_konsumen_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"/>
@@ -174,15 +102,72 @@
             android:layout_marginRight="10dp">
 
             <TextView
-                android:layout_width="110dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="Dicetak Tanggal"
+                android:text="Nomor Telepon"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tanggal_cetak_surat_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/no_tlp_konsumen_detail"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/status_member_konsumen_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Daftar Hewan Milik Konsumen"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -190,9 +175,9 @@
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="350dp"
-            android:id = "@+id/recycle_tampil_detail_pengadaan"
+            android:id = "@+id/recycle_tampil_detail_hewankonsumen"
             android:scrollbars = "vertical"
-            tools:listitem="@layout/recycle_adapter_detail_pengadaan"/>
+            tools:listitem="@layout/recycle_adapter_detail_hewankonsumen"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -202,29 +187,27 @@
             android:layout_marginTop="20dp">
 
             <Button
-                android:layout_width="130dp"
+                android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:text="TERIMA PRODUK"
-                android:textSize="15dp"
+                android:drawableStart="@drawable/ic_ubah"
+                android:text="UBAH"
+                android:textAllCaps="false"
                 android:textColor="@color/colorTop"
                 android:background="@drawable/button_ubah"
                 android:textStyle="bold"
-                android:id="@+id/button_terima_stok"/>
+                android:id="@+id/edit_layanan"/>
 
             <Button
-                android:layout_width="200dp"
+                android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
-                android:text="UBAH DETAIL PENGADAAN"
-                android:textSize="15dp"
+                android:drawableStart="@drawable/ic_hapus"
+                android:text="Hapus"
+                android:textAllCaps="false"
                 android:textColor="#FFFFFF"
+                android:layout_marginLeft="50dp"
                 android:background="@drawable/button_hapus"
                 android:textStyle="bold"
-                android:id="@+id/ubah_detail_pengadaan"
-                android:layout_gravity="center"/>
+                android:id="@+id/hapus_layanan"/>
         </LinearLayout>
-
     </LinearLayout>
-
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

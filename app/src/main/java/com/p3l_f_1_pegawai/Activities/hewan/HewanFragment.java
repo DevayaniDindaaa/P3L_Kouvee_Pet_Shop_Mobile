@@ -16,12 +16,12 @@ import com.p3l_f_1_pegawai.R;
 
 public class HewanFragment extends Fragment {
 
-    private HewanViewModel hewanViewModel;
+    private HewanAdapter hewanViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         hewanViewModel =
-                ViewModelProviders.of(this).get(HewanViewModel.class);
+                ViewModelProviders.of(this).get(HewanAdapter.class);
         View root = inflater.inflate(R.layout.fragment_hewan, container, false);
         final TextView textView = root.findViewById(R.id.text_home);
         hewanViewModel.getText().observe(this, new Observer<String>() {

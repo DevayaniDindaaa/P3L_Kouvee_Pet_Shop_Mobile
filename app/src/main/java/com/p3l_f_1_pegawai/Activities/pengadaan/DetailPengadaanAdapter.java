@@ -38,19 +38,6 @@ public class DetailPengadaanAdapter extends RecyclerView.Adapter<DetailPengadaan
         holder.nama_produk.setText(row.getNama_produk());
         holder.jumlah_produk.setText(String.valueOf(row.getJumlah_produk_dipesan()));
         holder.log_aktivitas.setText(row.getStatus_data() + " by " + row.getKeterangan() + " at " + row.getTime_stamp());
-
-//        holder.wisata_recyle.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(context.getApplicationContext(), detail_wisata.class);
-//                i.putExtra("url_foto", row.getUrl_foto());
-//                i.putExtra("nama_tempat", row.getNama_tempat());
-//                i.putExtra("alamat_tempat", row.getAlamat_tempat());
-//                i.putExtra("sejarah_tempat", row.getSejarah_tempat());
-//                i.putExtra("email_user", row.getEmail_user());
-//                context.getApplicationContext().startActivity(i);
-//            }
-//        });
     }
 
     @Override

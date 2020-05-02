@@ -48,19 +48,6 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
-<!--        <service-->
-<!--            android:name=".MyFirebaseInstanceIDService">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>-->
-<!--            </intent-filter>-->
-<!--        </service>-->
-<!--        <service-->
-<!--            android:name=".MyFirebaseMessagingService">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="com.google.firebase.MESSAGING_EVENT"/>-->
-<!--            </intent-filter>-->
-<!--        </service>-->
-
         <activity
             android:name=".Activities.ukuran_hewan.activity_tambah_ukuran"
             android:label="Tambah Ukuran Hewan"
@@ -180,12 +167,62 @@
             android:parentActivityName=".Activities.pengadaan.activity_detail_pengadaan">
         </activity>
         <activity
-            android:name=".Activities.pengadaan.activity_hapus_pengadaan"
-            android:label="Hapus Pengadaan Produk"
+            android:name=".Activities.pengadaan.activity_ubah_detail_pengadaan"
+            android:label="Ubah Detail Pengadaan Produk"
             android:launchMode="singleTop"
-            android:parentActivityName=".Activities.pengadaan.activity_detail_pengadaan">
+            android:parentActivityName=".Activities.pengadaan.activity_ubah_pengadaan">
         </activity>
         <activity android:name=".Activities.pengadaan.PengadaanFragment"></activity>
+
+        <activity
+            android:name=".Activities.konsumen.activity_detail_hewankonsumen"
+            android:label="Detail Data Konsumen"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.konsumen.KonsumenFragment">
+        </activity>
+        <activity
+            android:name=".Activities.konsumen.activity_tambah_konsumen"
+            android:label="Tambah Konsumen"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.konsumen.KonsumenFragment">
+        </activity>
+        <activity
+            android:name=".Activities.konsumen.activity_ubah_konsumen"
+            android:label="Ubah Konsumen"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.konsumen.activity_detail_hewankonsumen">
+        </activity>
+        <activity
+            android:name=".Activities.konsumen.activity_hapus_konsumen"
+            android:label="Hapus Konsumen"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.konsumen.activity_hapus_konsumen">
+        </activity>
+
+        <activity
+            android:name=".Activities.hewan.activity_detail_konsumenhewan"
+            android:label="Detail Data Hewan"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.konsumen.KonsumenFragment">
+        </activity>
+        <activity
+            android:name=".Activities.hewan.activity_tambah_hewan"
+            android:label="Tambah Hewan"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.hewan.HewanFragment">
+        </activity>
+        <activity
+            android:name=".Activities.hewan.activity_ubah_hewan"
+            android:label="Ubah Hewan"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.hewan.activity_detail_konsumenhewan">
+        </activity>
+        <activity
+            android:name=".Activities.hewan.activity_hapus_hewan"
+            android:label="Hapus Hewan"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.hewan.activity_detail_konsumenhewan">
+        </activity>
         <activity android:name=".Activities.akun.AkunFragment"></activity>
         <activity android:name=".logout_activity"></activity>
 

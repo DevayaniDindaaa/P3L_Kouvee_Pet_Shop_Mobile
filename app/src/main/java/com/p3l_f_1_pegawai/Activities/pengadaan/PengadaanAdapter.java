@@ -43,7 +43,12 @@ public class PengadaanAdapter extends RecyclerView.Adapter<PengadaanAdapter.MyVi
         holder.nomor_pemesanan.setText(row.getNomor_pemesanan());
         holder.nama_supplier.setText(row.getNama_supplier());
         holder.tgl_pemesanan.setText(row.getTgl_pemesanan());
-        holder.tgl_cetak_surat.setText(row.getTgl_cetak_surat());
+        if(row.getTgl_cetak_surat().equalsIgnoreCase("null")){
+            holder.tgl_cetak_surat.setText("-");
+        }
+        else{
+            holder.tgl_cetak_surat.setText(row.getTgl_cetak_surat());
+        }
         holder.status_kedatangan.setText(row.getStatus_kedatangan_produk());
 
         holder.recycler_pengadaan.findViewById(R.id.lihat_detail_pengadaan).setOnClickListener(new View.OnClickListener() {
@@ -53,9 +58,11 @@ public class PengadaanAdapter extends RecyclerView.Adapter<PengadaanAdapter.MyVi
                 i.putExtra("nomor_pemesanan", row.getNomor_pemesanan());
                 i.putExtra("tanggal_pemesanan", row.getTgl_pemesanan());
                 i.putExtra("tanggal_cetak", row.getTgl_cetak_surat());
+                i.putExtra("id_supplier", row.getId_supplier());
                 i.putExtra("nama_supplier", row.getNama_supplier());
                 i.putExtra("alamat_supplier", row.getAlamat_supplier() + ", " + row.getKota_supplier());
                 i.putExtra("telepon_supplier", row.getNo_tlp_supplier());
+                i.putExtra("status_kedatangan", row.getStatus_kedatangan_produk());
                 i.putExtra("details", row.getDetail_pengadaan().toString());
                 context.getApplicationContext().startActivity(i);
             }

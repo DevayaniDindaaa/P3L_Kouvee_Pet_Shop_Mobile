@@ -18,7 +18,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -64,7 +63,7 @@ public class activity_tambah_pengadaan extends AppCompatActivity {
     private List<produkDAO> produks = new ArrayList<>();
     private ArrayList<String> tempProduk = new ArrayList<>();
     private ArrayList<detailProduk_pengadaanDAO> arrayList = new ArrayList<>();
-    private DetailPengadaanProdukAdapter detailPengadaanProdukAdapter;
+    private DetailTambahPengadaanProdukAdapter detailPengadaanProdukAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -131,7 +130,7 @@ public class activity_tambah_pengadaan extends AppCompatActivity {
         });
 
         recyclerView = findViewById(R.id.recycle_tambah_pengadaan_produk);
-        detailPengadaanProdukAdapter = new DetailPengadaanProdukAdapter(arrayList, getApplicationContext());
+        detailPengadaanProdukAdapter = new DetailTambahPengadaanProdukAdapter(arrayList, getApplicationContext());
         recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 1));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(detailPengadaanProdukAdapter);

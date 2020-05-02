@@ -3,11 +3,12 @@ package com.p3l_f_1_pegawai.dao;
 import org.json.JSONArray;
 
 public class pengadaanDAO {
-    private String nomor_pemesanan, nama_supplier, alamat_supplier, kota_supplier, no_tlp_supplier, tgl_pemesanan, tgl_cetak_surat, status_cetak_surat, status_kedatangan_produk;
+    private String nomor_pemesanan, id_supplier, nama_supplier, alamat_supplier, kota_supplier, no_tlp_supplier, tgl_pemesanan, tgl_cetak_surat, status_cetak_surat, status_kedatangan_produk;
     private JSONArray detail_pengadaan = new JSONArray();
 
-    public pengadaanDAO(String nomor_pemesanan, String nama_supplier, String alamat_supplier, String kota_supplier, String no_tlp_supplier, String tgl_pemesanan, String tgl_cetak_surat, String status_cetak_surat, String status_kedatangan_produk, JSONArray detail_pengadaan) {
+    public pengadaanDAO(String nomor_pemesanan, String id_supplier, String nama_supplier, String alamat_supplier, String kota_supplier, String no_tlp_supplier, String tgl_pemesanan, String tgl_cetak_surat, String status_cetak_surat, String status_kedatangan_produk, JSONArray detail_pengadaan) {
         this.nomor_pemesanan = nomor_pemesanan;
+        this.id_supplier = id_supplier;
         this.nama_supplier = nama_supplier;
         this.alamat_supplier = alamat_supplier;
         this.kota_supplier = kota_supplier;
@@ -25,6 +26,14 @@ public class pengadaanDAO {
 
     public void setNomor_pemesanan(String nomor_pemesanan) {
         this.nomor_pemesanan = nomor_pemesanan;
+    }
+
+    public String getId_supplier() {
+        return id_supplier;
+    }
+
+    public void setId_supplier(String id_supplier) {
+        this.id_supplier = id_supplier;
     }
 
     public String getNama_supplier() {
