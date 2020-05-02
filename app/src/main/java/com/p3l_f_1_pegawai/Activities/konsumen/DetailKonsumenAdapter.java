@@ -15,25 +15,25 @@ import com.p3l_f_1_pegawai.dao.hewanDAO;
 
 import java.util.List;
 
-public class DetailHewanKonsumenAdapter extends RecyclerView.Adapter<DetailHewanKonsumenAdapter.ViewHolder> {
+public class DetailKonsumenAdapter extends RecyclerView.Adapter<DetailKonsumenAdapter.ViewHolder> {
     private List<hewanDAO> DetailHewanKonsumenList;
     private Context context;
 
-    public DetailHewanKonsumenAdapter(List<hewanDAO> detailHewanKonsumenList, Context context) {
+    public DetailKonsumenAdapter(List<hewanDAO> detailHewanKonsumenList, Context context) {
         this.DetailHewanKonsumenList = detailHewanKonsumenList;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public DetailHewanKonsumenAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.recycle_adapter_detail_hewankonsumen, parent, false);
-        final DetailHewanKonsumenAdapter.ViewHolder holder = new DetailHewanKonsumenAdapter.ViewHolder(view);
+    public DetailKonsumenAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.recycle_adapter_detail_konsumen, parent, false);
+        final DetailKonsumenAdapter.ViewHolder holder = new DetailKonsumenAdapter.ViewHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DetailHewanKonsumenAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull DetailKonsumenAdapter.ViewHolder holder, int position) {
         final hewanDAO row = DetailHewanKonsumenList.get(position);
         holder.nama_hewan_konsumen.setText(row.getNama_hewan());
         holder.jenis_hewan_konsumen.setText(String.valueOf(row.getId_jenis_hewan()));

@@ -175,7 +175,7 @@
         <activity android:name=".Activities.pengadaan.PengadaanFragment"></activity>
 
         <activity
-            android:name=".Activities.konsumen.activity_detail_hewankonsumen"
+            android:name=".Activities.konsumen.activity_detail_konsumen"
             android:label="Detail Data Konsumen"
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.konsumen.KonsumenFragment">
@@ -190,7 +190,7 @@
             android:name=".Activities.konsumen.activity_ubah_konsumen"
             android:label="Ubah Konsumen"
             android:launchMode="singleTop"
-            android:parentActivityName=".Activities.konsumen.activity_detail_hewankonsumen">
+            android:parentActivityName=".Activities.konsumen.activity_detail_konsumen">
         </activity>
         <activity
             android:name=".Activities.konsumen.activity_hapus_konsumen"
@@ -201,7 +201,7 @@
         <activity android:name=".Activities.konsumen.KonsumenFragment"></activity>
 
         <activity
-            android:name=".Activities.hewan.activity_detail_konsumenhewan"
+            android:name=".Activities.hewan.activity_detail_hewan"
             android:label="Detail Data Hewan"
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.hewan.HewanFragment">
@@ -216,13 +216,13 @@
             android:name=".Activities.hewan.activity_ubah_hewan"
             android:label="Ubah Hewan"
             android:launchMode="singleTop"
-            android:parentActivityName=".Activities.hewan.activity_detail_konsumenhewan">
+            android:parentActivityName=".Activities.hewan.activity_detail_hewan">
         </activity>
         <activity
             android:name=".Activities.hewan.activity_hapus_hewan"
             android:label="Hapus Hewan"
             android:launchMode="singleTop"
-            android:parentActivityName=".Activities.hewan.activity_detail_konsumenhewan">
+            android:parentActivityName=".Activities.hewan.activity_detail_hewan">
         </activity>
         <activity android:name=".Activities.hewan.HewanFragment"></activity>
 

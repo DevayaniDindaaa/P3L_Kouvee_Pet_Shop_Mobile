@@ -2,7 +2,6 @@ package com.p3l_f_1_pegawai.Activities.konsumen;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.p3l_f_1_pegawai.Activities.pengadaan.activity_detail_pengadaan;
+
 import com.p3l_f_1_pegawai.R;
 import com.p3l_f_1_pegawai.dao.konsumenDAO;
 import java.util.ArrayList;
@@ -45,10 +44,10 @@ public class KonsumenAdapter extends RecyclerView.Adapter<KonsumenAdapter.MyView
         holder.status_member.setText(row.getStatus_member());
         holder.log_aktivitas.setText(row.getStatus_data() + " by " + row.getKeterangan() + " at " + row.getTime_stamp());
 
-        holder.recycler_konsumen.findViewById(R.id.lihat_detail_hewankonsumen).setOnClickListener(new View.OnClickListener() {
+        holder.recycler_konsumen.findViewById(R.id.lihat_detail_konsumen).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context.getApplicationContext(), activity_detail_hewankonsumen.class);
+                Intent i = new Intent(context.getApplicationContext(), activity_detail_konsumen.class);
                 i.putExtra("nama_konsumen", row.getNama_konsumen());
                 i.putExtra("status_member", row.getStatus_member());
                 i.putExtra("alamat_konsumen", row.getAlamat_konsumen());

@@ -1,7 +1,6 @@
 package com.p3l_f_1_pegawai.Activities.konsumen;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,18 +13,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.p3l_f_1_pegawai.Activities.pengadaan.DetailPengadaanAdapter;
-import com.p3l_f_1_pegawai.Activities.pengadaan.PengadaanFragment;
-import com.p3l_f_1_pegawai.Activities.pengadaan.activity_detail_pengadaan;
-import com.p3l_f_1_pegawai.Activities.pengadaan.activity_ubah_pengadaan;
 import com.p3l_f_1_pegawai.R;
-import com.p3l_f_1_pegawai.dao.detail_pengadaanDAO;
 import com.p3l_f_1_pegawai.dao.hewanDAO;
 
 import org.json.JSONArray;
@@ -33,15 +21,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class activity_detail_hewankonsumen extends AppCompatActivity {
+public class activity_detail_konsumen extends AppCompatActivity {
     Activity context;
     private List<hewanDAO> DetailHewanKonsumen;
     private RecyclerView recyclerView;
-    private DetailHewanKonsumenAdapter recycleAdapter;
+    private DetailKonsumenAdapter recycleAdapter;
     private TextView nama_konsumen, alamat_konsumen, tgl_lahir_konsumen, nomor_telepon, status_member, status_data;
     String nama_user;
     private Button ubah_konsumen, hapus_konsumen;
@@ -49,7 +35,7 @@ public class activity_detail_hewankonsumen extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_hewankonsumen);
+        setContentView(R.layout.activity_detail_konsumen);
         setAtribut();
 
         DetailHewanKonsumen = new ArrayList<>();
@@ -57,7 +43,7 @@ public class activity_detail_hewankonsumen extends AppCompatActivity {
         ubah_konsumen = findViewById(R.id.ubah_konsumen);
         hapus_konsumen = findViewById(R.id.hapus_konsumen);
         recyclerView = findViewById(R.id.recycle_tampil_detail_hewankonsumen);
-        recycleAdapter = new DetailHewanKonsumenAdapter(DetailHewanKonsumen, this);
+        recycleAdapter = new DetailKonsumenAdapter(DetailHewanKonsumen, this);
         recyclerView.setLayoutManager(new GridLayoutManager(context, 1));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(recycleAdapter);
@@ -99,6 +85,10 @@ public class activity_detail_hewankonsumen extends AppCompatActivity {
                         objectDetail.getString("nama_jenis_hewan"),
                         objectDetail.getString("nama_ukuran_hewan"),
                         objectDetail.getString("nama_konsumen"),
+                        objectDetail.getString("alamat_konsumen"),
+                        objectDetail.getString("tgl_lahir_konsumen"),
+                        objectDetail.getString("no_tlp_konsumen"),
+                        objectDetail.getString("status_member"),
                         objectDetail.getString("nama_hewan"),
                         objectDetail.getString("tgl_lahir_hewan"),
                         objectDetail.getString("status_data"),

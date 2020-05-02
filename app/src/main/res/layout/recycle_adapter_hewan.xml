@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:id="@+id/recycle_konsumen">
+        android:id="@+id/recycle_hewan">
 
         <ImageView
             android:layout_width="50dp"
@@ -28,13 +28,13 @@
             android:padding="5dp">
 
             <TextView
-                android:id="@+id/nama_konsumen"
+                android:id="@+id/nama_hewan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/status_member"
+                android:id="@+id/jenis_dan_ukuran"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"/>
@@ -61,7 +61,7 @@
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/button_hapus"
                     android:textStyle="bold"
-                    android:id="@+id/lihat_detail_konsumen"/>
+                    android:id="@+id/lihat_detail_hewan"/>
             </LinearLayout>
 
         </LinearLayout>
