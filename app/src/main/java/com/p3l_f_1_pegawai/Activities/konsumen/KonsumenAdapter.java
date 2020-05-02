@@ -2,6 +2,7 @@ package com.p3l_f_1_pegawai.Activities.konsumen;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,18 +48,18 @@ public class KonsumenAdapter extends RecyclerView.Adapter<KonsumenAdapter.MyView
         holder.recycler_konsumen.findViewById(R.id.lihat_detail_hewankonsumen).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context.getApplicationContext(), activity_detail_pengadaan.class);
+                Intent i = new Intent(context.getApplicationContext(), activity_detail_hewankonsumen.class);
                 i.putExtra("nama_konsumen", row.getNama_konsumen());
                 i.putExtra("status_member", row.getStatus_member());
                 i.putExtra("alamat_konsumen", row.getAlamat_konsumen());
                 i.putExtra("tgl_lahir_konsumen", row.getTgl_lahir_konsumen());
                 i.putExtra("no_tlp_konsumen", row.getNo_tlp_konsumen());
+                i.putExtra("status_data", row.getStatus_data() + " by " + row.getKeterangan() + " at " + row.getTime_stamp());
                 i.putExtra("details", row.getDetail_hewankonsumen().toString());
                 context.getApplicationContext().startActivity(i);
             }
         });
     }
-
 
     @Override
     public int getItemCount() {

@@ -198,12 +198,13 @@
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.konsumen.activity_hapus_konsumen">
         </activity>
+        <activity android:name=".Activities.konsumen.KonsumenFragment"></activity>
 
         <activity
             android:name=".Activities.hewan.activity_detail_konsumenhewan"
             android:label="Detail Data Hewan"
             android:launchMode="singleTop"
-            android:parentActivityName=".Activities.konsumen.KonsumenFragment">
+            android:parentActivityName=".Activities.hewan.HewanFragment">
         </activity>
         <activity
             android:name=".Activities.hewan.activity_tambah_hewan"
@@ -223,6 +224,8 @@
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.hewan.activity_detail_konsumenhewan">
         </activity>
+        <activity android:name=".Activities.hewan.HewanFragment"></activity>
+
         <activity android:name=".Activities.akun.AkunFragment"></activity>
         <activity android:name=".logout_activity"></activity>
 

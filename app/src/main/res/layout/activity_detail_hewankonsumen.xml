@@ -148,13 +148,20 @@
                 android:layout_marginRight="5dp"/>
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/log_aktivitas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="20dp">
 
             <TextView
                 android:layout_width="200dp"
@@ -171,13 +178,13 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:padding="5dp"
-            android:layout_marginTop="10dp"
+            android:id="@+id/recycle_tampil_detail_hewankonsumen"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:id = "@+id/recycle_tampil_detail_hewankonsumen"
-            android:scrollbars = "vertical"
-            tools:listitem="@layout/recycle_adapter_detail_hewankonsumen"/>
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/recycle_adapter_detail_hewankonsumen" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -195,7 +202,7 @@
                 android:textColor="@color/colorTop"
                 android:background="@drawable/button_ubah"
                 android:textStyle="bold"
-                android:id="@+id/edit_layanan"/>
+                android:id="@+id/ubah_konsumen"/>
 
             <Button
                 android:layout_width="100dp"
@@ -207,7 +214,7 @@
                 android:layout_marginLeft="50dp"
                 android:background="@drawable/button_hapus"
                 android:textStyle="bold"
-                android:id="@+id/hapus_layanan"/>
+                android:id="@+id/hapus_konsumen"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

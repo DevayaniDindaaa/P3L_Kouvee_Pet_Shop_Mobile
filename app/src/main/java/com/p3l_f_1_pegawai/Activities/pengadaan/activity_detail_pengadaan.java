@@ -68,7 +68,6 @@ public class activity_detail_pengadaan extends AppCompatActivity {
 
         getDetailPengadaan();
 
-
         ubah_detail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
