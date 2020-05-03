@@ -3,14 +3,16 @@ package com.p3l_f_1_pegawai.dao;
 import org.json.JSONArray;
 
 public class penjualan_produkDAO {
-    private String no_transaksi_produk, nama_hewan, nama_konsumen, nama_cs, nama_kasir, waktu_transaksi_produk, status_pembayaran_produk;
+    private String no_transaksi_produk, nama_hewan, nama_jenis_hewan, nama_konsumen, status_member, nama_cs, nama_kasir, waktu_transaksi_produk, status_pembayaran_produk;
     private Integer sub_total_produk, diskon_produk, total_pembayaran_produk;
     private JSONArray detail_penjualan_produk = new JSONArray();
 
-    public penjualan_produkDAO(String no_transaksi_produk, String nama_hewan, String nama_konsumen, String nama_cs, String nama_kasir, String waktu_transaksi_produk, String status_pembayaran_produk, Integer sub_total_produk, Integer diskon_produk, Integer total_pembayaran_produk, JSONArray detail_penjualan_produk) {
+    public penjualan_produkDAO(String no_transaksi_produk, String nama_hewan, String nama_jenis_hewan, String nama_konsumen, String status_member, String nama_cs, String nama_kasir, String waktu_transaksi_produk, String status_pembayaran_produk, Integer sub_total_produk, Integer diskon_produk, Integer total_pembayaran_produk, JSONArray detail_penjualan_produk) {
         this.no_transaksi_produk = no_transaksi_produk;
         this.nama_hewan = nama_hewan;
+        this.nama_jenis_hewan = nama_jenis_hewan;
         this.nama_konsumen = nama_konsumen;
+        this.status_member = status_member;
         this.nama_cs = nama_cs;
         this.nama_kasir = nama_kasir;
         this.waktu_transaksi_produk = waktu_transaksi_produk;
@@ -37,12 +39,28 @@ public class penjualan_produkDAO {
         this.nama_hewan = nama_hewan;
     }
 
+    public String getNama_jenis_hewan() {
+        return nama_jenis_hewan;
+    }
+
+    public void setNama_jenis_hewan(String nama_jenis_hewan) {
+        this.nama_jenis_hewan = nama_jenis_hewan;
+    }
+
     public String getNama_konsumen() {
         return nama_konsumen;
     }
 
     public void setNama_konsumen(String nama_konsumen) {
         this.nama_konsumen = nama_konsumen;
+    }
+
+    public String getStatus_member() {
+        return status_member;
+    }
+
+    public void setStatus_member(String status_member) {
+        this.status_member = status_member;
     }
 
     public String getNama_cs() {

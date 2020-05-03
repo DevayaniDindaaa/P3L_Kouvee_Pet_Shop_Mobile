@@ -214,6 +214,46 @@
         </activity>
         <activity android:name=".Activities.hewan.HewanFragment"></activity>
 
+        <activity
+            android:name=".Activities.penjualan_layanan.activity_detail_penjualan_layanan"
+            android:label="Detail Penjualan Layanan"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.penjualan_layanan.PenjualanLayananFragment">
+        </activity>
+        <activity
+            android:name=".Activities.penjualan_layanan.activity_tambah_penjualan_layanan"
+            android:label="Tambah Transaksi Penjualan Layanan"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.penjualan_layanan.PenjualanLayananFragment">
+        </activity>
+        <activity
+            android:name=".Activities.penjualan_layanan.activity_ubah_penjualan_layanan"
+            android:label="Ubah Transaksi Penjualan Layanan"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.penjualan_layanan.PenjualanLayananFragment">
+        </activity>
+        <activity android:name=".Activities.penjualan_layanan.PenjualanLayananFragment"></activity>
+
+        <activity
+            android:name=".Activities.penjualan_produk.activity_detail_penjualan_produk"
+            android:label="Detail Penjualan Produk"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.penjualan_produk.PenjualanProdukFragment">
+        </activity>
+        <activity
+            android:name=".Activities.penjualan_produk.activity_tambah_penjualan_produk"
+            android:label="Tambah Transaksi Penjualan Produk"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.penjualan_produk.PenjualanProdukFragment">
+        </activity>
+        <activity
+            android:name=".Activities.penjualan_produk.activity_ubah_penjualan_produk"
+            android:label="Ubah Transaksi Penjualan Produk"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.penjualan_produk.PenjualanProdukFragment">
+        </activity>
+        <activity android:name=".Activities.penjualan_produk.PenjualanProdukFragment"></activity>
+
         <activity android:name=".Activities.akun.AkunFragment"></activity>
         <activity android:name=".logout_activity"></activity>
 

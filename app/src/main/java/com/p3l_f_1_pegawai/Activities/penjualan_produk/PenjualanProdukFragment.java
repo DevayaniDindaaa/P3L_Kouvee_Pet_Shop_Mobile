@@ -99,7 +99,9 @@ public class PenjualanProdukFragment extends Fragment {
                                 JSONObject objectReview = jsonArray.getJSONObject(i);
                                 penjualan_produkDAO r = new penjualan_produkDAO(objectReview.getString("no_transaksi_produk"),
                                         objectReview.getString("nama_hewan"),
+                                        objectReview.getString("nama_jenis_hewan"),
                                         objectReview.getString("nama_konsumen"),
+                                        objectReview.getString("status_member"),
                                         objectReview.getString("nama_cs"),
                                         objectReview.getString("nama_kasir"),
                                         objectReview.getString("waktu_transaksi_produk"),

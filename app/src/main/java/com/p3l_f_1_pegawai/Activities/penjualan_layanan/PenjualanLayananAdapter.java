@@ -42,24 +42,30 @@ public class PenjualanLayananAdapter extends RecyclerView.Adapter<PenjualanLayan
     public void onBindViewHolder(@NonNull PenjualanLayananAdapter.MyViewHolder holder, int position) {
         final penjualan_layananDAO row = PenjualanLayananFiltered.get(position);
         holder.nomor_transaksi.setText(row.getNo_transaksi_layanan());
-        holder.nama_konsumen.setText(row.getNama_konsumen() + " --- " + row.getNama_hewan());
+        holder.nama_konsumen.setText(row.getNama_konsumen() + " <---> " + row.getNama_hewan());
         holder.tgl_transaksi.setText(row.getWaktu_transaksi_layanan());
         holder.status_pengerjaan.setText(row.getStatus_pengerjaan_layanan());
         holder.status_pembayaran.setText(row.getStatus_pembayaran_layanan());
         holder.recycler_penjualan_layanan.findViewById(R.id.lihat_detail_transaksi_layanan).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent i = new Intent(context.getApplicationContext(), activity_detail_hapus_konsumen.class);
-//                i.putExtra("id_konsumen", row.getId_konsumen());
-//                i.putExtra("nama_konsumen", row.getNama_konsumen());
-//                i.putExtra("status_member", row.getStatus_member());
-//                i.putExtra("alamat_konsumen", row.getAlamat_konsumen());
-//                i.putExtra("tgl_lahir_konsumen", row.getTgl_lahir_konsumen());
-//                i.putExtra("no_tlp_konsumen", row.getNo_tlp_konsumen());
-//                i.putExtra("status_hapus", row.getStatus_data());
-//                i.putExtra("status_data", row.getStatus_data() + " by " + row.getKeterangan() + " at " + row.getTime_stamp());
-//                i.putExtra("details", row.getDetail_hewankonsumen().toString());
-//                context.getApplicationContext().startActivity(i);
+                Intent i = new Intent(context.getApplicationContext(), activity_detail_penjualan_layanan.class);
+                i.putExtra("no_transaksi", row.getNo_transaksi_layanan());
+                i.putExtra("tgl_transaksi", row.getWaktu_transaksi_layanan());
+                i.putExtra("nama_konsumen", row.getNama_konsumen());
+                i.putExtra("status_member", row.getStatus_member());
+                i.putExtra("nama_hewan", row.getNama_hewan());
+                i.putExtra("jenis_hewan", row.getNama_jenis_hewan());
+                i.putExtra("ukuran_hewan", row.getNama_ukuran_hewan());
+                i.putExtra("nama_cs", row.getNama_cs());
+                i.putExtra("nama_kasir", row.getNama_kasir());
+                i.putExtra("sub_total", String.valueOf(row.getSub_total_layanan()));
+                i.putExtra("diskon", String.valueOf(row.getDiskon_layanan()));
+                i.putExtra("total_bayar", String.valueOf(row.getTotal_pembayaran_layanan()));
+                i.putExtra("status_kerja", row.getStatus_pengerjaan_layanan());
+                i.putExtra("status_bayar", row.getStatus_pembayaran_layanan());
+                i.putExtra("details", row.getDetail_penjualan_layanan().toString());
+                context.getApplicationContext().startActivity(i);
             }
         });
     }
