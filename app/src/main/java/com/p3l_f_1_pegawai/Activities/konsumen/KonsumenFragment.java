@@ -52,9 +52,14 @@ public class KonsumenFragment extends Fragment {
         tambahKonsumen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), activity_tambah_konsumen.class);
-                i.putExtra("USERNAME", nama_user);
-                startActivity(i);
+                if(nama_user.equalsIgnoreCase("owner")){
+                    Toast.makeText(context, "Owner tidak bisa menambah data konsumen!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent i = new Intent(getActivity(), activity_tambah_konsumen.class);
+                    i.putExtra("USERNAME", nama_user);
+                    startActivity(i);
+                }
             }
         });
         return view;
@@ -123,7 +128,7 @@ public class KonsumenFragment extends Fragment {
         inflater.inflate(R.menu.main, menu);
         MenuItem item = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) item.getActionView();
-        searchView.setQueryHint("Cari Konsumen ... (Nama)");
+        searchView.setQueryHint("Cari Konsumen ... (Nama, Status)");
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String newText) {

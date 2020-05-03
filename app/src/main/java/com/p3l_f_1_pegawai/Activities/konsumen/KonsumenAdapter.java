@@ -85,6 +85,9 @@ public class KonsumenAdapter extends RecyclerView.Adapter<KonsumenAdapter.MyView
                     if(konsumen.getNama_konsumen().toLowerCase().contains(charSequence.toString().toLowerCase())){
                         filteredList.add(konsumen);
                     }
+                    else if(konsumen.getStatus_member().toLowerCase().contains(charSequence.toString().toLowerCase())){
+                        filteredList.add(konsumen);
+                    }
                 }
 
                 KonsumenFiltered = filteredList;

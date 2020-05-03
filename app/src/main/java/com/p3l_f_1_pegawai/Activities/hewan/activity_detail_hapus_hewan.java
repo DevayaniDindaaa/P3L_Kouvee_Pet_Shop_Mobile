@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,6 +24,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.p3l_f_1_pegawai.Activities.konsumen.activity_detail_hapus_konsumen;
+import com.p3l_f_1_pegawai.Activities.konsumen.activity_ubah_konsumen;
 import com.p3l_f_1_pegawai.R;
 
 import org.json.JSONException;
@@ -63,7 +66,14 @@ public class activity_detail_hapus_hewan extends AppCompatActivity {
                     Toast.makeText(activity_detail_hapus_hewan.this, "Data ini sudah dihapus, tidak dapat dihapus lagi!", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    //DISINI INTENT KE HALAMAN UBAH DATA HEWAN
+                    Intent i = new Intent(activity_detail_hapus_hewan.this, activity_ubah_hewan.class);
+                    i.putExtra("id_hewan", id_hewan);
+                    i.putExtra("nama_hewan", nama_hewan.getText().toString());
+                    i.putExtra("tgl_lahir_hewan", tgl_lahir_hewan.getText().toString());
+                    i.putExtra("nama_jenis", jenis_hewan.getText().toString());
+                    i.putExtra("nama_ukuran", ukuran_hewan.getText().toString());
+                    i.putExtra("nama_konsumen", nama_konsumen.getText().toString());
+                    startActivity(i);
                 }
             }});
 

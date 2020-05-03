@@ -58,9 +58,14 @@ public class HewanFragment extends Fragment {
         tambahHewan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), activity_tambah_konsumen.class);
-                i.putExtra("USERNAME", nama_user);
-                startActivity(i);
+                if(nama_user.equalsIgnoreCase("owner")){
+                    Toast.makeText(context, "Owner tidak bisa menambah data hewan!", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Intent i = new Intent(getActivity(), activity_tambah_hewan.class);
+                    i.putExtra("USERNAME", nama_user);
+                    startActivity(i);
+                }
             }
         });
         return view;
