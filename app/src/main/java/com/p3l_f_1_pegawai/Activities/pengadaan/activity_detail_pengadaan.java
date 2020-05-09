@@ -39,8 +39,8 @@ import java.util.List;
 import java.util.Map;
 
 public class activity_detail_pengadaan extends AppCompatActivity {
-    private String URLline = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/tambahproduk/ubahstatus";
-    private String URL = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/tambahproduk/addstok";
+    private String URLline = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/tambahproduk/ubahstatus";
+    private String URL = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/tambahproduk/addstok";
     Activity context;
     private List<detail_pengadaanDAO> DetailPengadaanList;
     private RecyclerView recyclerView;

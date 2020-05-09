@@ -48,7 +48,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 public class activity_tambah_produk extends AppCompatActivity {
-    private String URLline = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/produk";
+    private String URLline = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/produk";
     private TextInputEditText nama_produk, satuan_produk, harga_produk, stok_produk, stok_minimal_produk;
     private ImageView foto_produk;
     private Button tambah_foto, simpan_produk, batal_simpan;
@@ -147,7 +147,7 @@ public class activity_tambah_produk extends AppCompatActivity {
     }
 
     public void setSpinner_jenis(){
-        String url = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/jenishewan";
+        String url = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/jenishewan";
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,

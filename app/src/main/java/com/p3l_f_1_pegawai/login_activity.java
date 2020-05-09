@@ -107,9 +107,11 @@ public class login_activity extends AppCompatActivity {
             public void run() {
 
                 String nama_user_login = username_pengguna;
+                String id_user_login = id_pengguna;
                 SharedPreferences mSettings = getApplication().getSharedPreferences("Login", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = mSettings.edit();
                 editor.putString("nama_user_login", nama_user_login);
+                editor.putString("id_user_login", id_user_login);
                 editor.apply();
                 System.out.println(editor);
 
@@ -154,7 +156,7 @@ public class login_activity extends AppCompatActivity {
     }
 
     private void loginUser(final String usernameku, final String passwordku) {
-        String url = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/pegawai/login";
+        String url = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/pegawai/login";
         RequestQueue queue = Volley.newRequestQueue(this);
 
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,

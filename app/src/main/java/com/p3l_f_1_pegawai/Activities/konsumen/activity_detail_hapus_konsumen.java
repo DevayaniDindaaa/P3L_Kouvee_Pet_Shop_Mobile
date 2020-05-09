@@ -41,8 +41,8 @@ import java.util.List;
 import java.util.Map;
 
 public class activity_detail_hapus_konsumen extends AppCompatActivity {
-    private String URLhewan = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/hewan/delete/";
-    private String URLkonsumen = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/konsumen/delete/";
+    private String URLhewan = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/hewan/delete/";
+    private String URLkonsumen = "http://192.168.8.103CI_Mobile_P3L_1F/index.php/konsumen/delete/";
     Activity context;
     private List<hewanDAO> DetailHewanKonsumen;
     private RecyclerView recyclerView;
@@ -170,6 +170,7 @@ public class activity_detail_hapus_konsumen extends AppCompatActivity {
                 hewanDAO d = new hewanDAO(objectDetail.getString("id_hewan"),
                         objectDetail.getString("nama_jenis_hewan"),
                         objectDetail.getString("nama_ukuran_hewan"),
+                        objectDetail.getString("id_konsumen"),
                         objectDetail.getString("nama_konsumen"),
                         objectDetail.getString("alamat_konsumen"),
                         objectDetail.getString("tgl_lahir_konsumen"),

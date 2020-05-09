@@ -88,7 +88,7 @@ public class HewanFragment extends Fragment {
     }
 
     public void getHewan(){
-        String url = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/hewan";
+        String url = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/hewan";
         RequestQueue queue = Volley.newRequestQueue(getActivity());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,
@@ -105,6 +105,7 @@ public class HewanFragment extends Fragment {
                                 hewanDAO d = new hewanDAO(objectReview.getString("id_hewan"),
                                         objectReview.getString("nama_jenis_hewan"),
                                         objectReview.getString("nama_ukuran_hewan"),
+                                        objectReview.getString("id_konsumen"),
                                         objectReview.getString("nama_konsumen"),
                                         objectReview.getString("alamat_konsumen"),
                                         objectReview.getString("tgl_lahir_konsumen"),

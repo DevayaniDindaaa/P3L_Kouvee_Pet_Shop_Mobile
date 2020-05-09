@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@color/colorBottom">
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Nama Produk"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="10dp"
+    android:textStyle="bold"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/spinner_produk_pesan">
+    </Spinner>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/jumlah_produk_beli"
+            android:hint="Jumlah Produk Dibeli"
+            android:inputType="numberSigned"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="BATAL"
+            android:textSize="15dp"
+            android:textColor="@color/colorTop"
+            android:background="@drawable/button_ubah"
+            android:textStyle="bold"
+            android:id="@+id/button_batal_tambah"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="TAMBAH"
+            android:textSize="15dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/button_hapus"
+            android:textStyle="bold"
+            android:id="@+id/button_simpan_produk"/>
+    </LinearLayout>
+</LinearLayout>

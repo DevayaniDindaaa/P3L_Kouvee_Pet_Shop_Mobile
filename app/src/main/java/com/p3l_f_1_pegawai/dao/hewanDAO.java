@@ -1,13 +1,14 @@
 package com.p3l_f_1_pegawai.dao;
 
 public class hewanDAO {
-    private String id_hewan, id_jenis_hewan, id_ukuran_hewan, id_konsumen, alamat_konsumen, tgl_lahir_konsumen, no_tlp_konsumen, status_member, nama_hewan, tgl_lahir_hewan, status_data, time_stamp, keterangan;
+    private String id_hewan, id_jenis_hewan, id_ukuran_hewan, id_konsumen, nama_konsumen, alamat_konsumen, tgl_lahir_konsumen, no_tlp_konsumen, status_member, nama_hewan, tgl_lahir_hewan, status_data, time_stamp, keterangan;
 
-    public hewanDAO(String id_hewan, String id_jenis_hewan, String id_ukuran_hewan, String id_konsumen, String alamat_konsumen, String tgl_lahir_konsumen, String no_tlp_konsumen, String status_member, String nama_hewan, String tgl_lahir_hewan, String status_data, String time_stamp, String keterangan) {
+    public hewanDAO(String id_hewan, String id_jenis_hewan, String id_ukuran_hewan, String id_konsumen, String nama_konsumen, String alamat_konsumen, String tgl_lahir_konsumen, String no_tlp_konsumen, String status_member, String nama_hewan, String tgl_lahir_hewan, String status_data, String time_stamp, String keterangan) {
         this.id_hewan = id_hewan;
         this.id_jenis_hewan = id_jenis_hewan;
         this.id_ukuran_hewan = id_ukuran_hewan;
         this.id_konsumen = id_konsumen;
+        this.nama_konsumen = nama_konsumen;
         this.alamat_konsumen = alamat_konsumen;
         this.tgl_lahir_konsumen = tgl_lahir_konsumen;
         this.no_tlp_konsumen = no_tlp_konsumen;
@@ -49,6 +50,14 @@ public class hewanDAO {
 
     public void setId_konsumen(String id_konsumen) {
         this.id_konsumen = id_konsumen;
+    }
+
+    public String getNama_konsumen() {
+        return nama_konsumen;
+    }
+
+    public void setNama_konsumen(String nama_konsumen) {
+        this.nama_konsumen = nama_konsumen;
     }
 
     public String getAlamat_konsumen() {

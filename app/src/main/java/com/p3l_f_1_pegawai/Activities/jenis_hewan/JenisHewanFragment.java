@@ -77,7 +77,7 @@ public class JenisHewanFragment extends Fragment {
     }
 
     public void getJenisHewan(){
-        String url = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/jenishewan";
+        String url = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/jenishewan";
         RequestQueue queue = Volley.newRequestQueue(getActivity());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,

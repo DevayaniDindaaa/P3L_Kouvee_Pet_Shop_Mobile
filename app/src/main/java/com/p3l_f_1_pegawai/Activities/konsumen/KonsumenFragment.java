@@ -82,7 +82,7 @@ public class KonsumenFragment extends Fragment {
     }
 
     public void getKonsumen(){
-        String url = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/konsumen";
+        String url = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/konsumen";
         RequestQueue queue = Volley.newRequestQueue(getActivity());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,

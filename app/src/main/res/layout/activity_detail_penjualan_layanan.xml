@@ -425,7 +425,17 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:text="KIRIM PESAN"
+                android:textSize="15dp"
+                android:textColor="@color/colorTop"
+                android:background="@drawable/button_ubah"
+                android:textStyle="bold"
+                android:id="@+id/button_kirim_sms"/>
 
             <Button
                 android:layout_width="200dp"

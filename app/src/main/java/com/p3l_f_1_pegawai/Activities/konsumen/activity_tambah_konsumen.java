@@ -35,7 +35,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 public class activity_tambah_konsumen  extends AppCompatActivity {
-    private String URLline = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/konsumen";
+    private String URLline = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/konsumen";
     private TextInputEditText nama_konsumen, alamat_konsumen, tgl_lahir, telepon_konsumen;
     String MobilePattern = "\\+?([ -]?\\d+)+|\\(\\d+\\)([ -]\\d+)";
     String DatePattern = "(\\d{4})-(\\d{1,2})-(\\d{1,2})";
