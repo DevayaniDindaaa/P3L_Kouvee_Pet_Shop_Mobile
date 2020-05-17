@@ -35,7 +35,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class activity_ubah_detail_pengadaan extends AppCompatActivity {
-    private String URLline = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/transaksipengadaan/detail/";
+    private String URLline = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/transaksipengadaan/detail/";
     private EditText jumlah_produk_pesan;
     private TextView nama_produk;
     private Button simpan_produk, batal_simpan;

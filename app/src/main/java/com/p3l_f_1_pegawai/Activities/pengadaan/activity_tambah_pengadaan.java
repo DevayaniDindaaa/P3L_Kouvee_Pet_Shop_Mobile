@@ -45,8 +45,8 @@ import java.util.List;
 import java.util.Map;
 
 public class activity_tambah_pengadaan extends AppCompatActivity {
-    private String URLline = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/transaksipengadaan";
-    private String URL = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/transaksipengadaan/detail";
+    private String URLline = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/transaksipengadaan";
+    private String URL = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/transaksipengadaan/detail";
     private Button simpan_pengadaan, batal_simpan, tambah_produk;
     private TextView show_calendar, show_person;
     private Spinner spinner_produk, spinner_supplier;
@@ -143,7 +143,7 @@ public class activity_tambah_pengadaan extends AppCompatActivity {
     }
 
     public void setSpinner_supplier(){
-        String url = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/supplier";
+        String url = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/supplier";
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,
@@ -191,7 +191,7 @@ public class activity_tambah_pengadaan extends AppCompatActivity {
     }
 
     public void setSpinner_produk(){
-        String url = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/produk";
+        String url = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/produk";
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,

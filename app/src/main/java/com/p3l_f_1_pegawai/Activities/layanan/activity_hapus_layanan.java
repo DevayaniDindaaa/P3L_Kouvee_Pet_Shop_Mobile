@@ -31,7 +31,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class activity_hapus_layanan extends AppCompatActivity {
-    private String URLline = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/layanan/delete/";
+    private String URLline = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/layanan/delete/";
     private Button hapus_layanan, batal_hapus;
     private TextView show_calendar, show_person, nama_layanan_hewan, harga_layanan_hewan;
     private String data = "-";

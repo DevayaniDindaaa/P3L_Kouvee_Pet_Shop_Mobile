@@ -88,7 +88,7 @@ public class HewanFragment extends Fragment {
     }
 
     public void getHewan(){
-        String url = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/hewan";
+        String url = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/hewan";
         RequestQueue queue = Volley.newRequestQueue(getActivity());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,

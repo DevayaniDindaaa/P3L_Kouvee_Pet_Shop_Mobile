@@ -53,8 +53,9 @@ import java.util.List;
 import java.util.Map;
 
 public class activity_tambah_penjualan_produk extends AppCompatActivity {
-    private String URLline = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/transaksipengadaan";
-    private String URL = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/transaksipengadaan/detail";
+    private String URLline = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/transaksiproduk";
+    private String URL = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/transaksiproduk/detail";
+    private String URLHarga = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/transaksiproduk/totalHarga";
     private Button simpan_jual_produk, batal_simpan, tambah_produk;
     private TextView show_calendar, show_person;
     private Spinner spinner_produk, spinner_konsumen, spinner_hewan;
@@ -63,7 +64,7 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
     private String pesanku = "-";
     private String data = "-";
     ProgressDialog dialog;
-    private String id_konsumen, id_produk, id_hewan, id_cs, nama_jenis_hewan;
+    private String id_konsumen, id_produk, id_hewan, id_cs, nama_jenis_hewan, nama_cs;
     String no_transaksi;
     private RecyclerView recyclerView;
     private List<konsumenDAO> konsumens = new ArrayList<>();
@@ -84,14 +85,11 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
         simpan_jual_produk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String tanggal_pesan;
-                tanggal_pesan = show_calendar.getText().toString();
-
-                //tambahPengadaan(tanggal_pesan, id_hewan, id_cs);
+                tambahPenjualanProduk(id_cs, id_hewan);
 
                 pesanku = "Berhasil";
-               /* progDialog();
-                waitingResponse();*/
+                progDialog();
+                waitingResponse();
             }
         });
 
@@ -116,6 +114,7 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
     private void setAtribut(){
         SharedPreferences mSettings = getSharedPreferences("Login", Context.MODE_PRIVATE);
         id_cs = mSettings.getString("id_user_login", "user_tidak_terdeteksi");
+        nama_cs = mSettings.getString("nama_user_login", "user_tidak_terdeteksi");
 
         simpan_jual_produk = (Button) findViewById(R.id.button_simpan);
         batal_simpan = (Button) findViewById(R.id.button_batal);
@@ -177,7 +176,7 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
     }
 
     public void setSpinner_konsumen(){
-        String url = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/konsumen";
+        String url = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/konsumen";
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,
@@ -228,7 +227,7 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
     }
 
     public void setSpinner_hewan(){
-        String url = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/hewan";
+        String url = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/hewan";
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,
@@ -287,7 +286,7 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
     }
 
     public void setSpinner_produk(){
-        String url = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/produk";
+        String url = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/produk";
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,
@@ -409,7 +408,7 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
         dialogBuilder.show();
     }
 
-   /* private void progDialog() {
+    private void progDialog() {
         dialog.setMessage("Menyimpan Data ...");
         dialog.show();
     }
@@ -420,21 +419,17 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
             @Override
             public void run() {
                 if(pesanku.equalsIgnoreCase("Berhasil")) {
-                    Toast.makeText(activity_tambah_pengadaan.this, "Data Pemesanan Produk Berhasil Disimpan!", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_tambah_pengadaan.this, PengadaanFragment.class);
-                    startActivity(intent);
+                    Toast.makeText(activity_tambah_penjualan_produk.this, "Data Penjualan Produk Berhasil Disimpan!", Toast.LENGTH_LONG).show();
                 }
                 else if(pesanku.equalsIgnoreCase("Gagal")) {
-                    Toast.makeText(activity_tambah_pengadaan.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_tambah_pengadaan.this, PengadaanFragment.class);
-                    startActivity(intent);
+                    Toast.makeText(activity_tambah_penjualan_produk.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
                 }
                 dialog.dismiss();
             }
         }, 2000);
-    }*/
+    }
 
-   /* private void tambahPengadaan(String tanggal_pesan, final String string_tanggal, final String id_supplier){
+    private void tambahPenjualanProduk(final String id_cs, final String id_hewan){
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URLline,
                 new Response.Listener<String>() {
@@ -448,7 +443,8 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
                             System.out.println(pesan);
                             for (int i = 0; i<arrayList.size(); i++)
                             {
-                                tambahDetailPengadaan(pesan, arrayList.get(i).getId_produk_tambah(), arrayList.get(i).getJumlah_produk());
+                                tambahDetailProduk(pesan, arrayList.get(i).getId_produk_tambah(), arrayList.get(i).getJumlah_produk(), nama_cs);
+                                updateTotalHarga(pesan);
                             }
 
                         } catch (JSONException e) {
@@ -459,7 +455,7 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(activity_tambah_pengadaan.this, "Koneksi Terputus",
+                        Toast.makeText(activity_tambah_penjualan_produk.this, "Koneksi Terputus",
                                 Toast.LENGTH_SHORT).show();
                     }
                 }){
@@ -468,8 +464,8 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
             @Override
             protected Map<String,String> getParams(){
                 Map<String,String> params = new HashMap<>();
-                params.put("ID_SUPPLIER", id_supplier);
-                params.put("TGL_PEMESANAN", string_tanggal);
+                params.put("ID_CUSTOMER_SERVICE", id_cs);
+                params.put("ID_HEWAN", id_hewan);
                 return params;
             }
         };
@@ -483,7 +479,7 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    private void tambahDetailPengadaan(final String nomor_pemesanan, final String id_produk, final Integer jumlah_produk_dipesan){
+    private void tambahDetailProduk(final String no_transaksi_produk, final String id_produk, final Integer jumlah_produk, final String keterangan){
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
                 new Response.Listener<String>() {
@@ -493,7 +489,6 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
                             JSONObject json = new JSONObject(response);
 
                             message = json.getString("message");
-                            data = json.getString("data");
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -503,7 +498,7 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(activity_tambah_pengadaan.this, "Koneksi Terputus",
+                        Toast.makeText(activity_tambah_penjualan_produk.this, "Koneksi Terputus",
                                 Toast.LENGTH_SHORT).show();
                     }
                 }){
@@ -512,9 +507,10 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
             @Override
             protected Map<String,String> getParams(){
                 Map<String,String> params = new HashMap<>();
-                params.put("NOMOR_PEMESANAN", nomor_pemesanan);
+                params.put("NO_TRANSAKSI_PRODUK", no_transaksi_produk);
                 params.put("ID_PRODUK", id_produk);
-                params.put("JUMLAH_PRODUK_DIPESAN", String.valueOf(jumlah_produk_dipesan));
+                params.put("JUMLAH_PRODUK", String.valueOf(jumlah_produk));
+                params.put("KETERANGAN", keterangan);
                 return params;
             }
         };
@@ -526,5 +522,47 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
                 )
         );
         requestQueue.add(stringRequest);
-    }*/
+    }
+
+    private void updateTotalHarga(final String no_transaksi_produk){
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLHarga,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject json = new JSONObject(response);
+
+                            message = json.getString("message");
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(activity_tambah_penjualan_produk.this, "Koneksi Terputus",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }){
+
+            //datayangdiinput
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<>();
+                params.put("NO_TRANSAKSI_PRODUK", no_transaksi_produk);
+                return params;
+            }
+        };
+        stringRequest.setRetryPolicy(
+                new DefaultRetryPolicy(
+                        50000,
+                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+                )
+        );
+        requestQueue.add(stringRequest);
+    }
 }

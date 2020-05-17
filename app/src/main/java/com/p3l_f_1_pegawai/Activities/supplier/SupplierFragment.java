@@ -79,7 +79,7 @@ public class SupplierFragment extends Fragment {
     }
 
     public void getUkuranHewan(){
-        String url = "http://192.168.8.103/CI_Mobile_P3L_1F/index.php/supplier";
+        String url = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/supplier";
         RequestQueue queue = Volley.newRequestQueue(getActivity());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,
