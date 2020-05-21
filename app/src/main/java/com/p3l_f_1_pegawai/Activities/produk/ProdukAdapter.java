@@ -50,10 +50,10 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
         holder.harga_produk.setText((String.valueOf(row.getHarga_produk())) + " /" + row.getSatuan_produk());
         holder.log_aktivitas.setText(row.getStatus_data() + " by " + row.getKeterangan() + " at " + row.getTime_stamp());
         if(row.getFoto_produk().equalsIgnoreCase("null")){
-            Glide.with(context).load("http://192.168.8.101/CI_Mobile_P3L_1F/upload/default.png").into(holder.foto_produk);;
+            Glide.with(context).load("http://192.168.8.100/CI_Mobile_P3L_1F/upload/default.png").into(holder.foto_produk);;
         }
         else{
-            Glide.with(context).load("http://192.168.8.101/CI_Mobile_P3L_1F/" + row.getFoto_produk()).into(holder.foto_produk);
+            Glide.with(context).load("http://192.168.8.100/CI_Mobile_P3L_1F/" + row.getFoto_produk()).into(holder.foto_produk);
         }
 
         if(row.getStatus_data().equalsIgnoreCase("deleted")){
@@ -83,11 +83,11 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
                     i.putExtra("id_produk", row.getId_produk());
                     i.putExtra("harga_produk", (String.valueOf(row.getHarga_produk())) + " /" + row.getSatuan_produk());
                     if(row.getFoto_produk().equalsIgnoreCase("null")){
-                        i.putExtra("foto_produk", "http://192.168.8.101/CI_Mobile_P3L_1F/upload/default.png");
+                        i.putExtra("foto_produk", "http://192.168.8.100/CI_Mobile_P3L_1F/upload/default.png");
                     }
                     else
                     {
-                        i.putExtra("foto_produk", "http://192.168.8.101/CI_Mobile_P3L_1F/" + row.getFoto_produk());
+                        i.putExtra("foto_produk", "http://192.168.8.100/CI_Mobile_P3L_1F/" + row.getFoto_produk());
                     }
                     context.getApplicationContext().startActivity(i);
                 }
@@ -105,11 +105,11 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
                     i.putExtra("id_produk", row.getId_produk());
                     i.putExtra("harga_produk", String.valueOf(row.getHarga_produk()));
                     if(row.getFoto_produk().equalsIgnoreCase("null")){
-                        i.putExtra("foto_produk", "http://192.168.8.101/CI_Mobile_P3L_1F/upload/default.png");
+                        i.putExtra("foto_produk", "http://192.168.8.100/CI_Mobile_P3L_1F/upload/default.png");
                     }
                     else
                     {
-                        i.putExtra("foto_produk", "http://192.168.8.101/CI_Mobile_P3L_1F/" + row.getFoto_produk());
+                        i.putExtra("foto_produk", "http://192.168.8.100/CI_Mobile_P3L_1F/" + row.getFoto_produk());
                     }
                     context.getApplicationContext().startActivity(i);
                 }

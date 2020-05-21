@@ -35,7 +35,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class activity_detail_hapus_hewan extends AppCompatActivity {
-    private String URLline = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/hewan/delete/";
+    private String URLline = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/hewan/delete/";
     Activity context;
     private TextView nama_konsumen, alamat_konsumen, tgl_lahir_konsumen, nomor_telepon, status_member, status_data, nama_hewan, jenis_hewan, ukuran_hewan, tgl_lahir_hewan;
     String nama_user;

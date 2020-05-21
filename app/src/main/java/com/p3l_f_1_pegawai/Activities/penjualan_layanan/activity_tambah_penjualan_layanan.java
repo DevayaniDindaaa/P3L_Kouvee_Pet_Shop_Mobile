@@ -29,14 +29,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.p3l_f_1_pegawai.Activities.penjualan_produk.PenjualanProdukFragment;
-import com.p3l_f_1_pegawai.Activities.penjualan_produk.activity_tambah_penjualan_produk;
 import com.p3l_f_1_pegawai.R;
 import com.p3l_f_1_pegawai.dao.detailLayanan_penjualanDAO;
 import com.p3l_f_1_pegawai.dao.hewanDAO;
 import com.p3l_f_1_pegawai.dao.konsumenDAO;
 import com.p3l_f_1_pegawai.dao.layananDAO;
-import com.p3l_f_1_pegawai.dao.produkDAO;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -50,9 +47,9 @@ import java.util.List;
 import java.util.Map;
 
 public class activity_tambah_penjualan_layanan extends AppCompatActivity {
-    private String URLline = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/transaksilayanan";
-    private String URL = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/transaksilayanan/detail";
-    private String URLHarga = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/transaksilayanan/totalHarga";
+    private String URLline = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/transaksilayanan";
+    private String URL = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/transaksilayanan/detail";
+    private String URLHarga = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/transaksilayanan/totalHarga";
     private Button simpan_jual_layanan, batal_simpan, tambah_layanan;
     private TextView show_calendar, show_person;
     private Spinner spinner_layanan, spinner_konsumen, spinner_hewan;
@@ -173,7 +170,7 @@ public class activity_tambah_penjualan_layanan extends AppCompatActivity {
     }
 
     public void setSpinner_konsumen(){
-        String url = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/konsumen";
+        String url = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/konsumen";
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,
@@ -224,7 +221,7 @@ public class activity_tambah_penjualan_layanan extends AppCompatActivity {
     }
 
     public void setSpinner_hewan(){
-        String url = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/hewan";
+        String url = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/hewan";
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,
@@ -282,7 +279,7 @@ public class activity_tambah_penjualan_layanan extends AppCompatActivity {
     }
 
     public void setSpinner_layanan(){
-        String url = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/layanan";
+        String url = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/layanan";
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,
@@ -450,7 +447,7 @@ public class activity_tambah_penjualan_layanan extends AppCompatActivity {
         };
         stringRequest.setRetryPolicy(
                 new DefaultRetryPolicy(
-                        50000,
+                        500000,
                         DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                         DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
                 )
@@ -507,7 +504,10 @@ public class activity_tambah_penjualan_layanan extends AppCompatActivity {
                             @Override
                             public void run() {
                                 Toast.makeText(activity_tambah_penjualan_layanan.this, "Data Penjualan Layanan Berhasil Disimpan!", Toast.LENGTH_LONG).show();
+
                                 dialog.dismiss();
+                                arrayList.clear();
+                                detailTambahPenjualanLayananAdapter.notifyDataSetChanged();
                             }
                         }, 2000);
                     }

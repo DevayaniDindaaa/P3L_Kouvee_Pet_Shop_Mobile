@@ -41,8 +41,8 @@ import java.util.List;
 import java.util.Map;
 
 public class activity_detail_hapus_konsumen extends AppCompatActivity {
-    private String URLhewan = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/hewan/delete/";
-    private String URLkonsumen = "http://192.168.8.101CI_Mobile_P3L_1F/index.php/konsumen/delete/";
+    private String URLhewan = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/hewan/delete/";
+    private String URLkonsumen = "http://192.168.8.100CI_Mobile_P3L_1F/index.php/konsumen/delete/";
     Activity context;
     private List<hewanDAO> DetailHewanKonsumen;
     private RecyclerView recyclerView;

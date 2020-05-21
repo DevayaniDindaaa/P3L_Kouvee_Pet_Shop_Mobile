@@ -83,7 +83,7 @@ public class PenjualanLayananFragment extends Fragment {
     }
 
     public void getPenjualanLayanan(){
-        String url = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/transaksilayanan";
+        String url = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/transaksilayanan";
         RequestQueue queue = Volley.newRequestQueue(getActivity());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,

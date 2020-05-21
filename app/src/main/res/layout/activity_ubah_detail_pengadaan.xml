@@ -45,7 +45,7 @@
         android:layout_marginTop="80dp">
 
         <Button
-            android:layout_width="101dp"
+            android:layout_width="100dp"
             android:layout_height="40dp"
             android:text="BATAL"
             android:textSize="15dp"
@@ -55,7 +55,7 @@
             android:id="@+id/button_batal_ubah"/>
 
         <Button
-            android:layout_width="101dp"
+            android:layout_width="100dp"
             android:layout_height="40dp"
             android:text="UBAH"
             android:textSize="15dp"

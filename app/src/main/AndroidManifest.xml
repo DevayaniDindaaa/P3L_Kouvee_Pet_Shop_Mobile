@@ -227,7 +227,7 @@
             android:parentActivityName=".Activities.penjualan_layanan.PenjualanLayananFragment">
         </activity>
         <activity
-            android:name=".Activities.penjualan_layanan.activity_ubah_penjualan_layanan"
+            android:name=".Activities.penjualan_layanan.activity_ubah_hapus_penjualan_layanan"
             android:label="Ubah Transaksi Layanan"
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.penjualan_layanan.PenjualanLayananFragment">
@@ -247,7 +247,7 @@
             android:parentActivityName=".Activities.penjualan_produk.PenjualanProdukFragment">
         </activity>
         <activity
-            android:name=".Activities.penjualan_produk.activity_ubah_penjualan_produk"
+            android:name=".Activities.penjualan_produk.activity_ubah_hapus_penjualan_produk"
             android:label="Ubah Transaksi Produk"
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.penjualan_produk.PenjualanProdukFragment">
