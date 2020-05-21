@@ -2,6 +2,7 @@ package com.p3l_f_1_pegawai.Activities.penjualan_produk;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -33,7 +34,7 @@ public class activity_detail_penjualan_produk extends AppCompatActivity {
     private List<detail_penjualan_produkDAO> DetailPenjualanProdukList;
     private RecyclerView recyclerView;
     private DetailPenjualanProdukAdapter recycleAdapter;
-    private TextView no_transaksi, tgl_transaksi, nama_konsumen, status_member, nama_hewan, jenis_hewan, ukuran_hewan, nama_cs, nama_kasir, sub_total, diskon, total_bayar, status_bayar, status_kerja;
+    private TextView no_transaksi, tgl_transaksi, nama_konsumen, status_member, nama_hewan, jenis_hewan, nama_cs, nama_kasir, sub_total, diskon, total_bayar, status_bayar;
     String nama_user;
     private Button ubah_penjualan_produk;
     private String status_pembayaran = "-";
@@ -66,7 +67,13 @@ public class activity_detail_penjualan_produk extends AppCompatActivity {
                     Toast.makeText(activity_detail_penjualan_produk.this, "Transaksi ini Sudah Lunas, tidak dapat diubah lagi!", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    //DISINI INTENT KE HALAMAN UBAH DATA HEWAN
+                    Intent i = new Intent(activity_detail_penjualan_produk.this, activity_ubah_hapus_penjualan_produk.class);
+                    i.putExtra("no_transaksi", no_transaksi.getText().toString());
+                    i.putExtra("tgl_transaksi", tgl_transaksi.getText().toString());
+                    i.putExtra("nama_konsumen", nama_konsumen.getText().toString());
+                    i.putExtra("nama_hewan", nama_hewan.getText().toString());
+                    i.putExtra("details", getIntent().getStringExtra("details"));
+                    startActivity(i);
                 }
             }});
     }

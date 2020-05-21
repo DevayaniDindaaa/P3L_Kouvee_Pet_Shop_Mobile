@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -79,7 +80,13 @@ public class activity_detail_penjualan_layanan extends AppCompatActivity {
                     Toast.makeText(activity_detail_penjualan_layanan.this, "Transaksi ini Sudah Lunas, tidak dapat diubah lagi!", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    //DISINI INTENT KE HALAMAN UBAH DATA HEWAN
+                    Intent i = new Intent(activity_detail_penjualan_layanan.this, activity_ubah_hapus_penjualan_layanan.class);
+                    i.putExtra("no_transaksi", no_transaksi.getText().toString());
+                    i.putExtra("tgl_transaksi", tgl_transaksi.getText().toString());
+                    i.putExtra("nama_konsumen", nama_konsumen.getText().toString());
+                    i.putExtra("nama_hewan", nama_hewan.getText().toString());
+                    i.putExtra("details", getIntent().getStringExtra("details"));
+                    startActivity(i);
                 }
             }});
     }
