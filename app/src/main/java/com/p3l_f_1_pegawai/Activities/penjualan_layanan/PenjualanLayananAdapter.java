@@ -54,6 +54,7 @@ public class PenjualanLayananAdapter extends RecyclerView.Adapter<PenjualanLayan
                 i.putExtra("tgl_transaksi", row.getWaktu_transaksi_layanan());
                 i.putExtra("nama_konsumen", row.getNama_konsumen());
                 i.putExtra("status_member", row.getStatus_member());
+                i.putExtra("telepon_konsumen", row.getTelepon_konsumen());
                 i.putExtra("nama_hewan", row.getNama_hewan());
                 i.putExtra("jenis_hewan", row.getNama_jenis_hewan());
                 i.putExtra("ukuran_hewan", row.getNama_ukuran_hewan());

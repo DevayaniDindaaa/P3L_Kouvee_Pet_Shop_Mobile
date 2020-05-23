@@ -156,7 +156,7 @@ public class login_activity extends AppCompatActivity {
     }
 
     private void loginUser(final String usernameku, final String passwordku) {
-        String url = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/pegawai/login";
+        String url = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/pegawai/login";
         RequestQueue queue = Volley.newRequestQueue(this);
 
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,

@@ -41,7 +41,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 public class activity_tambah_hewan extends AppCompatActivity {
-    private String URLline = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/hewan";
+    private String URLline = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/hewan";
     private TextInputEditText nama_hewan, tgl_lahir_hewan;
     private Button simpan_hewan, batal_simpan;
     private TextView show_calendar, show_person;
@@ -162,7 +162,7 @@ public class activity_tambah_hewan extends AppCompatActivity {
     }
 
     public void setSpinner_jenis(){
-        String url = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/jenishewan";
+        String url = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/jenishewan";
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,
@@ -207,7 +207,7 @@ public class activity_tambah_hewan extends AppCompatActivity {
 
 
     public void setSpinner_ukuran(){
-        String url = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/ukuranhewan";
+        String url = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/ukuranhewan";
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,
@@ -251,7 +251,7 @@ public class activity_tambah_hewan extends AppCompatActivity {
     }
 
     public void setSpinner_konsumen(){
-        String url = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/konsumen";
+        String url = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/konsumen";
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,

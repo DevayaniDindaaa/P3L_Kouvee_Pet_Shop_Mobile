@@ -3,17 +3,18 @@ package com.p3l_f_1_pegawai.dao;
 import org.json.JSONArray;
 
 public class penjualan_layananDAO {
-    private String no_transaksi_layanan, nama_hewan, nama_jenis_hewan, nama_ukuran_hewan, nama_konsumen, status_member, nama_cs, nama_kasir, waktu_transaksi_layanan, status_pembayaran_layanan, status_pengerjaan_layanan;
+    private String no_transaksi_layanan, nama_hewan, nama_jenis_hewan, nama_ukuran_hewan, nama_konsumen, status_member, telepon_konsumen, nama_cs, nama_kasir, waktu_transaksi_layanan, status_pembayaran_layanan, status_pengerjaan_layanan;
     private Integer sub_total_layanan, diskon_layanan, total_pembayaran_layanan;
     private JSONArray detail_penjualan_layanan = new JSONArray();
 
-    public penjualan_layananDAO(String no_transaksi_layanan, String nama_hewan, String nama_jenis_hewan, String nama_ukuran_hewan, String nama_konsumen, String status_member, String nama_cs, String nama_kasir, String waktu_transaksi_layanan, String status_pembayaran_layanan, String status_pengerjaan_layanan, Integer sub_total_layanan, Integer diskon_layanan, Integer total_pembayaran_layanan, JSONArray detail_penjualan_layanan) {
+    public penjualan_layananDAO(String no_transaksi_layanan, String nama_hewan, String nama_jenis_hewan, String nama_ukuran_hewan, String nama_konsumen, String status_member, String telepon_konsumen, String nama_cs, String nama_kasir, String waktu_transaksi_layanan, String status_pembayaran_layanan, String status_pengerjaan_layanan, Integer sub_total_layanan, Integer diskon_layanan, Integer total_pembayaran_layanan, JSONArray detail_penjualan_layanan) {
         this.no_transaksi_layanan = no_transaksi_layanan;
         this.nama_hewan = nama_hewan;
         this.nama_jenis_hewan = nama_jenis_hewan;
         this.nama_ukuran_hewan = nama_ukuran_hewan;
         this.nama_konsumen = nama_konsumen;
         this.status_member = status_member;
+        this.telepon_konsumen = telepon_konsumen;
         this.nama_cs = nama_cs;
         this.nama_kasir = nama_kasir;
         this.waktu_transaksi_layanan = waktu_transaksi_layanan;
@@ -71,6 +72,14 @@ public class penjualan_layananDAO {
 
     public void setStatus_member(String status_member) {
         this.status_member = status_member;
+    }
+
+    public String getTelepon_konsumen() {
+        return telepon_konsumen;
+    }
+
+    public void setTelepon_konsumen(String telepon_konsumen) {
+        this.telepon_konsumen = telepon_konsumen;
     }
 
     public String getNama_cs() {

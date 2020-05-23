@@ -31,7 +31,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class activity_hapus_ukuran extends AppCompatActivity {
-    private String URLline = "http://192.168.8.100/CI_Mobile_P3L_1F/index.php/ukuranhewan/delete/";
+    private String URLline = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/ukuranhewan/delete/";
     private Button simpan_ukuran, batal_simpan;
     private TextView show_calendar, show_person, nama_ukuran_hewan;
     private String data = "-";

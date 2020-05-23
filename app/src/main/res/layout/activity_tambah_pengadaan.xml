@@ -88,7 +88,7 @@
         android:layout_marginTop="10dp">
 
         <Button
-            android:layout_width="100dp"
+            android:layout_width="101dp"
             android:layout_height="40dp"
             android:text="BATAL"
             android:textSize="15dp"
@@ -98,7 +98,7 @@
             android:id="@+id/button_batal"/>
 
         <Button
-            android:layout_width="100dp"
+            android:layout_width="101dp"
             android:layout_height="40dp"
             android:text="SIMPAN"
             android:textSize="15dp"

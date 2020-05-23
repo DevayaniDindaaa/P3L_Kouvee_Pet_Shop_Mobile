@@ -1,13 +1,17 @@
 package com.p3l_f_1_pegawai.Activities.penjualan_layanan;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -48,8 +52,8 @@ public class activity_detail_penjualan_layanan extends AppCompatActivity {
     private RecyclerView recyclerView;
     private DetailPenjualanLayananAdapter recycleAdapter;
     private TextView no_transaksi, tgl_transaksi, nama_konsumen, status_member, nama_hewan, jenis_hewan, ukuran_hewan, nama_cs, nama_kasir, sub_total, diskon, total_bayar, status_bayar, status_kerja;
-    String nama_user;
-    private Button ubah_penjualan_layanan;
+    String nama_user, nomor_telepon;
+    private Button ubah_penjualan_layanan, kirim_sms;
     private String status_pembayaran = "-";
 
     @Override
@@ -61,6 +65,7 @@ public class activity_detail_penjualan_layanan extends AppCompatActivity {
         DetailPenjualanLayananList = new ArrayList<>();
 
         ubah_penjualan_layanan = findViewById(R.id.ubah_detail_layanan);
+        kirim_sms = findViewById(R.id.button_kirim_sms);
         recyclerView = findViewById(R.id.recycle_tampil_detail_penjualan_layanan);
         recycleAdapter = new DetailPenjualanLayananAdapter(DetailPenjualanLayananList, this);
         recyclerView.setLayoutManager(new GridLayoutManager(context, 1));
@@ -85,10 +90,36 @@ public class activity_detail_penjualan_layanan extends AppCompatActivity {
                     i.putExtra("tgl_transaksi", tgl_transaksi.getText().toString());
                     i.putExtra("nama_konsumen", nama_konsumen.getText().toString());
                     i.putExtra("nama_hewan", nama_hewan.getText().toString());
+                    i.putExtra("nama_jenis_hewan", jenis_hewan.getText().toString());
+                    i.putExtra("ukuran_hewan", ukuran_hewan.getText().toString());
                     i.putExtra("details", getIntent().getStringExtra("details"));
                     startActivity(i);
                 }
             }});
+
+        kirim_sms.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("IntentReset")
+            @Override
+            public void onClick(View v) {
+                Intent smsIntent = new Intent(Intent.ACTION_VIEW);
+
+                smsIntent.setData(Uri.parse("smsto:"));
+                smsIntent.setType("vnd.android-dir/mms-sms");
+                smsIntent.putExtra("address"  , nomor_telepon);
+                smsIntent.putExtra("sms_body"  , "Hallo Pelanggan, " + nama_konsumen.getText().toString() + "! \n" + "Pengerjaan Layanan untuk Nomor Transaksi : " + no_transaksi.getText().toString() + "\n---SUDAH SELESAI---" +
+                        "\n\nSilahkan Melakukan Pembayaran di Kouvee Pet Shop dan Mengambil Hewan Anda!" +
+                        "\n \n \nBest Regards, \nKouvee Pet Shop");
+
+                try {
+                    startActivity(smsIntent);
+                    finish();
+                    Log.i("SMS Berhasil Dikirim ke Nomor Telepon Pelanggan...", "");
+                } catch (android.content.ActivityNotFoundException ex) {
+                    Toast.makeText(activity_detail_penjualan_layanan.this,
+                            "Kirim SMS Gagal... Silahkan Cek Kembali Nomor Telepon Pelanggan!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     private void getDetailPenjualanLayanan() {
@@ -153,5 +184,6 @@ public class activity_detail_penjualan_layanan extends AppCompatActivity {
         status_kerja.setText(getIntent().getStringExtra("status_kerja"));
 
         status_pembayaran = getIntent().getStringExtra("status_bayar");
+        nomor_telepon = getIntent().getStringExtra("telepon_konsumen");
     }
 }

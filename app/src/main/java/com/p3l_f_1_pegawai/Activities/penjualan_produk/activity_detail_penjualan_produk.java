@@ -1,6 +1,7 @@
 package com.p3l_f_1_pegawai.Activities.penjualan_produk;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -72,6 +73,7 @@ public class activity_detail_penjualan_produk extends AppCompatActivity {
                     i.putExtra("tgl_transaksi", tgl_transaksi.getText().toString());
                     i.putExtra("nama_konsumen", nama_konsumen.getText().toString());
                     i.putExtra("nama_hewan", nama_hewan.getText().toString());
+                    i.putExtra("nama_jenis_hewan", jenis_hewan.getText().toString());
                     i.putExtra("details", getIntent().getStringExtra("details"));
                     startActivity(i);
                 }
