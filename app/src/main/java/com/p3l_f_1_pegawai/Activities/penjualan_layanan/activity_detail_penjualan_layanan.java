@@ -2,15 +2,11 @@ package com.p3l_f_1_pegawai.Activities.penjualan_layanan;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -18,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -31,11 +26,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.p3l_f_1_pegawai.Activities.hewan.activity_detail_hapus_hewan;
-import com.p3l_f_1_pegawai.Activities.konsumen.DetailKonsumenAdapter;
 import com.p3l_f_1_pegawai.R;
 import com.p3l_f_1_pegawai.dao.detail_penjualan_layananDAO;
-import com.p3l_f_1_pegawai.dao.hewanDAO;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,13 +40,13 @@ import java.util.Map;
 
 public class activity_detail_penjualan_layanan extends AppCompatActivity {
     Activity context;
+    private String URL = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/transaksilayanan/sendsms";
     private List<detail_penjualan_layananDAO> DetailPenjualanLayananList;
     private RecyclerView recyclerView;
     private DetailPenjualanLayananAdapter recycleAdapter;
     private TextView no_transaksi, tgl_transaksi, nama_konsumen, status_member, nama_hewan, jenis_hewan, ukuran_hewan, nama_cs, nama_kasir, sub_total, diskon, total_bayar, status_bayar, status_kerja;
     String nama_user, nomor_telepon;
     private Button ubah_penjualan_layanan, kirim_sms;
-    private String status_pembayaran = "-";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -81,7 +73,7 @@ public class activity_detail_penjualan_layanan extends AppCompatActivity {
                 if(nama_user.equalsIgnoreCase("owner")){
                     Toast.makeText(activity_detail_penjualan_layanan.this, "Owner tidak bisa mengubah data penjualan layanan!", Toast.LENGTH_SHORT).show();
                 }
-                else if(status_pembayaran.equalsIgnoreCase("Lunas")){
+                else if(status_kerja.getText().toString().equalsIgnoreCase("Selesai")){
                     Toast.makeText(activity_detail_penjualan_layanan.this, "Transaksi ini Sudah Lunas, tidak dapat diubah lagi!", Toast.LENGTH_SHORT).show();
                 }
                 else{
@@ -101,22 +93,31 @@ public class activity_detail_penjualan_layanan extends AppCompatActivity {
             @SuppressLint("IntentReset")
             @Override
             public void onClick(View v) {
-                Intent smsIntent = new Intent(Intent.ACTION_VIEW);
+                if(nama_user.equalsIgnoreCase("owner")){
+                    Toast.makeText(activity_detail_penjualan_layanan.this, "Owner tidak bisa mengirim SMS ke nomor pelanggan!", Toast.LENGTH_SHORT).show();
+                }
+                else if(status_kerja.getText().toString().equalsIgnoreCase("Selesai")){
+                    Toast.makeText(activity_detail_penjualan_layanan.this, "Transaksi ini Sudah Selesai di kerjakan!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent smsIntent = new Intent(Intent.ACTION_VIEW);
 
-                smsIntent.setData(Uri.parse("smsto:"));
-                smsIntent.setType("vnd.android-dir/mms-sms");
-                smsIntent.putExtra("address"  , nomor_telepon);
-                smsIntent.putExtra("sms_body"  , "Hallo Pelanggan, " + nama_konsumen.getText().toString() + "! \n" + "Pengerjaan Layanan untuk Nomor Transaksi : " + no_transaksi.getText().toString() + "\n---SUDAH SELESAI---" +
-                        "\n\nSilahkan Melakukan Pembayaran di Kouvee Pet Shop dan Mengambil Hewan Anda!" +
-                        "\n \n \nBest Regards, \nKouvee Pet Shop");
+                    smsIntent.setData(Uri.parse("smsto:"));
+                    smsIntent.setType("vnd.android-dir/mms-sms");
+                    smsIntent.putExtra("address"  , nomor_telepon);
+                    smsIntent.putExtra("sms_body"  , "Hallo Pelanggan, " + nama_konsumen.getText().toString() + "! \n" + "Pengerjaan Layanan untuk Nomor Transaksi : " + no_transaksi.getText().toString() + "\n---SUDAH SELESAI---" +
+                            "\n\nSilahkan Melakukan Pembayaran di Kouvee Pet Shop dan Mengambil Hewan Anda!" +
+                            "\n \n \nBest Regards, \nKouvee Pet Shop");
 
-                try {
-                    startActivity(smsIntent);
-                    finish();
-                    Log.i("SMS Berhasil Dikirim ke Nomor Telepon Pelanggan...", "");
-                } catch (android.content.ActivityNotFoundException ex) {
-                    Toast.makeText(activity_detail_penjualan_layanan.this,
-                            "Kirim SMS Gagal... Silahkan Cek Kembali Nomor Telepon Pelanggan!", Toast.LENGTH_SHORT).show();
+                    try {
+                        startActivity(smsIntent);
+                        finish();
+                        updateStatus(no_transaksi.getText().toString());
+                        Log.i("SMS Berhasil Dikirim ke Nomor Telepon Pelanggan...", "");
+                    } catch (android.content.ActivityNotFoundException ex) {
+                        Toast.makeText(activity_detail_penjualan_layanan.this,
+                                "Kirim SMS Gagal... Silahkan Cek Kembali Nomor Telepon Pelanggan!", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
@@ -183,7 +184,41 @@ public class activity_detail_penjualan_layanan extends AppCompatActivity {
         status_kerja = findViewById(R.id.status_kerja_layanan_detail);
         status_kerja.setText(getIntent().getStringExtra("status_kerja"));
 
-        status_pembayaran = getIntent().getStringExtra("status_bayar");
         nomor_telepon = getIntent().getStringExtra("telepon_konsumen");
+    }
+
+    private void updateStatus(final String no_transaksi_layanan){
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(activity_detail_penjualan_layanan.this, "SMS Berhasil Dikirim ke Nomor Telepon Pengguna!", Toast.LENGTH_LONG).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(activity_detail_penjualan_layanan.this, "Koneksi Terputus",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }){
+
+            //datayangdiinput
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<>();
+                params.put("NO_TRANSAKSI_LAYANAN", no_transaksi_layanan);
+                return params;
+            }
+        };
+        stringRequest.setRetryPolicy(
+                new DefaultRetryPolicy(
+                        50000,
+                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+                )
+        );
+        requestQueue.add(stringRequest);
     }
 }

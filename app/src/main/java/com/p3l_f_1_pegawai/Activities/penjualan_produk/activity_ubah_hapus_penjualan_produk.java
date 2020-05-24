@@ -48,6 +48,8 @@ import java.util.List;
 import java.util.Map;
 
 public class activity_ubah_hapus_penjualan_produk extends AppCompatActivity {
+    private String URL = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/transaksiproduk/detail";
+    private String URLHarga = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/transaksiproduk/totalHarga";
     Activity context;
     private List<detail_penjualan_produkDAO> DetailPenjualanProdukList;
     private RecyclerView recyclerView, recycleTambah;
@@ -86,6 +88,12 @@ public class activity_ubah_hapus_penjualan_produk extends AppCompatActivity {
         button_ubah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                for (int i = 0; i<arrayList.size(); i++)
+                {
+                    tambahDetailProduk(no_transaksi.getText().toString(), arrayList.get(i).getId_produk_tambah(), arrayList.get(i).getJumlah_produk(), nama_user);
+                }
+                updateTotalHarga(no_transaksi.getText().toString());
+                progDialog();
                 Toast.makeText(activity_ubah_hapus_penjualan_produk.this, "Berhasil Ubah Detail Penjualan Layanan!", Toast.LENGTH_SHORT).show();
             }});
 
@@ -140,6 +148,7 @@ public class activity_ubah_hapus_penjualan_produk extends AppCompatActivity {
         button_ubah = findViewById(R.id.button_simpan);
         button_batal = findViewById(R.id.button_batal);
         tambah_produk = (Button) findViewById(R.id.button_tambah_produk);
+        dialog = new ProgressDialog(this);
     }
 
     public void setSpinner_produk(){
@@ -286,136 +295,85 @@ public class activity_ubah_hapus_penjualan_produk extends AppCompatActivity {
 //        }, 2000);
 //    }
 
-//    private void tambahPenjualanProduk(final String id_cs, final String id_hewan){
-//        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLline,
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        try {
-//                            JSONObject jsonObject = new JSONObject(response);
-//
-//                            pesan = jsonObject.getString("message");
-//
-//                            System.out.println(pesan);
-//                            for (int i = 0; i<arrayList.size(); i++)
-//                            {
-//                                tambahDetailProduk(pesan, arrayList.get(i).getId_produk_tambah(), arrayList.get(i).getJumlah_produk(), nama_cs);
-//                            }
-//
-//                            updateTotalHarga(pesan);
-//
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                },
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        Toast.makeText(activity_tambah_penjualan_produk.this, "Koneksi Terputus",
-//                                Toast.LENGTH_SHORT).show();
-//                    }
-//                }){
-//
-//            //datayangdiinput
-//            @Override
-//            protected Map<String,String> getParams(){
-//                Map<String,String> params = new HashMap<>();
-//                params.put("ID_CUSTOMER_SERVICE", id_cs);
-//                params.put("ID_HEWAN", id_hewan);
-//                return params;
-//            }
-//        };
-//        stringRequest.setRetryPolicy(
-//                new DefaultRetryPolicy(
-//                        500000,
-//                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-//                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
-//                )
-//        );
-//        requestQueue.add(stringRequest);
-//    }
-//
-//    private void tambahDetailProduk(final String no_transaksi_produk, final String id_produk, final Integer jumlah_produk, final String keterangan){
-//        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        Toast.makeText(activity_tambah_penjualan_produk.this, "Detail Penjualan Produk Berhasil Disimpan!", Toast.LENGTH_LONG).show();
-//                    }
-//                },
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        Toast.makeText(activity_tambah_penjualan_produk.this, "Koneksi Terputus",
-//                                Toast.LENGTH_SHORT).show();
-//                    }
-//                }){
-//
-//            //datayangdiinput
-//            @Override
-//            protected Map<String,String> getParams(){
-//                Map<String,String> params = new HashMap<>();
-//                params.put("NO_TRANSAKSI_PRODUK", no_transaksi_produk);
-//                params.put("ID_PRODUK", id_produk);
-//                params.put("JUMLAH_PRODUK", String.valueOf(jumlah_produk));
-//                params.put("KETERANGAN", keterangan);
-//                return params;
-//            }
-//        };
-//        stringRequest.setRetryPolicy(
-//                new DefaultRetryPolicy(
-//                        50000,
-//                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-//                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
-//                )
-//        );
-//        requestQueue.add(stringRequest);
-//    }
-//
-//    private void updateTotalHarga(final String no_transaksi_produk){
-//        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLHarga,
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        Handler handler = new Handler();
-//                        handler.postDelayed(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                Toast.makeText(activity_tambah_penjualan_produk.this, "Data Penjualan Produk Berhasil Disimpan!", Toast.LENGTH_LONG).show();
-//                                dialog.dismiss();
-//                                arrayList.clear();
-//                                detailPenjualanProdukAdapter.notifyDataSetChanged();
-//                            }
-//                        }, 2000);
-//                    }
-//                },
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        Toast.makeText(activity_tambah_penjualan_produk.this, "Koneksi Terputus",
-//                                Toast.LENGTH_SHORT).show();
-//                    }
-//                }){
-//
-//            //datayangdiinput
-//            @Override
-//            protected Map<String,String> getParams(){
-//                Map<String,String> params = new HashMap<>();
-//                params.put("NO_TRANSAKSI_PRODUK", no_transaksi_produk);
-//                return params;
-//            }
-//        };
-//        stringRequest.setRetryPolicy(
-//                new DefaultRetryPolicy(
-//                        50000,
-//                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-//                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
-//                )
-//        );
-//        requestQueue.add(stringRequest);
-//    }
+    private void tambahDetailProduk(final String no_transaksi_produk, final String id_produk, final Integer jumlah_produk, final String keterangan){
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(activity_ubah_hapus_penjualan_produk.this, "Detail Penjualan Produk Berhasil Disimpan!", Toast.LENGTH_LONG).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(activity_ubah_hapus_penjualan_produk.this, "Koneksi Terputus",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }){
+
+            //datayangdiinput
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<>();
+                params.put("NO_TRANSAKSI_PRODUK", no_transaksi_produk);
+                params.put("ID_PRODUK", id_produk);
+                params.put("JUMLAH_PRODUK", String.valueOf(jumlah_produk));
+                params.put("KETERANGAN", keterangan);
+                return params;
+            }
+        };
+        stringRequest.setRetryPolicy(
+                new DefaultRetryPolicy(
+                        50000,
+                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+                )
+        );
+        requestQueue.add(stringRequest);
+    }
+
+    private void updateTotalHarga(final String no_transaksi_produk){
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLHarga,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(activity_ubah_hapus_penjualan_produk.this, "Data Penjualan Produk Berhasil Disimpan!", Toast.LENGTH_LONG).show();
+                                dialog.dismiss();
+                                arrayList.clear();
+                                detailPenjualanProdukAdapter.notifyDataSetChanged();
+                            }
+                        }, 2000);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(activity_ubah_hapus_penjualan_produk.this, "Koneksi Terputus",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }){
+
+            //datayangdiinput
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<>();
+                params.put("NO_TRANSAKSI_PRODUK", no_transaksi_produk);
+                return params;
+            }
+        };
+        stringRequest.setRetryPolicy(
+                new DefaultRetryPolicy(
+                        50000,
+                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+                )
+        );
+        requestQueue.add(stringRequest);
+    }
 }

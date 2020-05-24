@@ -45,6 +45,8 @@ import java.util.List;
 import java.util.Map;
 
 public class activity_ubah_hapus_penjualan_layanan extends AppCompatActivity {
+    private String URLDetail = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/transaksilayanan/detail";
+    private String URLHarga = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/transaksilayanan/totalHarga";
     Activity context;
     private List<detail_penjualan_layananDAO> DetailPenjualanLayananList;
     private RecyclerView recyclerView, tambahLayanan;
@@ -83,6 +85,12 @@ public class activity_ubah_hapus_penjualan_layanan extends AppCompatActivity {
         button_ubah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                for (int i = 0; i<arrayList.size(); i++)
+                {
+                    tambahDetailLayanan(no_transaksi.getText().toString(), arrayList.get(i).getId_layanan_tambah(), arrayList.get(i).getJumlah_layanan(), nama_user);
+                }
+                updateTotalHarga(no_transaksi.getText().toString());
+                progDialog();
                 Toast.makeText(activity_ubah_hapus_penjualan_layanan.this, "Berhasil Ubah Detail Penjualan Layanan!", Toast.LENGTH_SHORT).show();
             }
         });
@@ -139,6 +147,7 @@ public class activity_ubah_hapus_penjualan_layanan extends AppCompatActivity {
         button_ubah = findViewById(R.id.button_simpan);
         button_batal = findViewById(R.id.button_batal);
         tambah_layanan = (Button) findViewById(R.id.button_tambah_layanan);
+        dialog = new ProgressDialog(this);
     }
 
     public void setSpinner_layanan() {
@@ -267,137 +276,86 @@ public class activity_ubah_hapus_penjualan_layanan extends AppCompatActivity {
 //        }, 2000);
 //    }
 
-//    private void tambahPenjualanLayanan(final String id_cs, final String id_hewan){
-//        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLline,
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        try {
-//                            JSONObject jsonObject = new JSONObject(response);
-//
-//                            pesan = jsonObject.getString("message");
-//
-//                            System.out.println(pesan);
-//                            for (int i = 0; i<arrayList.size(); i++)
-//                            {
-//                                tambahDetailLayanan(pesan, arrayList.get(i).getId_layanan_tambah(), arrayList.get(i).getJumlah_layanan(), nama_cs);
-//                            }
-//
-//                            updateTotalHarga(pesan);
-//
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                },
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        Toast.makeText(activity_tambah_penjualan_layanan.this, "Koneksi Terputus",
-//                                Toast.LENGTH_SHORT).show();
-//                    }
-//                }){
-//
-//            //datayangdiinput
-//            @Override
-//            protected Map<String,String> getParams(){
-//                Map<String,String> params = new HashMap<>();
-//                params.put("ID_CUSTOMER_SERVICE", id_cs);
-//                params.put("ID_HEWAN", id_hewan);
-//                return params;
-//            }
-//        };
-//        stringRequest.setRetryPolicy(
-//                new DefaultRetryPolicy(
-//                        500000,
-//                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-//                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
-//                )
-//        );
-//        requestQueue.add(stringRequest);
-//    }
-//
-//    private void tambahDetailLayanan(final String no_transaksi_layanan, final String id_layanan, final Integer jumlah_layanan, final String keterangan){
-//        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        Toast.makeText(activity_tambah_penjualan_layanan.this, "Detail Penjualan Layanan Berhasil Disimpan!", Toast.LENGTH_LONG).show();
-//                    }
-//                },
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        Toast.makeText(activity_tambah_penjualan_layanan.this, "Koneksi Terputus",
-//                                Toast.LENGTH_SHORT).show();
-//                    }
-//                }){
-//
-//            //datayangdiinput
-//            @Override
-//            protected Map<String,String> getParams(){
-//                Map<String,String> params = new HashMap<>();
-//                params.put("NO_TRANSAKSI_LAYANAN", no_transaksi_layanan);
-//                params.put("ID_LAYANAN", id_layanan);
-//                params.put("JUMLAH_LAYANAN", String.valueOf(jumlah_layanan));
-//                params.put("KETERANGAN", keterangan);
-//                return params;
-//            }
-//        };
-//        stringRequest.setRetryPolicy(
-//                new DefaultRetryPolicy(
-//                        50000,
-//                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-//                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
-//                )
-//        );
-//        requestQueue.add(stringRequest);
-//    }
-//
-//    private void updateTotalHarga(final String no_transaksi_layanan){
-//        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLHarga,
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        Handler handler = new Handler();
-//                        handler.postDelayed(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                Toast.makeText(activity_tambah_penjualan_layanan.this, "Data Penjualan Layanan Berhasil Disimpan!", Toast.LENGTH_LONG).show();
-//
-//                                dialog.dismiss();
-//                                arrayList.clear();
-//                                detailTambahPenjualanLayananAdapter.notifyDataSetChanged();
-//                            }
-//                        }, 2000);
-//                    }
-//                },
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        Toast.makeText(activity_tambah_penjualan_layanan.this, "Koneksi Terputus",
-//                                Toast.LENGTH_SHORT).show();
-//                    }
-//                }){
-//
-//            //datayangdiinput
-//            @Override
-//            protected Map<String,String> getParams(){
-//                Map<String,String> params = new HashMap<>();
-//                params.put("NO_TRANSAKSI_LAYANAN", no_transaksi_layanan);
-//                return params;
-//            }
-//        };
-//        stringRequest.setRetryPolicy(
-//                new DefaultRetryPolicy(
-//                        50000,
-//                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-//                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
-//                )
-//        );
-//        requestQueue.add(stringRequest);
-//    }
+    private void tambahDetailLayanan(final String no_transaksi_layanan, final String id_layanan, final Integer jumlah_layanan, final String keterangan){
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLDetail,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(activity_ubah_hapus_penjualan_layanan.this, "Detail Penjualan Layanan Berhasil Disimpan!", Toast.LENGTH_LONG).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(activity_ubah_hapus_penjualan_layanan.this, "Koneksi Terputus",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }){
+
+            //datayangdiinput
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<>();
+                params.put("NO_TRANSAKSI_LAYANAN", no_transaksi_layanan);
+                params.put("ID_LAYANAN", id_layanan);
+                params.put("JUMLAH_LAYANAN", String.valueOf(jumlah_layanan));
+                params.put("KETERANGAN", keterangan);
+                return params;
+            }
+        };
+        stringRequest.setRetryPolicy(
+                new DefaultRetryPolicy(
+                        50000,
+                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+                )
+        );
+        requestQueue.add(stringRequest);
+    }
+
+    private void updateTotalHarga(final String no_transaksi_layanan){
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLHarga,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(activity_ubah_hapus_penjualan_layanan.this, "Data Penjualan Layanan Berhasil Disimpan!", Toast.LENGTH_LONG).show();
+
+                                dialog.dismiss();
+                                arrayList.clear();
+                                detailTambahPenjualanLayananAdapter.notifyDataSetChanged();
+                            }
+                        }, 2000);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(activity_ubah_hapus_penjualan_layanan.this, "Koneksi Terputus",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }){
+
+            //datayangdiinput
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<>();
+                params.put("NO_TRANSAKSI_LAYANAN", no_transaksi_layanan);
+                return params;
+            }
+        };
+        stringRequest.setRetryPolicy(
+                new DefaultRetryPolicy(
+                        50000,
+                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+                )
+        );
+        requestQueue.add(stringRequest);
+    }
 }
