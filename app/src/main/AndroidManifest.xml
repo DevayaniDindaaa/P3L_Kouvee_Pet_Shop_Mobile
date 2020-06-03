@@ -67,7 +67,6 @@
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.ukuran_hewan.UkuranHewanFragment">
         </activity>
-        <activity android:name=".Activities.ukuran_hewan.UkuranHewanFragment"></activity>
 
         <activity
             android:name=".Activities.jenis_hewan.activity_tambah_jenis"
@@ -87,7 +86,6 @@
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.jenis_hewan.JenisHewanFragment">
         </activity>
-        <activity android:name=".Activities.jenis_hewan.JenisHewanFragment"></activity>
 
         <activity
             android:name=".Activities.produk.activity_tambah_produk"
@@ -107,7 +105,6 @@
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.produk.ProdukFragment">
         </activity>
-        <activity android:name=".Activities.produk.ProdukFragment"></activity>
 
         <activity
             android:name=".Activities.layanan.activity_tambah_layanan"
@@ -127,7 +124,6 @@
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.layanan.LayananFragment">
         </activity>
-        <activity android:name=".Activities.layanan.LayananFragment"></activity>
 
         <activity
             android:name=".Activities.supplier.activity_tambah_supplier"
@@ -147,7 +143,6 @@
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.supplier.SupplierFragment">
         </activity>
-        <activity android:name=".Activities.supplier.SupplierFragment"></activity>
 
         <activity
             android:name=".Activities.pengadaan.activity_detail_pengadaan"
@@ -173,7 +168,6 @@
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.pengadaan.activity_ubah_pengadaan">
         </activity>
-        <activity android:name=".Activities.pengadaan.PengadaanFragment"></activity>
 
         <activity
             android:name=".Activities.konsumen.activity_detail_hapus_konsumen"
@@ -193,7 +187,6 @@
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.konsumen.activity_detail_hapus_konsumen">
         </activity>
-        <activity android:name=".Activities.konsumen.KonsumenFragment"></activity>
 
         <activity
             android:name=".Activities.hewan.activity_detail_hapus_hewan"
@@ -213,7 +206,6 @@
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.hewan.activity_detail_hapus_hewan">
         </activity>
-        <activity android:name=".Activities.hewan.HewanFragment"></activity>
 
         <activity
             android:name=".Activities.penjualan_layanan.activity_detail_penjualan_layanan"
@@ -233,7 +225,6 @@
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.penjualan_layanan.PenjualanLayananFragment">
         </activity>
-        <activity android:name=".Activities.penjualan_layanan.PenjualanLayananFragment"></activity>
 
         <activity
             android:name=".Activities.penjualan_produk.activity_detail_penjualan_produk"
@@ -259,10 +250,6 @@
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.penjualan_produk.activity_detail_penjualan_produk">
         </activity>
-        <activity android:name=".Activities.penjualan_produk.PenjualanProdukFragment"></activity>
-
-        <activity android:name=".Activities.akun.AkunFragment"></activity>
-        <activity android:name=".logout_activity"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
