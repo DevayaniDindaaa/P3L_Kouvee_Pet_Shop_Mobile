@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.p3l_f_1_pegawai.R;
 import com.p3l_f_1_pegawai.dao.jenis_hewanDAO;
-import com.p3l_f_1_pegawai.dao.ukuran_hewanDAO;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -125,10 +124,6 @@ public class JenisHewanAdapter extends RecyclerView.Adapter<JenisHewanAdapter.My
             notifyDataSetChanged();
         }
     };
-
-    public interface UkuranHewanAdapterListener {
-        void onUkuranHewanSelected(ukuran_hewanDAO ukuran);
-    }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         LinearLayout recycler_jenis;

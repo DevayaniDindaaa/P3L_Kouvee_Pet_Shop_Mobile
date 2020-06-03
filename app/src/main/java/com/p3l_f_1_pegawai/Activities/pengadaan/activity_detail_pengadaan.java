@@ -3,31 +3,25 @@ package com.p3l_f_1_pegawai.Activities.pengadaan;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.p3l_f_1_pegawai.R;
 import com.p3l_f_1_pegawai.dao.detail_pengadaanDAO;
-import com.p3l_f_1_pegawai.dao.pengadaanDAO;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -102,8 +96,6 @@ public class activity_detail_pengadaan extends AppCompatActivity {
                             tambahDetailPengadaan(DetailPengadaanList.get(i).getId_detail_pengadaan(), DetailPengadaanList.get(i).getId_produk(), DetailPengadaanList.get(i).getJumlah_produk_dipesan());
                         }
                         Toast.makeText(getApplicationContext(), "Stok Produk Berhasil Diperbarui!", Toast.LENGTH_LONG).show();
-                        Intent i = new Intent(activity_detail_pengadaan.this, PengadaanFragment.class);
-                        startActivity(i);
                     }
                     else{
                         Toast.makeText(getApplicationContext(), "Produk dari Pengadaan ini, Sudah Diterima!", Toast.LENGTH_LONG).show();

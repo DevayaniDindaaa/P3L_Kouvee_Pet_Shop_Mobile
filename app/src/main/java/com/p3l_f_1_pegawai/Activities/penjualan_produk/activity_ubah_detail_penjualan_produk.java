@@ -22,13 +22,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.p3l_f_1_pegawai.Activities.pengadaan.activity_ubah_detail_pengadaan;
-import com.p3l_f_1_pegawai.Activities.pengadaan.activity_ubah_pengadaan;
 import com.p3l_f_1_pegawai.R;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -88,26 +82,6 @@ public class activity_ubah_detail_penjualan_produk extends AppCompatActivity {
         dialog.setMessage("Mengubah Data ...");
         dialog.show();
     }
-
-//    private void waitingResponse() {
-//        Handler handler = new Handler();
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                if(message.equalsIgnoreCase("Berhasil")) {
-//                    Toast.makeText(activity_ubah_detail_penjualan_produk.this, "Data Detail Pengadaan Berhasil Diubah!", Toast.LENGTH_LONG).show();
-//                    Intent intent = new Intent(activity_ubah_detail_penjualan_produk.this, activity_ubah_hapus_penjualan_produk.class);
-//                    startActivity(intent);
-//                }
-//                else if(message.equalsIgnoreCase("Gagal")) {
-//                    Toast.makeText(activity_ubah_detail_penjualan_produk.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
-//                    Intent intent = new Intent(activity_ubah_detail_penjualan_produk.this, activity_ubah_hapus_penjualan_produk.class);
-//                    startActivity(intent);
-//                }
-//                dialog.dismiss();
-//            }
-//        }, 2000);
-//    }
 
     private void ubahDetail(final String jumlah_produk, final String nama_user, final String id_produk){
         final String url = URLline + id_detail_pengadaan;

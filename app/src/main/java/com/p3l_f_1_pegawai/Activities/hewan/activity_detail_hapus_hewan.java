@@ -24,8 +24,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.p3l_f_1_pegawai.Activities.konsumen.activity_detail_hapus_konsumen;
-import com.p3l_f_1_pegawai.Activities.konsumen.activity_ubah_konsumen;
 import com.p3l_f_1_pegawai.R;
 
 import org.json.JSONException;

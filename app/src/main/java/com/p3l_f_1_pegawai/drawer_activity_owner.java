@@ -13,8 +13,6 @@ import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -27,8 +25,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.navigation.NavigationView;
-import com.p3l_f_1_pegawai.Activities.akun.AkunFragment;
-import com.p3l_f_1_pegawai.Activities.pengadaan.PengadaanFragment;
 import com.p3l_f_1_pegawai.Activities.pengadaan.activity_tambah_pengadaan;
 import com.p3l_f_1_pegawai.dao.produkDAO;
 
@@ -65,8 +61,6 @@ public class drawer_activity_owner extends AppCompatActivity {
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_data_layanan, R.id.nav_data_produk, R.id.nav_data_supplier,
                 R.id.nav_jenis_hewan, R.id.nav_ukuran_hewan, R.id.nav_pemesanan_produk, R.id.nav_hewan, R.id.nav_konsumen, R.id.nav_akun, R.id.nav_keluar)
@@ -148,8 +142,6 @@ public class drawer_activity_owner extends AppCompatActivity {
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel("1", name, importance);
             channel.setDescription(description);
-            // Register the channel with the system; you can't change the importance
-            // or other notification behaviors after this
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }

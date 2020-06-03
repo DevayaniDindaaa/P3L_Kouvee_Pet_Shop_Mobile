@@ -135,10 +135,6 @@ public class SupplierAdapter extends RecyclerView.Adapter<SupplierAdapter.MyView
         }
     };
 
-    public interface UkuranHewanAdapterListener {
-        void onUkuranHewanSelected(supplierDAO supplier);
-    }
-
     public class MyViewHolder extends RecyclerView.ViewHolder {
         LinearLayout recycler_supplier;
         TextView nama_supplier, alamat_supplier, telepon_supplier, log_aktivitas;

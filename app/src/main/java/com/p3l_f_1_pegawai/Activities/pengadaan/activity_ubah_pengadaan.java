@@ -92,13 +92,6 @@ public class activity_ubah_pengadaan extends AppCompatActivity {
             }
         });
 
-//        tambah_produk.setOnClickListener(new View.OnClickListener() {
-////            @Override
-////            public void onClick(View v) {
-////                tambah_produk();
-////            }
-////        });
-
     }
 
     private void getDetailPengadaan() {
@@ -267,71 +260,6 @@ public class activity_ubah_pengadaan extends AppCompatActivity {
         queue.add(getRequest);
     }
 
-//    private void tambah_produk() {
-//        final AlertDialog dialogBuilder = new AlertDialog.Builder(activity_tambah_pengadaan.this).create();
-//        LayoutInflater inflater = LayoutInflater.from(activity_tambah_pengadaan.this);
-//        View dialogView = inflater.inflate(R.layout.dialog_tambah_detail_pengadaan, null);
-//
-//        spinner_produk = (Spinner) dialogView.findViewById(R.id.spinner_produk_pesan);
-//        setSpinner_produk();
-//        spinner_produk.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                id_produk = parent.getSelectedItem().toString();
-//                for(int count = 0; count < produks.size(); count++){
-//                    if (id_produk.equalsIgnoreCase(produks.get(count).getNama_produk())){
-//                        id_produk = produks.get(count).getId_produk();
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-//
-//        final String[] satuanProduk = new String[1];
-//        final TextInputEditText Jumlah = (TextInputEditText) dialogView.findViewById(R.id.jumlah_produk_pengadaan);
-//        Button simpan = (Button) dialogView.findViewById(R.id.button_simpan_produk);
-//        Button batal = (Button) dialogView.findViewById(R.id.button_batal_tambah);
-//
-//        batal.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                dialogBuilder.dismiss();
-//            }
-//        });
-//        simpan.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (Jumlah.getText().toString().isEmpty()) {
-//                    Jumlah.setError("Field Tidak Boleh Kosong!");
-//                    return;
-//                } else {
-//                    final String namaProduk = spinner_produk.getSelectedItem().toString();
-//                    for(int count = 0; count < produks.size(); count++){
-//                        if (namaProduk.equalsIgnoreCase(produks.get(count).getNama_produk())){
-//                            satuanProduk[0] = produks.get(count).getSatuan_produk();
-//                        }
-//                    }
-//
-//                    final int jumlah = Integer.valueOf(Jumlah.getText().toString());
-//
-//                    detailProduk_pengadaanDAO detailProduk = new detailProduk_pengadaanDAO(id_produk, namaProduk, satuanProduk[0], jumlah);
-//                    arrayList.add(detailProduk);
-//                    detailPengadaanProdukAdapter.notifyDataSetChanged();
-//                    dialogBuilder.dismiss();
-//                    produks.clear();
-//                    tempProduk.clear();
-//                }
-//            }
-//        });
-//
-//        dialogBuilder.setView(dialogView);
-//        dialogBuilder.show();
-//    }
-//
     private void progDialog() {
         dialog.setMessage("Mengubah Data ...");
         dialog.show();
@@ -344,13 +272,9 @@ public class activity_ubah_pengadaan extends AppCompatActivity {
             public void run() {
                 if(pesanku.equalsIgnoreCase("Berhasil")) {
                     Toast.makeText(activity_ubah_pengadaan.this, "Data Pemesanan Produk Berhasil Diubah!", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_ubah_pengadaan.this, PengadaanFragment.class);
-                    startActivity(intent);
                 }
                 else if(pesanku.equalsIgnoreCase("Gagal")) {
                     Toast.makeText(activity_ubah_pengadaan.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_ubah_pengadaan.this, PengadaanFragment.class);
-                    startActivity(intent);
                 }
                 dialog.dismiss();
             }
@@ -368,12 +292,6 @@ public class activity_ubah_pengadaan extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(response);
 
                             pesan = jsonObject.getString("message");
-
-//                            System.out.println(pesan);
-//                            for (int i = 0; i<arrayList.size(); i++)
-//                            {
-//                                tambahDetailPengadaan(pesan, arrayList.get(i).getId_produk_tambah(), arrayList.get(i).getJumlah_produk());
-//                            }
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -406,49 +324,4 @@ public class activity_ubah_pengadaan extends AppCompatActivity {
         );
         requestQueue.add(stringRequest);
     }
-
-//    private void tambahDetailPengadaan(final String nomor_pemesanan, final String id_produk, final Integer jumlah_produk_dipesan){
-//        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        try {
-//                            JSONObject json = new JSONObject(response);
-//
-//                            message = json.getString("message");
-//                            data = json.getString("data");
-//
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                },
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        Toast.makeText(activity_ubah_pengadaan.this, "Koneksi Terputus",
-//                                Toast.LENGTH_SHORT).show();
-//                    }
-//                }){
-//
-//            //datayangdiinput
-//            @Override
-//            protected Map<String,String> getParams(){
-//                Map<String,String> params = new HashMap<>();
-//                params.put("NOMOR_PEMESANAN", nomor_pemesanan);
-//                params.put("ID_PRODUK", id_produk);
-//                params.put("JUMLAH_PRODUK_DIPESAN", String.valueOf(jumlah_produk_dipesan));
-//                return params;
-//            }
-//        };
-//        stringRequest.setRetryPolicy(
-//                new DefaultRetryPolicy(
-//                        50000,
-//                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-//                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
-//                )
-//        );
-//        requestQueue.add(stringRequest);
-//    }
 }

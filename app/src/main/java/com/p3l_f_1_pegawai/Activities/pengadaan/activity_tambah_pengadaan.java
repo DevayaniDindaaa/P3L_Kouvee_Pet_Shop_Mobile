@@ -318,13 +318,9 @@ public class activity_tambah_pengadaan extends AppCompatActivity {
             public void run() {
                 if(pesanku.equalsIgnoreCase("Berhasil")) {
                     Toast.makeText(activity_tambah_pengadaan.this, "Data Pemesanan Produk Berhasil Disimpan!", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_tambah_pengadaan.this, PengadaanFragment.class);
-                    startActivity(intent);
                 }
                 else if(pesanku.equalsIgnoreCase("Gagal")) {
                     Toast.makeText(activity_tambah_pengadaan.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_tambah_pengadaan.this, PengadaanFragment.class);
-                    startActivity(intent);
                 }
                 dialog.dismiss();
             }

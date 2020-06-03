@@ -259,13 +259,9 @@ public class activity_tambah_layanan extends AppCompatActivity {
             public void run() {
                 if(message.equalsIgnoreCase("Berhasil")) {
                     Toast.makeText(activity_tambah_layanan.this, "Data Layanan Berhasil Disimpan!", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_tambah_layanan.this, LayananFragment.class);
-                    startActivity(intent);
                 }
                 else if(message.equalsIgnoreCase("Gagal")) {
                     Toast.makeText(activity_tambah_layanan.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_tambah_layanan.this, LayananFragment.class);
-                    startActivity(intent);
                 }
                 dialog.dismiss();
             }

@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -96,13 +95,9 @@ public class activity_hapus_layanan extends AppCompatActivity {
             public void run() {
                 if(message.equalsIgnoreCase("Berhasil")) {
                     Toast.makeText(activity_hapus_layanan.this, "Data Layanan Berhasil Dihapus!", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_hapus_layanan.this, LayananFragment.class);
-                    startActivity(intent);
                 }
                 else if(message.equalsIgnoreCase("Gagal")) {
                     Toast.makeText(activity_hapus_layanan.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_hapus_layanan.this, LayananFragment.class);
-                    startActivity(intent);
                 }
                 dialog.dismiss();
             }

@@ -1,7 +1,6 @@
 package com.p3l_f_1_pegawai.Activities.konsumen;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;

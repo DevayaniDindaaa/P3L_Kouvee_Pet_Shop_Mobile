@@ -125,10 +125,6 @@ public class UkuranHewanAdapter extends RecyclerView.Adapter<UkuranHewanAdapter.
         }
     };
 
-    public interface UkuranHewanAdapterListener {
-        void onUkuranHewanSelected(ukuran_hewanDAO ukuran);
-    }
-
     public class MyViewHolder extends RecyclerView.ViewHolder {
         LinearLayout recycler_ukuran;
         TextView nama_ukuran_hewan, log_aktivitas;

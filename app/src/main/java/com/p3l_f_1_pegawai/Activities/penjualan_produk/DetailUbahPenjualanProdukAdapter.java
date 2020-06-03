@@ -19,16 +19,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.p3l_f_1_pegawai.Activities.pengadaan.activity_ubah_detail_pengadaan;
 import com.p3l_f_1_pegawai.R;
-import com.p3l_f_1_pegawai.dao.detailProduk_penjualanDAO;
-import com.p3l_f_1_pegawai.dao.detail_penjualan_layananDAO;
 import com.p3l_f_1_pegawai.dao.detail_penjualan_produkDAO;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

@@ -135,13 +135,9 @@ public class activity_tambah_supplier extends AppCompatActivity {
             public void run() {
                 if(message.equalsIgnoreCase("Berhasil")) {
                     Toast.makeText(activity_tambah_supplier.this, "Data Supplier Berhasil Disimpan!", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_tambah_supplier.this, SupplierFragment.class);
-                    startActivity(intent);
                 }
                 else if(message.equalsIgnoreCase("Gagal")) {
                     Toast.makeText(activity_tambah_supplier.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_tambah_supplier.this, SupplierFragment.class);
-                    startActivity(intent);
                 }
                 dialog.dismiss();
             }

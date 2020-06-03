@@ -104,13 +104,9 @@ public class activity_tambah_ukuran extends AppCompatActivity {
             public void run() {
             if(message.equalsIgnoreCase("Berhasil")) {
                 Toast.makeText(activity_tambah_ukuran.this, "Data Ukuran Hewan Berhasil Disimpan!", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(activity_tambah_ukuran.this, UkuranHewanFragment.class);
-                startActivity(intent);
             }
             else if(message.equalsIgnoreCase("Gagal")) {
                 Toast.makeText(activity_tambah_ukuran.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(activity_tambah_ukuran.this, UkuranHewanFragment.class);
-                startActivity(intent);
             }
             dialog.dismiss();
             }

@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.p3l_f_1_pegawai.R;
@@ -44,26 +43,4 @@ public class AkunFragment extends Fragment {
         tgl_lahir_pegawai.setText(getActivity().getIntent().getExtras().getString("TGL_LAHIR_PEGAWAI"));
         no_telp.setText(getActivity().getIntent().getExtras().getString("NO_TELP"));
     }
-
-
-//    @Override
-//    protected void onCreate(@Nullable Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.fragment_akun);
-//        id_pegawai = findViewById(R.id.id_pegawai);
-//        role = findViewById(R.id.role);
-//        nama_pegawai = findViewById(R.id.nama_pegawai);
-//        username = findViewById(R.id.username);
-//        tgl_lahir_pegawai = findViewById(R.id.tgl_lahir);
-//        alamat_pegawai = findViewById(R.id.alamat);
-//        no_telp = findViewById(R.id.telepon);
-//
-//        id_pegawai.setText(getIntent().getExtras().getString("ID_PEGAWAI"));
-//        role.setText(getIntent().getExtras().getString("ID_ROLE"));
-//        nama_pegawai.setText(getIntent().getExtras().getString("NAMA_PEGAWAI"));
-//        username.setText(getIntent().getExtras().getString("USERNAME"));
-//        alamat_pegawai.setText(getIntent().getExtras().getString("ALAMAT_PEGAWAI"));
-//        tgl_lahir_pegawai.setText(getIntent().getExtras().getString("TGL_LAHIR_PEGAWAI"));
-//        no_telp.setText(getIntent().getExtras().getString("NO_TELP"));
-//    }
 }

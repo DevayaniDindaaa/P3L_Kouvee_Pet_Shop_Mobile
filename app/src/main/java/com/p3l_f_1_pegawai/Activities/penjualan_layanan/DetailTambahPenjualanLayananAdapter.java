@@ -5,20 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.p3l_f_1_pegawai.Activities.penjualan_produk.DetailTambahPenjualanProdukAdapter;
 import com.p3l_f_1_pegawai.R;
 import com.p3l_f_1_pegawai.dao.detailLayanan_penjualanDAO;
-import com.p3l_f_1_pegawai.dao.detailProduk_penjualanDAO;
-import com.p3l_f_1_pegawai.dao.produkDAO;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class DetailTambahPenjualanLayananAdapter extends RecyclerView.Adapter<DetailTambahPenjualanLayananAdapter.ViewHolder> {
     private Context Mcontext;

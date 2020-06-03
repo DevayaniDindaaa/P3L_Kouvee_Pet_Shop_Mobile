@@ -107,13 +107,9 @@ public class activity_ubah_jenis extends AppCompatActivity {
             public void run() {
                 if(message.equalsIgnoreCase("Berhasil")) {
                     Toast.makeText(activity_ubah_jenis.this, "Data Jenis Hewan Berhasil Diubah!", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_ubah_jenis.this, JenisHewanFragment.class);
-                    startActivity(intent);
                 }
                 else if(message.equalsIgnoreCase("Gagal")) {
                     Toast.makeText(activity_ubah_jenis.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_ubah_jenis.this, JenisHewanFragment.class);
-                    startActivity(intent);
                 }
                 dialog.dismiss();
             }

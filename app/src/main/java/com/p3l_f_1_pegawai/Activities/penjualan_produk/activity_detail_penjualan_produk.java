@@ -1,7 +1,6 @@
 package com.p3l_f_1_pegawai.Activities.penjualan_produk;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,11 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.p3l_f_1_pegawai.Activities.penjualan_layanan.DetailPenjualanLayananAdapter;
-import com.p3l_f_1_pegawai.Activities.penjualan_layanan.activity_detail_penjualan_layanan;
 import com.p3l_f_1_pegawai.R;
-import com.p3l_f_1_pegawai.dao.detail_penjualan_layananDAO;
 import com.p3l_f_1_pegawai.dao.detail_penjualan_produkDAO;
 
 import org.json.JSONArray;

@@ -9,15 +9,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,10 +26,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.p3l_f_1_pegawai.Activities.konsumen.KonsumenAdapter;
-import com.p3l_f_1_pegawai.Activities.konsumen.activity_tambah_konsumen;
 import com.p3l_f_1_pegawai.R;
-import com.p3l_f_1_pegawai.dao.konsumenDAO;
 import com.p3l_f_1_pegawai.dao.penjualan_layananDAO;
 
 import org.json.JSONArray;

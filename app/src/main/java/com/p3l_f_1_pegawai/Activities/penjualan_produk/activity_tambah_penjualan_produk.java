@@ -205,7 +205,6 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
                             ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, tempKonsumen);
                             spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                             spinner_konsumen.setAdapter(spinnerArrayAdapter);
-                            //spinnerArrayAdapter.notifyDataSetChanged();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -406,22 +405,6 @@ public class activity_tambah_penjualan_produk extends AppCompatActivity {
         dialog.setMessage("Menyimpan Data ...");
         dialog.show();
     }
-
-//    private void waitingResponse() {
-//        Handler handler = new Handler();
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                if(pesanku.equalsIgnoreCase("Berhasil")) {
-//                    Toast.makeText(activity_tambah_penjualan_produk.this, "Data Penjualan Produk Berhasil Disimpan!", Toast.LENGTH_LONG).show();
-//                }
-//                else if(pesanku.equalsIgnoreCase("Gagal")) {
-//                    Toast.makeText(activity_tambah_penjualan_produk.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
-//                }
-//                dialog.dismiss();
-//            }
-//        }, 2000);
-//    }
 
     private void tambahPenjualanProduk(final String id_cs, final String id_hewan){
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());

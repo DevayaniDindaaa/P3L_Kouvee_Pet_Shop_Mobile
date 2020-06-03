@@ -388,22 +388,6 @@ public class activity_tambah_penjualan_layanan extends AppCompatActivity {
         dialog.show();
     }
 
-//    private void waitingResponse() {
-//        Handler handler = new Handler();
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                if(pesanku.equalsIgnoreCase("Berhasil")) {
-//                    Toast.makeText(activity_tambah_penjualan_produk.this, "Data Penjualan Produk Berhasil Disimpan!", Toast.LENGTH_LONG).show();
-//                }
-//                else if(pesanku.equalsIgnoreCase("Gagal")) {
-//                    Toast.makeText(activity_tambah_penjualan_produk.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
-//                }
-//                dialog.dismiss();
-//            }
-//        }, 2000);
-//    }
-
     private void tambahPenjualanLayanan(final String id_cs, final String id_hewan){
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URLline,

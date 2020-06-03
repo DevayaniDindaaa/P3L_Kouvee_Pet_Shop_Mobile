@@ -21,8 +21,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
-import com.p3l_f_1_pegawai.Activities.layanan.LayananFragment;
-import com.p3l_f_1_pegawai.Activities.layanan.activity_hapus_layanan;
 import com.p3l_f_1_pegawai.R;
 
 import org.json.JSONException;
@@ -108,13 +106,9 @@ public class activity_hapus_produk extends AppCompatActivity {
             public void run() {
                 if(message.equalsIgnoreCase("Berhasil")) {
                     Toast.makeText(activity_hapus_produk.this, "Data Produk Berhasil Dihapus!", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_hapus_produk.this, ProdukFragment.class);
-                    startActivity(intent);
                 }
                 else if(message.equalsIgnoreCase("Gagal")) {
                     Toast.makeText(activity_hapus_produk.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_hapus_produk.this, ProdukFragment.class);
-                    startActivity(intent);
                 }
                 dialog.dismiss();
             }

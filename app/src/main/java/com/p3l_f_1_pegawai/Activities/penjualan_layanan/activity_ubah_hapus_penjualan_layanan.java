@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -259,22 +258,6 @@ public class activity_ubah_hapus_penjualan_layanan extends AppCompatActivity {
         dialog.setMessage("Menyimpan Data ...");
         dialog.show();
     }
-
-//    private void waitingResponse() {
-//        Handler handler = new Handler();
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                if(pesanku.equalsIgnoreCase("Berhasil")) {
-//                    Toast.makeText(activity_tambah_penjualan_produk.this, "Data Penjualan Produk Berhasil Disimpan!", Toast.LENGTH_LONG).show();
-//                }
-//                else if(pesanku.equalsIgnoreCase("Gagal")) {
-//                    Toast.makeText(activity_tambah_penjualan_produk.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
-//                }
-//                dialog.dismiss();
-//            }
-//        }, 2000);
-//    }
 
     private void tambahDetailLayanan(final String no_transaksi_layanan, final String id_layanan, final Integer jumlah_layanan, final String keterangan){
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());

@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -20,8 +19,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.p3l_f_1_pegawai.Activities.ukuran_hewan.UkuranHewanFragment;
-import com.p3l_f_1_pegawai.Activities.ukuran_hewan.activity_hapus_ukuran;
 import com.p3l_f_1_pegawai.R;
 
 import org.json.JSONException;
@@ -100,13 +97,9 @@ public class activity_hapus_supplier extends AppCompatActivity {
             public void run() {
                 if(message.equalsIgnoreCase("Berhasil")) {
                     Toast.makeText(activity_hapus_supplier.this, "Data Supplier Berhasil Dihapus!", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_hapus_supplier.this, SupplierFragment.class);
-                    startActivity(intent);
                 }
                 else if(message.equalsIgnoreCase("Gagal")) {
                     Toast.makeText(activity_hapus_supplier.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_hapus_supplier.this, SupplierFragment.class);
-                    startActivity(intent);
                 }
                 dialog.dismiss();
             }

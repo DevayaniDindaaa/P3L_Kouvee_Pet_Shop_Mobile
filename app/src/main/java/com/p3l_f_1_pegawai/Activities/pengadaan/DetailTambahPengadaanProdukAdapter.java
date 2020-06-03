@@ -21,10 +21,6 @@ import java.util.List;
 public class DetailTambahPengadaanProdukAdapter extends RecyclerView.Adapter<DetailTambahPengadaanProdukAdapter.ViewHolder> {
     private Context Mcontext;
     private ArrayList<detailProduk_pengadaanDAO> arrayList;
-    private Spinner spinner_produk;
-    private String id_produk;
-    private List<produkDAO> produks = new ArrayList<>();
-    private ArrayList<String> tempProduk = new ArrayList<>();
 
     public DetailTambahPengadaanProdukAdapter(ArrayList<detailProduk_pengadaanDAO> arrayList, Context Mcontext) {
         this.arrayList = arrayList;

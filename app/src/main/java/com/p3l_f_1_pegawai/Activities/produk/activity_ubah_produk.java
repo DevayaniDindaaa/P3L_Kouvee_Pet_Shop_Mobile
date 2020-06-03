@@ -327,13 +327,9 @@ public class activity_ubah_produk extends AppCompatActivity {
             public void run() {
                 if(message.equalsIgnoreCase("Berhasil")) {
                     Toast.makeText(activity_ubah_produk.this, "Data Produk Berhasil Diubah!", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_ubah_produk.this, ProdukFragment.class);
-                    startActivity(intent);
                 }
                 else if(message.equalsIgnoreCase("Gagal")) {
                     Toast.makeText(activity_ubah_produk.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_ubah_produk.this, ProdukFragment.class);
-                    startActivity(intent);
                 }
                 dialogProg.dismiss();
             }

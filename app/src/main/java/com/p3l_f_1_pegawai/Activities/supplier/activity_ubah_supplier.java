@@ -137,13 +137,9 @@ public class activity_ubah_supplier extends AppCompatActivity {
             public void run() {
                 if(message.equalsIgnoreCase("Berhasil")) {
                     Toast.makeText(activity_ubah_supplier.this, "Data Supplier Berhasil Diubah!", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_ubah_supplier.this, SupplierFragment.class);
-                    startActivity(intent);
                 }
                 else if(message.equalsIgnoreCase("Gagal")) {
                     Toast.makeText(activity_ubah_supplier.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(activity_ubah_supplier.this, SupplierFragment.class);
-                    startActivity(intent);
                 }
                 dialog.dismiss();
             }

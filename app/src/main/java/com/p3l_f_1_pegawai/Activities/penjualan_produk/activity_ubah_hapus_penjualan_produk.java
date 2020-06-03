@@ -30,11 +30,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
-import com.p3l_f_1_pegawai.Activities.penjualan_layanan.DetailUbahPenjualanLayananAdapter;
-import com.p3l_f_1_pegawai.Activities.penjualan_layanan.activity_ubah_hapus_penjualan_layanan;
 import com.p3l_f_1_pegawai.R;
 import com.p3l_f_1_pegawai.dao.detailProduk_penjualanDAO;
-import com.p3l_f_1_pegawai.dao.detail_penjualan_layananDAO;
 import com.p3l_f_1_pegawai.dao.detail_penjualan_produkDAO;
 import com.p3l_f_1_pegawai.dao.produkDAO;
 
@@ -278,22 +275,6 @@ public class activity_ubah_hapus_penjualan_produk extends AppCompatActivity {
         dialog.setMessage("Menyimpan Data ...");
         dialog.show();
     }
-
-//    private void waitingResponse() {
-//        Handler handler = new Handler();
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                if(pesanku.equalsIgnoreCase("Berhasil")) {
-//                    Toast.makeText(activity_tambah_penjualan_produk.this, "Data Penjualan Produk Berhasil Disimpan!", Toast.LENGTH_LONG).show();
-//                }
-//                else if(pesanku.equalsIgnoreCase("Gagal")) {
-//                    Toast.makeText(activity_tambah_penjualan_produk.this, "Kesalahan Koneksi", Toast.LENGTH_LONG).show();
-//                }
-//                dialog.dismiss();
-//            }
-//        }, 2000);
-//    }
 
     private void tambahDetailProduk(final String no_transaksi_produk, final String id_produk, final Integer jumlah_produk, final String keterangan){
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
