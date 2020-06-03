@@ -33,7 +33,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 public class activity_tambah_supplier extends AppCompatActivity {
-    private String URLline = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/supplier";
+    private String URLline = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/supplier";
     private TextInputEditText nama_supplier, alamat_supplier, kota_supplier, telepon_supplier;
     String MobilePattern = "\\+?([ -]?\\d+)+|\\(\\d+\\)([ -]\\d+)";
     private Button simpan_supplier, batal_simpan;

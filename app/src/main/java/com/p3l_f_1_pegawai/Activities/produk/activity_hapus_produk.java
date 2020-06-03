@@ -32,7 +32,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class activity_hapus_produk extends AppCompatActivity {
-    private String URLline = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/produk/delete/";
+    private String URLline = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/produk/delete/";
     private Button hapus_produk, batal_hapus;
     private TextView show_calendar, show_person, nama_produk, harga_produk, jenis_hewan_produk, stok_produk, stok_minimal_produk;
     private ImageView foto_produk;

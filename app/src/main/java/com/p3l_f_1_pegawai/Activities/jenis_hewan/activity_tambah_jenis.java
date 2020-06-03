@@ -32,7 +32,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class activity_tambah_jenis extends AppCompatActivity {
-    private String URLline = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/jenishewan";
+    private String URLline = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/jenishewan";
     private TextInputEditText nama_jenis_hewan;
     private Button simpan_jenis, batal_simpan;
     private TextView show_calendar, show_person;

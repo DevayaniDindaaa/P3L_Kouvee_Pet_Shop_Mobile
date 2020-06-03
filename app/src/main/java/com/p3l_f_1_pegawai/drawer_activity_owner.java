@@ -46,7 +46,7 @@ public class drawer_activity_owner extends AppCompatActivity {
     private List<produkDAO> ProdukList;
     private static Uri alarmSound;
     private int messageCount = 0;
-    private final long[] pattern = {101, 300, 300, 300};
+    private final long[] pattern = {102, 300, 300, 300};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

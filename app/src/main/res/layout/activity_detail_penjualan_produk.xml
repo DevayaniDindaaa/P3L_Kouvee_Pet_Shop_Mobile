@@ -271,7 +271,7 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:layout_width="101dp"
+                android:layout_width="102dp"
                 android:layout_height="wrap_content"
                 android:text="Sub Total"
                 android:textStyle="bold" />
@@ -297,7 +297,7 @@
             android:layout_marginLeft="10dp">
 
             <TextView
-                android:layout_width="101dp"
+                android:layout_width="102dp"
                 android:layout_height="wrap_content"
                 android:text="Diskon"
                 android:textStyle="bold" />
@@ -323,7 +323,7 @@
             android:layout_marginLeft="10dp">
 
             <TextView
-                android:layout_width="101dp"
+                android:layout_width="102dp"
                 android:layout_height="wrap_content"
                 android:text="Total Bayar"
                 android:textStyle="bold" />
@@ -349,7 +349,7 @@
             android:layout_marginLeft="10dp">
 
             <TextView
-                android:layout_width="101dp"
+                android:layout_width="102dp"
                 android:layout_height="wrap_content"
                 android:text="Status Bayar"
                 android:textStyle="bold" />

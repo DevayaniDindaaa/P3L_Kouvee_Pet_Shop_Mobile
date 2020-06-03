@@ -85,7 +85,7 @@ public class DetailUbahPengadaanProdukAdapter extends RecyclerView.Adapter<Detai
     }
 
     private void hapusDetail(final String id_detail_pengadaan) {
-        final String url = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/transaksipengadaan/deletedetail";
+        final String url = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/transaksipengadaan/deletedetail";
         RequestQueue requestQueue = Volley.newRequestQueue(context);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

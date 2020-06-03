@@ -40,7 +40,7 @@ import java.util.Map;
 
 public class activity_detail_penjualan_layanan extends AppCompatActivity {
     Activity context;
-    private String URL = "http://192.168.8.101/CI_Mobile_P3L_1F/index.php/transaksilayanan/sendsms";
+    private String URL = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/transaksilayanan/sendsms";
     private List<detail_penjualan_layananDAO> DetailPenjualanLayananList;
     private RecyclerView recyclerView;
     private DetailPenjualanLayananAdapter recycleAdapter;
