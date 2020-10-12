@@ -47,9 +47,9 @@ import java.util.List;
 import java.util.Map;
 
 public class activity_tambah_penjualan_layanan extends AppCompatActivity {
-    private String URLline = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/transaksilayanan";
-    private String URL = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/transaksilayanan/detail";
-    private String URLHarga = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/transaksilayanan/totalHarga";
+    private String URLline = "http://192.168.0.200/CI_Mobile_P3L_1F/index.php/transaksilayanan";
+    private String URL = "http://192.168.0.200/CI_Mobile_P3L_1F/index.php/transaksilayanan/detail";
+    private String URLHarga = "http://192.168.0.200/CI_Mobile_P3L_1F/index.php/transaksilayanan/totalHarga";
     private Button simpan_jual_layanan, batal_simpan, tambah_layanan;
     private TextView show_calendar, show_person;
     private Spinner spinner_layanan, spinner_konsumen, spinner_hewan;
@@ -170,7 +170,7 @@ public class activity_tambah_penjualan_layanan extends AppCompatActivity {
     }
 
     public void setSpinner_konsumen(){
-        String url = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/konsumen";
+        String url = "http://192.168.0.200/CI_Mobile_P3L_1F/index.php/konsumen";
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,
@@ -221,7 +221,7 @@ public class activity_tambah_penjualan_layanan extends AppCompatActivity {
     }
 
     public void setSpinner_hewan(){
-        String url = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/hewan";
+        String url = "http://192.168.0.200/CI_Mobile_P3L_1F/index.php/hewan";
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,
@@ -279,7 +279,7 @@ public class activity_tambah_penjualan_layanan extends AppCompatActivity {
     }
 
     public void setSpinner_layanan(){
-        String url = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/layanan";
+        String url = "http://192.168.0.200/CI_Mobile_P3L_1F/index.php/layanan";
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,

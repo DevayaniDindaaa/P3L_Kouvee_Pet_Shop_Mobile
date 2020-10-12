@@ -47,7 +47,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp" >
+        android:layout_marginTop="30dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -102,7 +103,8 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -122,17 +124,18 @@
         android:layout_marginTop="50dp">
 
         <Button
-            android:layout_width="102dp"
+            android:layout_width="150dp"
             android:layout_height="40dp"
             android:text="BATAL"
             android:textSize="15dp"
             android:textColor="@color/colorTop"
             android:background="@drawable/button_ubah"
             android:textStyle="bold"
-            android:id="@+id/button_batal"/>
+            android:id="@+id/button_batal"
+            style="@style/Widget.MaterialComponents.Button"/>
 
         <Button
-            android:layout_width="102dp"
+            android:layout_width="150dp"
             android:layout_height="40dp"
             android:text="SIMPAN"
             android:textSize="15dp"
@@ -140,6 +143,7 @@
             android:layout_marginLeft="50dp"
             android:background="@drawable/button_hapus"
             android:textStyle="bold"
-            android:id="@+id/button_simpan"/>
+            android:id="@+id/button_simpan"
+            style="@style/Widget.MaterialComponents.Button"/>
     </LinearLayout>
 </LinearLayout>

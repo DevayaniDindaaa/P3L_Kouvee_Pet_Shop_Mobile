@@ -81,7 +81,7 @@ public class drawer_activity_owner extends AppCompatActivity {
     }
 
     private void notifikasiStokProdukKurang() {
-        String url = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/produk";
+        String url = "http://192.168.0.200/CI_Mobile_P3L_1F/index.php/produk";
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,

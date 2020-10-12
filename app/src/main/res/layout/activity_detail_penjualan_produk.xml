@@ -385,7 +385,8 @@
                 android:background="@drawable/button_hapus"
                 android:textStyle="bold"
                 android:id="@+id/ubah_detail_produk"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                style="@style/Widget.MaterialComponents.Button"/>
         </LinearLayout>
 
     </LinearLayout>

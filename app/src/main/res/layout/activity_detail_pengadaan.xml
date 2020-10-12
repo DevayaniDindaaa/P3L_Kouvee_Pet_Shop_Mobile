@@ -209,7 +209,8 @@
                 android:textColor="@color/colorTop"
                 android:background="@drawable/button_ubah"
                 android:textStyle="bold"
-                android:id="@+id/button_terima_stok"/>
+                android:id="@+id/button_terima_stok"
+                />
 
             <Button
                 android:layout_width="200dp"

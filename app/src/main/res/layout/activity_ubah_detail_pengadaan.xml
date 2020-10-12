@@ -45,17 +45,18 @@
         android:layout_marginTop="80dp">
 
         <Button
-            android:layout_width="102dp"
+            android:layout_width="150dp"
             android:layout_height="40dp"
             android:text="BATAL"
             android:textSize="15dp"
             android:textColor="@color/colorTop"
             android:background="@drawable/button_ubah"
             android:textStyle="bold"
-            android:id="@+id/button_batal_ubah"/>
+            android:id="@+id/button_batal_ubah"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
         <Button
-            android:layout_width="102dp"
+            android:layout_width="150dp"
             android:layout_height="40dp"
             android:text="UBAH"
             android:textSize="15dp"
@@ -63,6 +64,7 @@
             android:layout_marginLeft="50dp"
             android:background="@drawable/button_hapus"
             android:textStyle="bold"
-            android:id="@+id/button_ubah_produk"/>
+            android:id="@+id/button_ubah_produk"
+            style="@style/Widget.MaterialComponents.Button"/>
     </LinearLayout>
 </LinearLayout>

@@ -16,7 +16,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="350dp"
-        android:layout_marginRight="30dp" >
+        android:layout_marginRight="30dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense" >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -33,7 +34,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
         app:passwordToggleEnabled="true"
-        app:passwordToggleDrawable="@drawable/visibility">
+        app:passwordToggleDrawable="@drawable/visibility"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense" >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -55,5 +57,6 @@
         android:background="@drawable/button_masuk"
         android:textColor="#FFFFFF"
         android:text="MASUK"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        style="@style/Widget.MyApp.MyButton"/>
 </LinearLayout>

@@ -106,7 +106,8 @@
             android:textColor="@color/colorTop"
             android:background="@drawable/button_ubah"
             android:textStyle="bold"
-            android:id="@+id/button_batal"/>
+            android:id="@+id/button_batal"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
         <Button
             android:layout_width="102dp"
@@ -117,6 +118,7 @@
             android:layout_marginLeft="50dp"
             android:background="@drawable/button_hapus"
             android:textStyle="bold"
-            android:id="@+id/button_simpan"/>
+            android:id="@+id/button_simpan"
+            style="@style/Widget.MaterialComponents.Button"/>
     </LinearLayout>
 </LinearLayout>

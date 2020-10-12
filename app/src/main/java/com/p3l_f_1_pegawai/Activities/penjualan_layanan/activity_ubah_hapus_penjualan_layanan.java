@@ -44,8 +44,8 @@ import java.util.List;
 import java.util.Map;
 
 public class activity_ubah_hapus_penjualan_layanan extends AppCompatActivity {
-    private String URLDetail = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/transaksilayanan/detail";
-    private String URLHarga = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/transaksilayanan/totalHarga";
+    private String URLDetail = "http://192.168.0.200/CI_Mobile_P3L_1F/index.php/transaksilayanan/detail";
+    private String URLHarga = "http://192.168.0.200/CI_Mobile_P3L_1F/index.php/transaksilayanan/totalHarga";
     Activity context;
     private List<detail_penjualan_layananDAO> DetailPenjualanLayananList;
     private RecyclerView recyclerView, tambahLayanan;
@@ -150,7 +150,7 @@ public class activity_ubah_hapus_penjualan_layanan extends AppCompatActivity {
     }
 
     public void setSpinner_layanan() {
-        String url = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/layanan";
+        String url = "http://192.168.0.200/CI_Mobile_P3L_1F/index.php/layanan";
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,

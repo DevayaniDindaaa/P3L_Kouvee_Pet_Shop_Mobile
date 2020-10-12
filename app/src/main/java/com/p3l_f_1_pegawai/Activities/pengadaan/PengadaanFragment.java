@@ -77,7 +77,7 @@ public class PengadaanFragment extends Fragment {
     }
 
     public void getPengadaan(){
-        String url = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/transaksipengadaan";
+        String url = "http://192.168.0.200/CI_Mobile_P3L_1F/index.php/transaksipengadaan";
         RequestQueue queue = Volley.newRequestQueue(getActivity());
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url,

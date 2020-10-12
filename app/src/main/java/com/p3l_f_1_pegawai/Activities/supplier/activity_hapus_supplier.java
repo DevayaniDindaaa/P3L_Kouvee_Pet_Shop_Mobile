@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class activity_hapus_supplier extends AppCompatActivity {
-    private String URLline = "http://192.168.8.102/CI_Mobile_P3L_1F/index.php/supplier/delete/";
+    private String URLline = "http://192.168.0.200/CI_Mobile_P3L_1F/index.php/supplier/delete/";
     private Button hapus_supplier, batal_hapus;
     private TextView show_calendar, show_person, nama_supplier, alamat_supplier, telepon_supplier;
     private String data = "-";

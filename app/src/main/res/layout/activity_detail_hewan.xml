@@ -292,27 +292,29 @@
             android:layout_marginTop="80dp">
 
             <Button
-                android:layout_width="102dp"
+                android:layout_width="120dp"
                 android:layout_height="40dp"
                 android:text="UBAH"
                 android:textSize="15dp"
                 android:textAllCaps="false"
                 android:textColor="@color/colorTop"
-                android:background="@drawable/button_ubah"
                 android:textStyle="bold"
-                android:id="@+id/ubah_hewan"/>
+                android:id="@+id/ubah_hewan"
+                app:icon="@drawable/ic_ubah"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"/>
 
             <Button
-                android:layout_width="102dp"
+                android:layout_width="120dp"
                 android:layout_height="40dp"
                 android:text="HAPUS"
                 android:textSize="15dp"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:layout_marginLeft="50dp"
-                android:background="@drawable/button_hapus"
                 android:textStyle="bold"
-                android:id="@+id/hapus_hewan"/>
+                android:id="@+id/hapus_hewan"
+                app:icon="@drawable/ic_hapus"
+                style="@style/Widget.MaterialComponents.Button.Icon"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
