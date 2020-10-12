@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
     android:padding="10dp"
@@ -22,26 +22,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ambil Foto dari Kamera"
-        android:drawableStart="@drawable/ic_menu_camera"
         android:drawablePadding="10dp"
         android:textSize="18dp"
         android:textAllCaps="false"
         android:gravity="left"
         android:layout_marginTop="10dp"
         android:id="@+id/camera"
-        android:backgroundTint="@color/colorTop">
+        android:backgroundTint="@color/colorTop"
+        app:icon="@drawable/ic_menu_camera"
+        style="@style/Widget.MaterialComponents.Button.Icon">
     </Button>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Pilih dari Galeri"
-        android:drawableStart="@drawable/ic_menu_gallery"
         android:drawablePadding="10dp"
         android:textAllCaps="false"
         android:textSize="18dp"
         android:gravity="left"
         android:id="@+id/gallery"
-        android:backgroundTint="@color/colorTop">
+        android:backgroundTint="@color/colorTop"
+        app:icon="@drawable/ic_menu_gallery"
+        style="@style/Widget.MaterialComponents.Button.Icon">
     </Button>
 </LinearLayout>

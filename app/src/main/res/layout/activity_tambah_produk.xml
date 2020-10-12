@@ -172,12 +172,10 @@
             android:text="Tambah Foto"
             android:textSize="12dp"
             android:textColor="@color/colorTop"
-            android:background="@drawable/button_ubah"
             android:textStyle="bold"
             android:id="@+id/button_tambah_foto"
-            android:drawableTop="@drawable/add_photo"
             app:icon="@drawable/add_photo"
-            style="@style/Widget.MaterialComponents.Button.Icon"/>
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"/>
     </LinearLayout>
 
     <LinearLayout
@@ -188,18 +186,17 @@
         android:layout_marginTop="10dp">
 
         <Button
-            android:layout_width="150dp"
+            android:layout_width="120dp"
             android:layout_height="40dp"
             android:text="BATAL"
             android:textSize="15dp"
             android:textColor="@color/colorTop"
-            android:background="@drawable/button_ubah"
             android:textStyle="bold"
             android:id="@+id/button_batal"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
         <Button
-            android:layout_width="150dp"
+            android:layout_width="120dp"
             android:layout_height="40dp"
             android:text="SIMPAN"
             android:textSize="15dp"

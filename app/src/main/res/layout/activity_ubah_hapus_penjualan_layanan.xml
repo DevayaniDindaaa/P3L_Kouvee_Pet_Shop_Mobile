@@ -133,13 +133,11 @@
         android:text="Tambah Layanan"
         android:textSize="15dp"
         android:textColor="@color/colorTop"
-        android:background="@drawable/button_ubah"
-        android:drawableStart="@drawable/add_produk"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:id="@+id/button_tambah_layanan"
         app:icon="@drawable/add_produk"
-        style="@style/Widget.MaterialComponents.Button.Icon"/>
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="10dp"
@@ -157,24 +155,22 @@
         android:layout_marginTop="10dp">
 
         <Button
-            android:layout_width="150dp"
+            android:layout_width="120dp"
             android:layout_height="40dp"
             android:text="BATAL"
             android:textSize="15dp"
             android:textColor="@color/colorTop"
-            android:background="@drawable/button_ubah"
             android:textStyle="bold"
             android:id="@+id/button_batal"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
         <Button
-            android:layout_width="150dp"
+            android:layout_width="120dp"
             android:layout_height="40dp"
             android:text="SIMPAN"
             android:textSize="15dp"
             android:textColor="#FFFFFF"
             android:layout_marginLeft="50dp"
-            android:background="@drawable/button_hapus"
             android:textStyle="bold"
             android:id="@+id/button_simpan"
             style="@style/Widget.MaterialComponents.Button"/>

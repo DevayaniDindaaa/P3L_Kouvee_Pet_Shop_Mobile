@@ -433,7 +433,6 @@
                 android:text="KIRIM PESAN"
                 android:textSize="15dp"
                 android:textColor="@color/colorTop"
-                android:background="@drawable/button_ubah"
                 android:textStyle="bold"
                 android:id="@+id/button_kirim_sms"
                 style="?attr/materialButtonOutlinedStyle"/>
@@ -445,7 +444,6 @@
                 android:text="UBAH DETAIL TRANSAKSI"
                 android:textSize="15dp"
                 android:textColor="#FFFFFF"
-                android:background="@drawable/button_hapus"
                 android:textStyle="bold"
                 android:id="@+id/ubah_detail_layanan"
                 android:layout_gravity="center"
