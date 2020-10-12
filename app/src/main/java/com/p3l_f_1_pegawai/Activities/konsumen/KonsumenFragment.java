@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -43,6 +44,7 @@ public class KonsumenFragment extends Fragment {
     private KonsumenAdapter recycleAdapter;
     private FloatingActionButton tambahKonsumen;
     private String nama_user;
+    private SwipeRefreshLayout refreshLayout;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -70,6 +72,7 @@ public class KonsumenFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         KonsumenList = new ArrayList<>();
         context = getActivity();
+        refreshLayout = view.findViewById(R.id.swipe_refresh);
         recyclerView = view.findViewById(R.id.recycle_tampil_konsumen);
         recycleAdapter = new KonsumenAdapter(KonsumenList, getActivity());
         recyclerView.setLayoutManager(new GridLayoutManager(context, 1));
@@ -79,6 +82,15 @@ public class KonsumenFragment extends Fragment {
         nama_user = getActivity().getIntent().getExtras().getString("USERNAME");
 
         getKonsumen();
+
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                KonsumenList.clear();
+                getKonsumen();
+                refreshLayout.setRefreshing(false);
+            }
+        });
     }
 
     public void getKonsumen(){

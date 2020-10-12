@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -44,6 +45,7 @@ public class SupplierFragment extends Fragment {
     private SupplierAdapter recycleAdapter;
     private FloatingActionButton tambahSupplier;
     private String nama_user;
+    private SwipeRefreshLayout refreshLayout;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -66,8 +68,8 @@ public class SupplierFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         SupplierList = new ArrayList<>();
         context = getActivity();
+        refreshLayout = view.findViewById(R.id.swipe_refresh);
         recyclerView = view.findViewById(R.id.recycle_tampil_supplier);
-
         recycleAdapter = new SupplierAdapter(SupplierList, getActivity());
         recyclerView.setLayoutManager(new GridLayoutManager(context, 1));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -75,10 +77,19 @@ public class SupplierFragment extends Fragment {
 
         nama_user = getActivity().getIntent().getExtras().getString("USERNAME");
 
-        getUkuranHewan();
+        getSupplier();
+
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                SupplierList.clear();
+                getSupplier();
+                refreshLayout.setRefreshing(false);
+            }
+        });
     }
 
-    public void getUkuranHewan(){
+    public void getSupplier(){
         String url = "http://192.168.0.200/CI_Mobile_P3L_1F/index.php/supplier";
         RequestQueue queue = Volley.newRequestQueue(getActivity());
 

@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -44,6 +45,7 @@ public class UkuranHewanFragment extends Fragment {
     private UkuranHewanAdapter recycleAdapter;
     private FloatingActionButton tambahUkuran;
     private String nama_user;
+    private SwipeRefreshLayout refreshLayout;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -66,8 +68,8 @@ public class UkuranHewanFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         UkuranHewanList = new ArrayList<>();
         context = getActivity();
+        refreshLayout = view.findViewById(R.id.swipe_refresh);
         recyclerView = view.findViewById(R.id.recycle_tampil_ukuran);
-
         recycleAdapter = new UkuranHewanAdapter(UkuranHewanList, getActivity());
         recyclerView.setLayoutManager(new GridLayoutManager(context, 1));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -76,6 +78,15 @@ public class UkuranHewanFragment extends Fragment {
         nama_user = getActivity().getIntent().getExtras().getString("USERNAME");
 
         getUkuranHewan();
+
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                UkuranHewanList.clear();
+                getUkuranHewan();
+                refreshLayout.setRefreshing(false);
+            }
+        });
     }
 
     public void getUkuranHewan(){

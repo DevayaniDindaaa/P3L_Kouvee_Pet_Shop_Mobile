@@ -144,7 +144,7 @@ public class DetailUbahPengadaanProdukAdapter extends RecyclerView.Adapter<Detai
             nama_produk = itemView.findViewById(R.id.nama_produk_dipesan);
             jumlah_produk = itemView.findViewById(R.id.jumlah_produk_pesan);
             log_aktivitas = itemView.findViewById(R.id.log_aktivitas);
-            hapus_produk = itemView.findViewById(R.id.hapus_pengadan_produk);
+            hapus_produk = itemView.findViewById(R.id.hapus_pengadaan_produk);
             ubah_produk = itemView.findViewById(R.id.edit_pengadaan_produk);
         }
     }

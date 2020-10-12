@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -43,6 +44,7 @@ public class PenjualanLayananFragment extends Fragment {
     private PenjualanLayananAdapter recycleAdapter;
     private FloatingActionButton tambahPenjualanLayanan;
     private String nama_user;
+    private SwipeRefreshLayout refreshLayout;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -58,6 +60,7 @@ public class PenjualanLayananFragment extends Fragment {
             }
         });
         return view;
+
     }
 
     @Override
@@ -65,6 +68,7 @@ public class PenjualanLayananFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         PenjualanLayananList = new ArrayList<>();
         context = getActivity();
+        refreshLayout = view.findViewById(R.id.swipe_refresh);
         recyclerView = view.findViewById(R.id.recycle_tampil_penjualan_layanan);
         recycleAdapter = new PenjualanLayananAdapter(PenjualanLayananList, getActivity());
         recyclerView.setLayoutManager(new GridLayoutManager(context, 1));
@@ -74,6 +78,16 @@ public class PenjualanLayananFragment extends Fragment {
         nama_user = getActivity().getIntent().getExtras().getString("USERNAME");
 
         getPenjualanLayanan();
+
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                PenjualanLayananList.clear();
+                getPenjualanLayanan();
+                refreshLayout.setRefreshing(false);
+            }
+        });
+
     }
 
     public void getPenjualanLayanan(){

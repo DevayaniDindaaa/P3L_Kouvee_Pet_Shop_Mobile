@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -43,6 +44,7 @@ public class PengadaanFragment extends Fragment {
     private PengadaanAdapter recycleAdapter;
     private FloatingActionButton tambahPengadaan;
     private String nama_user;
+    private SwipeRefreshLayout refreshLayout;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -65,6 +67,7 @@ public class PengadaanFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         PengadaanList = new ArrayList<>();
         context = getActivity();
+        refreshLayout = view.findViewById(R.id.swipe_refresh);
         recyclerView = view.findViewById(R.id.recycle_tampil_pengadaan);
         recycleAdapter = new PengadaanAdapter(PengadaanList, getActivity());
         recyclerView.setLayoutManager(new GridLayoutManager(context, 1));
@@ -74,6 +77,15 @@ public class PengadaanFragment extends Fragment {
         nama_user = getActivity().getIntent().getExtras().getString("USERNAME");
 
         getPengadaan();
+
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                PengadaanList.clear();
+                getPengadaan();
+                refreshLayout.setRefreshing(false);
+            }
+        });
     }
 
     public void getPengadaan(){
