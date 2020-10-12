@@ -49,27 +49,29 @@
 
 
                 <Button
-                    android:layout_width="75dp"
-                    android:layout_height="30dp"
-                    android:drawableStart="@drawable/ic_ubah"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:textSize="15dp"
                     android:text="Ubah"
                     android:textAllCaps="false"
                     android:textColor="@color/colorTop"
-                    android:background="@drawable/button_ubah"
                     android:textStyle="bold"
-                    android:id="@+id/edit_jenis"/>
+                    android:id="@+id/edit_jenis"
+                    app:icon="@drawable/ic_ubah"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"/>
 
                 <Button
-                    android:layout_width="75dp"
-                    android:layout_height="30dp"
-                    android:drawableStart="@drawable/ic_hapus"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:textSize="15dp"
                     android:text="Hapus"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/button_hapus"
                     android:textStyle="bold"
-                    android:id="@+id/hapus_jenis"/>
+                    android:id="@+id/hapus_jenis"
+                    app:icon="@drawable/ic_hapus"
+                    style="@style/Widget.MaterialComponents.Button.Icon"/>
             </LinearLayout>
 
         </LinearLayout>
