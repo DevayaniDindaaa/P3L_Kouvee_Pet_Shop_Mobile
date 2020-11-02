@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:layout_gravity="center_horizontal">
+
+    <TableRow
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:text="KOUVEE PET SHOP"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="30dp"
+            android:textStyle="bold"></TextView>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10dip"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:text="Caring Your Beloved Pet"
+            android:textSize="20dp"
+            android:textStyle="italic"></TextView>
+    </TableRow>
+
+    <TableRow
+        android:paddingTop="10px"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:src="@drawable/round_logo" />
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10dip"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Jalan Moses Gatotkaca No. 22"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            ></TextView>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10dip"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Yogyakarta 55281"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            ></TextView>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10dip"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="http://www.sayanghewan.com"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            ></TextView>
+    </TableRow>
+
+</TableLayout>

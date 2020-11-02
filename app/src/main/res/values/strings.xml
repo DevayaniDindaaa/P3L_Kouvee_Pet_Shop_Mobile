@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">P3L_F_1_KONSUMEN</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    //spinner
+    <string-array name="produk">
+        <item name="-">Nama Produk</item>
+        <item name="hargaasc">Harga Terendah</item>
+        <item name="hargadesc">Harga Tertinggi</item>
+        <item name="stokasc">Stok Terendah</item>
+        <item name="stokdesc">Stok Tertinggi</item>
+    </string-array>
+
+    //spinner
+    <string-array name="layanan">
+        <item name="-">Nama Layanan</item>
+        <item name="hargaasc">Harga Terendah</item>
+        <item name="hargadesc">Harga Tertinggi</item>
+    </string-array>
+</resources>
